@@ -180,7 +180,7 @@
         "objective": "Ecosystem & Developer Experience Expansion",
         "items": [
           "Mobile companion app (React Native) \u2014 notifications, voice commands, session browsing on the go",
-          "Formal Plugin SDK \u2014 CLI scaffolding (\u2018lydia plugin create\u2019), docs, and templates for third-party developers",
+          "Formal Plugin SDK \u2014 CLI scaffolding (\u2018alice plugin create\u2019), docs, and templates for third-party developers",
           "Native Git integration \u2014 auto-commit agent changes, changelog generation, draft PR summaries",
           "Local observability dashboard \u2014 token usage, session analytics, live agent logs, cost tracking",
           "Local multi-modal RAG \u2014 drop PDFs, images, or codebases and query over them without uploading anywhere",

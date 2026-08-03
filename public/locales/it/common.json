@@ -250,7 +250,7 @@
         "objective": "Espansione dell'Ecosistema e Esperienza Sviluppatore",
         "items": [
           "App mobile companion (React Native) — notifiche, comandi vocali, esplorazione sessioni in movimento",
-          "Plugin SDK formale — scaffolding CLI (‘lydia plugin create’), documentazione e template per sviluppatori terzi",
+          "Plugin SDK formale — scaffolding CLI (‘alice plugin create’), documentazione e template per sviluppatori terzi",
           "Integrazione Git nativa — auto-commit delle modifiche dell'agente, generazione changelog, bozze riepilogo PR",
           "Dashboard di osservabilità locale — utilizzo token, analisi sessioni, log agente live, tracciamento costi",
           "RAG multimodale locale — trascina PDF, immagini o codebase e interroga senza caricare nulla",

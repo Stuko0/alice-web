@@ -250,7 +250,7 @@
         "objective": "Expansión del Ecosistema y Experiencia de Desarrollador",
         "items": [
           "App móvil companion (React Native) — notificaciones, comandos de voz, exploración de sesiones sobre la marcha",
-          "Plugin SDK formal — andamio CLI (‘lydia plugin create’), docs y plantillas para desarrolladores externos",
+          "Plugin SDK formal — andamio CLI (‘alice plugin create’), docs y plantillas para desarrolladores externos",
           "Integración nativa de Git — auto-commit de cambios del agente, generación de changelog, borradores de resúmenes de PR",
           "Panel de observabilidad local — uso de tokens, análisis de sesiones, logs del agente en vivo, seguimiento de costos",
           "RAG multimodal local — arrastra PDFs, imágenes o codebases y consulta sin subir nada",
