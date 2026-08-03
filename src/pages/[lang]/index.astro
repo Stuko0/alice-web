@@ -4,7 +4,7 @@ import HeroSection from "../../components/HeroSection.astro";
 import HeroTerminal from "../../components/HeroTerminal.astro";
 import AnimatedBackground from "../../components/AnimatedBackground.astro";
 import Stats from "../../components/Stats.astro";
-import WhyLydia from "../../components/WhyLydia.astro";
+import WhyAlice from "../../components/WhyAlice.astro";
 import HowItWorks from "../../components/HowItWorks.astro";
 import UseCases from "../../components/UseCases.astro";
 import Testimonials from "../../components/Testimonials.astro";
@@ -41,7 +41,7 @@ const slidesText = [
   { title: t.featurePreview.slides.schedule, desc: t.features.scheduledDesc },
 ];
 
-const title = `Lydia Agent — ${t.hero.title}`;
+const title = `Alice Agent — ${t.hero.title}`;
 const description = t.hero.description;
 const version = "0.17.0";
 ---
@@ -62,7 +62,7 @@ const version = "0.17.0";
 
   <Stats stars="128" version="0.1.0" langs="3" />
 
-  <WhyLydia
+  <WhyAlice
     title={t.why.title}
     subtitle={t.why.subtitle}
     withoutTitle={t.why.without}
@@ -176,7 +176,7 @@ const version = "0.17.0";
 
       <p class="mt-6 text-xs text-rpm-muted text-center">
         The desktop app bundles its own Python runtime — no separate install needed.
-        <a href="https://github.com/Stuko0/lydia-agent/releases" class="text-rpm-iris hover:underline ml-1">See all releases &rarr;</a>
+        <a href="https://github.com/Stuko0/alice-agent/releases" class="text-rpm-iris hover:underline ml-1">See all releases &rarr;</a>
       </p>
       </div>
   </section>

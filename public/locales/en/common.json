@@ -9,7 +9,7 @@
   "hero": {
     "badge": "Open Source \u2022 MIT License",
     "title": "Your AI teammate, on your machine",
-    "description": "Lydia Agent runs locally, remembers context, and handles code, tasks, and creativity without sending your workflow to the cloud.",
+    "description": "Alice Agent runs locally, remembers context, and handles code, tasks, and creativity without sending your workflow to the cloud.",
     "terminal": "Terminal",
     "primaryCta": "Install in 30 seconds",
     "secondaryCta": "See what it does"
@@ -28,7 +28,7 @@
   "featurePreview": {
     "badge": "Feature Preview",
     "title": "Lives everywhere, remembers everything.",
-    "description": "From terminal to desktop, Lydia runs tasks, keeps memory, and integrates with your favorite tools.",
+    "description": "From terminal to desktop, Alice runs tasks, keeps memory, and integrates with your favorite tools.",
     "ctaFeatures": "View features",
     "ctaDocs": "Read docs",
     "slides": {
@@ -46,7 +46,7 @@
   },
   "features": {
     "persistentMemory": "Persistent memory",
-    "persistentMemoryDesc": "Lydia stores facts, preferences, and project context using memory skills and structured notes.",
+    "persistentMemoryDesc": "Alice stores facts, preferences, and project context using memory skills and structured notes.",
     "webBrowse": "Web browsing",
     "webBrowseDesc": "Open sites, extract data, interact with forms, and verify results in real time.",
     "creative": "Assisted creativity",
@@ -71,10 +71,10 @@
     "codeDesc": "Write, review, refactor and test code across multiple languages and frameworks."
   },
   "why": {
-    "title": "Why developers choose Lydia",
+    "title": "Why developers choose Alice",
     "subtitle": "Less context switching. More shipped work.",
-    "without": "Without Lydia",
-    "with": "With Lydia",
+    "without": "Without Alice",
+    "with": "With Alice",
     "rows": [
       { "without": "Copy-paste prompts between browser and terminal", "with": "One CLI for chat, code, and automation" },
       { "without": "Lose context every time you restart a session", "with": "Persistent memory across projects and sessions" },
@@ -87,8 +87,8 @@
     "subtitle": "From install to first task in under a minute.",
     "steps": [
       { "number": "01", "title": "Install", "desc": "Run the one-line installer for macOS, Windows or Linux." },
-      { "number": "02", "title": "Configure", "desc": "Point Lydia at your model provider and optional skills." },
-      { "number": "03", "title": "Delegate", "desc": "Ask, code, automate, or create. Lydia remembers and executes." }
+      { "number": "02", "title": "Configure", "desc": "Point Alice at your model provider and optional skills." },
+      { "number": "03", "title": "Delegate", "desc": "Ask, code, automate, or create. Alice remembers and executes." }
     ]
   },
   "useCases": {
@@ -103,29 +103,29 @@
   },
   "testimonials": {
     "title": "What early users say",
-    "subtitle": "Makers using Lydia to ship faster.",
+    "subtitle": "Makers using Alice to ship faster.",
     "items": [
-      { "quote": "I stopped jumping between ChatGPT, my terminal, and Notion. Lydia keeps context and just does the work.", "author": "Alex M.", "role": "Indie hacker" },
+      { "quote": "I stopped jumping between ChatGPT, my terminal, and Notion. Alice keeps context and just does the work.", "author": "Alex M.", "role": "Indie hacker" },
       { "quote": "The local-first approach is exactly what I wanted. My code stays on my machine but I still get agent superpowers.", "author": "Sofia R.", "role": "Security engineer" },
-      { "quote": "I set up a cron skill and now Lydia summarizes my RSS feeds every morning. It took five minutes.", "author": "Daniel K.", "role": "Product designer" }
+      { "quote": "I set up a cron skill and now Alice summarizes my RSS feeds every morning. It took five minutes.", "author": "Daniel K.", "role": "Product designer" }
     ]
   },
   "faq": {
     "title": "Questions? Answered.",
     "subtitle": "Everything you need to know before installing.",
     "items": [
-      { "q": "Is Lydia free?", "a": "Yes. Lydia is open source under the MIT license and free to use, modify, and self-host." },
+      { "q": "Is Alice free?", "a": "Yes. Alice is open source under the MIT license and free to use, modify, and self-host." },
       { "q": "Does it run locally?", "a": "The agent core runs on your machine. You choose which model provider to connect; your data never has to leave your system unless you configure external APIs." },
-      { "q": "Do I need to know how to code?", "a": "A little. Lydia is built for developers and technical makers who want a programmable assistant." },
+      { "q": "Do I need to know how to code?", "a": "A little. Alice is built for developers and technical makers who want a programmable assistant." },
       { "q": "Can I add my own skills?", "a": "Absolutely. Skills are plain code and configuration files. Add integrations, cron jobs, memory sources, or custom tools." },
       { "q": "Which models are supported?", "a": "Any model reachable via API: OpenAI, Anthropic, local Ollama / llama.cpp, OpenRouter, and more through the gateway." },
-      { "q": "How is this different from other agents?", "a": "Lydia is local-first, memory-persistent, and designed to be extended by you, not locked behind a SaaS subscription." }
+      { "q": "How is this different from other agents?", "a": "Alice is local-first, memory-persistent, and designed to be extended by you, not locked behind a SaaS subscription." }
     ]
   },
   "cta": {
     "title": "Ready to meet your new teammate?",
-    "subtitle": "Install Lydia in one command and start delegating.",
-    "button": "Get Lydia now"
+    "subtitle": "Install Alice in one command and start delegating.",
+    "button": "Get Alice now"
   },
   "roadmap": {
     "title": "Strategic Roadmap",
@@ -146,7 +146,7 @@
         "phase": "Phase 2",
         "objective": "Event-Driven Proactivity",
         "items": [
-          "Event engine core \u2014 Lydia listens instead of waiting for prompts",
+          "Event engine core \u2014 Alice listens instead of waiting for prompts",
           "File system watcher + local webhook server for GitHub, Jira events",
           "System monitor \u2014 agent alerts on CPU/RAM spikes or network changes",
           "System tray pulse + notification center for agent-initiated actions",
@@ -157,11 +157,11 @@
         "phase": "Phase 3",
         "objective": "The Team Agent \u2014 B2B & Enterprise Collaboration",
         "items": [
-          "Lydia Server: FastAPI backend with shared session store and vector DB",
+          "Alice Server: FastAPI backend with shared session store and vector DB",
           "Enterprise SSO (OIDC/SAML) + RBAC engine with tool-to-role mapping",
           "Immutable audit logs for every tool execution across the organization",
           "Channels view (like Slack) with WebSocket real-time sync",
-          "Agent-to-agent protocol \u2014 local Lydia delegates to cloud Lydia"
+          "Agent-to-agent protocol \u2014 local Alice delegates to cloud Alice"
         ]
       },
       {
@@ -192,7 +192,7 @@
   "docs": {
     "badge": "Documentation",
     "title": "Documentation",
-    "subtitle": "Learn how to install, configure and extend Lydia Agent.",
+    "subtitle": "Learn how to install, configure and extend Alice Agent.",
     "onThisPage": "On this page",
     "install": "Installation",
     "cli": "CLI commands",

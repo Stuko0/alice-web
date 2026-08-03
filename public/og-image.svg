@@ -1,19 +1,19 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#232136"/>
-      <stop offset="1" stop-color="#2a273f"/>
+      <stop offset="0" stop-color="#0c0a12"/>
+      <stop offset="1" stop-color="#16131f"/>
     </linearGradient>
     <radialGradient id="glow" cx="900" cy="200" r="400">
-      <stop offset="0" stop-color="#c4a7e7" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#c4a7e7" stop-opacity="0"/>
+      <stop offset="0" stop-color="#a8213a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#a8213a" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
-  <text x="80" y="260" font-family="Georgia, serif" font-size="96" font-weight="600" fill="#e0def4">Lydia Agent</text>
-  <text x="80" y="330" font-family="system-ui, sans-serif" font-size="36" fill="#908caa">The agent that grows with you</text>
-  <circle cx="1050" cy="320" r="100" fill="#c4a7e7" opacity="0.2"/>
-  <circle cx="1050" cy="320" r="70" fill="#9ccfd8" opacity="0.25"/>
-  <circle cx="1050" cy="320" r="40" fill="#eb6f92" opacity="0.3"/>
+  <text x="80" y="260" font-family="Georgia, serif" font-size="96" font-weight="600" fill="#d4cfc7">Alice Agent</text>
+  <text x="80" y="330" font-family="system-ui, sans-serif" font-size="36" fill="#958da5">The agent that grows with you</text>
+  <circle cx="1050" cy="320" r="100" fill="#a8213a" opacity="0.2"/>
+  <circle cx="1050" cy="320" r="70" fill="#3a8c8c" opacity="0.25"/>
+  <circle cx="1050" cy="320" r="40" fill="#b8864e" opacity="0.3"/>
 </svg>

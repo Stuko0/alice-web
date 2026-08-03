@@ -45,7 +45,7 @@ export function Navigation({ currentPath, lng, labels }: NavigationProps) {
           <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-rpm-iris/40 bg-rpm-surface text-rpm-iris transition group-hover:scale-105">
             <Sparkles className="h-5 w-5" />
           </span>
-          <span className="font-display text-lg tracking-wide text-rpm-text">Lydia Agent</span>
+          <span className="font-display text-lg tracking-wide text-rpm-text">Alice Agent</span>
         </a>
 
         <div className="hidden items-center gap-5 md:flex">
@@ -66,7 +66,7 @@ export function Navigation({ currentPath, lng, labels }: NavigationProps) {
             );
           })}
           <a
-            href="https://github.com/Stuko0/lydia-agent"
+            href="https://github.com/Stuko0/alice-agent"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-sm font-medium text-rpm-subtle transition-colors hover:text-rpm-iris"
@@ -122,7 +122,7 @@ export function Navigation({ currentPath, lng, labels }: NavigationProps) {
                 );
               })}
               <a
-                href="https://github.com/Stuko0/lydia-agent"
+                href="https://github.com/Stuko0/alice-agent"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg px-3 py-2 text-rpm-text transition hover:bg-rpm-surface"

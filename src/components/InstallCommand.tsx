@@ -6,9 +6,9 @@ const labels: Record<string, string> = { macos: "macOS", linux: "Linux", windows
 
 export function InstallCommand() {
   const commands: Record<string, string> = {
-    macos: "curl -fsSL https://lydia-agent.stuko.dev/install.sh | bash",
-    linux: "curl -fsSL https://lydia-agent.stuko.dev/install.sh | bash",
-    windows: "iex (irm https://lydia-agent.stuko.dev/install.ps1)",
+    macos: "curl -fsSL https://alice-agent.stuko.dev/install.sh | bash",
+    linux: "curl -fsSL https://alice-agent.stuko.dev/install.sh | bash",
+    windows: "iex (irm https://alice-agent.stuko.dev/install.ps1)",
   };
   const [tab, setTab] = useState<"macos" | "linux" | "windows">("macos");
   const [copied, setCopied] = useState(false);

@@ -9,7 +9,7 @@
   "hero": {
     "badge": "Open Source • MIT License",
     "title": "La tua compagna IA, sulla tua macchina",
-    "description": "Lydia Agent gira localmente, ricorda il contesto e gestisce codice, compiti e creatività senza inviare il tuo flusso di lavoro al cloud.",
+    "description": "Alice Agent gira localmente, ricorda il contesto e gestisce codice, compiti e creatività senza inviare il tuo flusso di lavoro al cloud.",
     "terminal": "Terminale",
     "primaryCta": "Installa in 30 secondi",
     "secondaryCta": "Scopri cosa fa"
@@ -28,7 +28,7 @@
   "featurePreview": {
     "badge": "Anteprima",
     "title": "Vive ovunque, ricorda tutto.",
-    "description": "Dal terminale al desktop, Lydia esegue task, conserva memoria e si integra con i tuoi strumenti preferiti.",
+    "description": "Dal terminale al desktop, Alice esegue task, conserva memoria e si integra con i tuoi strumenti preferiti.",
     "ctaFeatures": "Vedi funzionalità",
     "ctaDocs": "Leggi docs",
     "slides": {
@@ -46,7 +46,7 @@
   },
   "features": {
     "persistentMemory": "Memoria persistente",
-    "persistentMemoryDesc": "Lydia memorizza fatti, preferenze e contesto di progetto usando skill di memoria e note strutturate.",
+    "persistentMemoryDesc": "Alice memorizza fatti, preferenze e contesto di progetto usando skill di memoria e note strutturate.",
     "webBrowse": "Navigazione web",
     "webBrowseDesc": "Apri siti, estrai dati, interagisci con form e verifica i risultati in tempo reale.",
     "creative": "Creatività assistita",
@@ -71,10 +71,10 @@
     "codeDesc": "Scrivi, revisiona, refactorizza e testa codice in più linguaggi e framework."
   },
   "why": {
-    "title": "Perché gli sviluppatori scelgono Lydia",
+    "title": "Perché gli sviluppatori scelgono Alice",
     "subtitle": "Meno cambi di contesto. Più lavoro consegnato.",
-    "without": "Senza Lydia",
-    "with": "Con Lydia",
+    "without": "Senza Alice",
+    "with": "Con Alice",
     "rows": [
       {
         "without": "Copia-incolla prompt tra browser e terminale",
@@ -106,12 +106,12 @@
       {
         "number": "02",
         "title": "Configura",
-        "desc": "Punta Lydia al tuo provider di modelli e skill opzionali."
+        "desc": "Punta Alice al tuo provider di modelli e skill opzionali."
       },
       {
         "number": "03",
         "title": "Delega",
-        "desc": "Chiedi, programma, automatizza o crea. Lydia ricorda ed esegue."
+        "desc": "Chiedi, programma, automatizza o crea. Alice ricorda ed esegue."
       }
     ]
   },
@@ -143,10 +143,10 @@
   },
   "testimonials": {
     "title": "Cosa dicono i primi utenti",
-    "subtitle": "Maker che usano Lydia per spedire più velocemente.",
+    "subtitle": "Maker che usano Alice per spedire più velocemente.",
     "items": [
       {
-        "quote": "Ho smesso di saltare tra ChatGPT, il terminale e Notion. Lydia tiene il contesto e semplicemente fa il lavoro.",
+        "quote": "Ho smesso di saltare tra ChatGPT, il terminale e Notion. Alice tiene il contesto e semplicemente fa il lavoro.",
         "author": "Alex M.",
         "role": "Indie hacker"
       },
@@ -156,7 +156,7 @@
         "role": "Security engineer"
       },
       {
-        "quote": "Ho configurato uno skill cron e ora Lydia riassume i miei feed RSS ogni mattina. Ci ho messo cinque minuti.",
+        "quote": "Ho configurato uno skill cron e ora Alice riassume i miei feed RSS ogni mattina. Ci ho messo cinque minuti.",
         "author": "Daniel K.",
         "role": "Product designer"
       }
@@ -167,8 +167,8 @@
     "subtitle": "Tutto ciò che devi sapere prima di installare.",
     "items": [
       {
-        "q": "Lydia è gratis?",
-        "a": "Sì. Lydia è open source sotto licenza MIT ed è gratis da usare, modificare e self-hostare."
+        "q": "Alice è gratis?",
+        "a": "Sì. Alice è open source sotto licenza MIT ed è gratis da usare, modificare e self-hostare."
       },
       {
         "q": "Gira localmente?",
@@ -176,7 +176,7 @@
       },
       {
         "q": "Devo saper programmare?",
-        "a": "Un po'. Lydia è pensata per sviluppatori e maker tecnici che vogliono un assistente programmabile."
+        "a": "Un po'. Alice è pensata per sviluppatori e maker tecnici che vogliono un assistente programmabile."
       },
       {
         "q": "Posso aggiungere skill mie?",
@@ -188,14 +188,14 @@
       },
       {
         "q": "In cosa differisce dagli altri agenti?",
-        "a": "Lydia è local-first, con memoria persistente e progettata per essere estesa da te, non rinchiusa dietro un abbonamento SaaS."
+        "a": "Alice è local-first, con memoria persistente e progettata per essere estesa da te, non rinchiusa dietro un abbonamento SaaS."
       }
     ]
   },
   "cta": {
     "title": "Pronto a incontrare la tua nuova compagna?",
-    "subtitle": "Installa Lydia con un comando e inizia a delegare.",
-    "button": "Ottieni Lydia"
+    "subtitle": "Installa Alice con un comando e inizia a delegare.",
+    "button": "Ottieni Alice"
   },
   "roadmap": {
     "title": "Roadmap Strategica",
@@ -216,7 +216,7 @@
         "phase": "Fase 2",
         "objective": "Proattività Basata su Eventi",
         "items": [
-          "Motore eventi — Lydia ascolta invece di aspettare prompt",
+          "Motore eventi — Alice ascolta invece di aspettare prompt",
           "Vigile del filesystem + server webhook locale per GitHub, Jira",
           "Monitor di sistema — avvisi dell'agente per picchi CPU/RAM o cambi rete",
           "Impulso tray + centro notifiche per azioni iniziate dall'agente",
@@ -227,11 +227,11 @@
         "phase": "Fase 3",
         "objective": "Agente in Team — Collaborazione B2B e Enterprise",
         "items": [
-          "Lydia Server: backend FastAPI con store sessioni condiviso e DB vettoriale",
+          "Alice Server: backend FastAPI con store sessioni condiviso e DB vettoriale",
           "SSO enterprise (OIDC/SAML) + motore RBAC con mappatura tool a ruoli",
           "Log di audit immutabili per ogni esecuzione tool nell'organizzazione",
           "Vista canali (come Slack) con sincronizzazione WebSocket in tempo reale",
-          "Protocollo agente-a-agente — Lydia locale delega a Lydia cloud"
+          "Protocollo agente-a-agente — Alice locale delega a Alice cloud"
         ]
       },
       {
@@ -262,7 +262,7 @@
   "docs": {
     "badge": "Documentazione",
     "title": "Documentazione",
-    "subtitle": "Impara a installare, configurare ed estendere Lydia Agent.",
+    "subtitle": "Impara a installare, configurare ed estendere Alice Agent.",
     "onThisPage": "In questa pagina",
     "install": "Installazione",
     "cli": "Comandi CLI",

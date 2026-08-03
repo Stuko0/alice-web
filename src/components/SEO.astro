@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const { title, description, image = "/og-image.png", type = "website", lang, pathname } = Astro.props;
-const canonical = `https://lydia-agent.stuko.dev${pathname}`;
+const canonical = `https://alice-agent.stuko.dev${pathname}`;
 ---
 
 <link rel="canonical" href={canonical} />
@@ -17,16 +17,16 @@ const canonical = `https://lydia-agent.stuko.dev${pathname}`;
 <meta property="og:description" content={description} />
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonical} />
-<meta property="og:image" content={`https://lydia-agent.stuko.dev${image}`} />
+<meta property="og:image" content={`https://alice-agent.stuko.dev${image}`} />
 <meta property="og:locale" content={lang === "es" ? "es_ES" : lang === "it" ? "it_IT" : "en_US"} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={`https://lydia-agent.stuko.dev${image}`} />
+<meta name="twitter:image" content={`https://alice-agent.stuko.dev${image}`} />
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Lydia Agent",
+  name: "Alice Agent",
   description,
   url: canonical,
   applicationCategory: "DeveloperApplication",
@@ -37,5 +37,5 @@ const canonical = `https://lydia-agent.stuko.dev${pathname}`;
     "@type": "Person",
     name: "Stuko0"
   },
-  codeRepository: "https://github.com/Stuko0/lydia-agent"
+  codeRepository: "https://github.com/Stuko0/alice-agent"
 })} />
