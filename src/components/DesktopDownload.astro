@@ -3,8 +3,6 @@ import { Download, Apple, Monitor, Terminal } from "lucide-react";
 import { getLatestRelease, LATEST_DOWNLOAD } from "../lib/releases";
 
 const release = await getLatestRelease();
-const winExeUrl = release.winExeUrl.startsWith("http") ? release.winExeUrl : LATEST_DOWNLOAD.winExe;
-const linuxTarUrl = release.linuxTarUrl.startsWith("http") ? release.linuxTarUrl : LATEST_DOWNLOAD.linuxTar;
 ---
 
 <div class="mt-8 w-full max-w-2xl">
@@ -25,7 +23,7 @@ const linuxTarUrl = release.linuxTarUrl.startsWith("http") ? release.linuxTarUrl
 
     <!-- Windows → latest release -->
     <a
-      href={winExeUrl}
+      href={LATEST_DOWNLOAD.winExe}
       target="_blank"
       rel="noopener noreferrer"
       class="group flex flex-col items-center gap-2 rounded-xl border border-rpm-love/40 bg-rpm-love/10 px-4 py-4 text-rpm-love transition hover:bg-rpm-love/20 hover:shadow-lg hover:-translate-y-1"
@@ -41,7 +39,7 @@ const linuxTarUrl = release.linuxTarUrl.startsWith("http") ? release.linuxTarUrl
 
     <!-- Linux → latest release -->
     <a
-      href={linuxTarUrl}
+      href={LATEST_DOWNLOAD.linuxTar}
       target="_blank"
       rel="noopener noreferrer"
       class="group flex flex-col items-center gap-2 rounded-xl border border-rpm-pine/40 bg-rpm-pine/10 px-4 py-4 text-rpm-pine transition hover:bg-rpm-pine/20 hover:shadow-lg hover:-translate-y-1"
