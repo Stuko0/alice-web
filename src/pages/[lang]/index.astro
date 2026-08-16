@@ -17,11 +17,13 @@ import { ScrollReveal } from "../../components/ScrollReveal";
 import { FeatureCard } from "../../components/FeatureCard";
 import { ArrowRight, Heart } from "lucide-react";
 import { getT } from "../../i18n.server";
+import { getLatestRelease } from "../../lib/releases";
 
 export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
 
 const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
 const t = getT(lng);
+const release = await getLatestRelease();
 
 const features = [
   { iconName: "Brain" as const, title: t.features.persistentMemory, desc: t.features.persistentMemoryDesc, color: "iris" as const },
@@ -43,7 +45,7 @@ const slidesText = [
 
 const title = `Alice Agent — ${t.hero.title}`;
 const description = t.hero.description;
-const version = "0.18.0";
+const version = release.version;
 ---
 
 <Layout title={title} description={description}>
@@ -60,7 +62,7 @@ const version = "0.18.0";
     </div>
   </HeroSection>
 
-  <Stats stars="128" version="0.1.0" langs="3" />
+  <Stats stars="128" version={release.version} langs="3" />
 
   <WhyAlice
     title={t.why.title}

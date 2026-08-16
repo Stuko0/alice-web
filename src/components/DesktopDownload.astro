@@ -1,8 +1,10 @@
 ---
 import { Download, Apple, Monitor, Terminal } from "lucide-react";
+import { getLatestRelease, LATEST_DOWNLOAD } from "../lib/releases";
 
-const WIN_EXE_URL = "https://github.com/Stuko0/alice-agent/releases/download/v0.18.0/Alice-0.17.0-Setup.exe";
-const LINUX_TAR_URL = "https://github.com/Stuko0/alice-agent/releases/download/v0.18.0/alice-linux-x86_64.tar.gz";
+const release = await getLatestRelease();
+const winExeUrl = release.winExeUrl.startsWith("http") ? release.winExeUrl : LATEST_DOWNLOAD.winExe;
+const linuxTarUrl = release.linuxTarUrl.startsWith("http") ? release.linuxTarUrl : LATEST_DOWNLOAD.linuxTar;
 ---
 
 <div class="mt-8 w-full max-w-2xl">
@@ -21,9 +23,9 @@ const LINUX_TAR_URL = "https://github.com/Stuko0/alice-agent/releases/download/v
       <span class="text-[10px] italic text-rpm-muted/60">Próximamente</span>
     </div>
 
-    <!-- Windows → download -->
+    <!-- Windows → latest release -->
     <a
-      href={WIN_EXE_URL}
+      href={winExeUrl}
       target="_blank"
       rel="noopener noreferrer"
       class="group flex flex-col items-center gap-2 rounded-xl border border-rpm-love/40 bg-rpm-love/10 px-4 py-4 text-rpm-love transition hover:bg-rpm-love/20 hover:shadow-lg hover:-translate-y-1"
@@ -34,11 +36,12 @@ const LINUX_TAR_URL = "https://github.com/Stuko0/alice-agent/releases/download/v
         <Download class="h-3 w-3" />
         Alice-Setup.exe
       </span>
+      <span class="text-[10px] text-rpm-muted">v{release.version}</span>
     </a>
 
-    <!-- Linux → download -->
+    <!-- Linux → latest release -->
     <a
-      href={LINUX_TAR_URL}
+      href={linuxTarUrl}
       target="_blank"
       rel="noopener noreferrer"
       class="group flex flex-col items-center gap-2 rounded-xl border border-rpm-pine/40 bg-rpm-pine/10 px-4 py-4 text-rpm-pine transition hover:bg-rpm-pine/20 hover:shadow-lg hover:-translate-y-1"
@@ -49,6 +52,7 @@ const LINUX_TAR_URL = "https://github.com/Stuko0/alice-agent/releases/download/v
         <Download class="h-3 w-3" />
         alice-linux.tar.gz
       </span>
+      <span class="text-[10px] text-rpm-muted">v{release.version}</span>
     </a>
   </div>
 </div>
