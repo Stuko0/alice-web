@@ -13,11 +13,14 @@ const canonical = `https://alice-agent.stuko.dev${pathname}`;
 ---
 
 <link rel="canonical" href={canonical} />
+<meta name="keywords" content="AI agent, autonomous coding, AI assistant, open source, CLI, terminal, code generation, self-improving, skills, plugins" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={`https://alice-agent.stuko.dev${image}`} />
+<meta property="og:site_name" content="Alice Agent" />
 <meta property="og:locale" content={lang === "es" ? "es_ES" : lang === "it" ? "it_IT" : "en_US"} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
