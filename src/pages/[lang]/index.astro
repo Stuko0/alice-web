@@ -48,6 +48,16 @@ const description = t.hero.description;
 const version = release.version;
 ---
 
+<script slot="head" type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: t.faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+})} />
+
 <Layout title={title} description={description}>
   <HeroSection
     badge={t.hero.badge}

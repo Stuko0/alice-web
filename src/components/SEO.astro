@@ -13,7 +13,13 @@ const canonical = `https://alice-agent.stuko.dev${pathname}`;
 ---
 
 <link rel="canonical" href={canonical} />
-<meta name="keywords" content="AI agent, autonomous coding, AI assistant, open source, CLI, terminal, code generation, self-improving, skills, plugins" />
+{lang === "en" && <link rel="alternate" hrefLang="es" href={`https://alice-agent.stuko.dev/es${pathname.replace(/^\/en/, "")}`} />}
+{lang === "en" && <link rel="alternate" hrefLang="it" href={`https://alice-agent.stuko.dev/it${pathname.replace(/^\/en/, "")}`} />}
+{lang === "en" && <link rel="alternate" hrefLang="x-default" href={`https://alice-agent.stuko.dev/en${pathname.replace(/^\/en/, "")}`} />}
+{lang !== "en" && <link rel="alternate" hrefLang="en" href={`https://alice-agent.stuko.dev/en${pathname.replace(/^\/(es|it)/, "")}`} />}
+{lang !== "en" && <link rel="alternate" hrefLang="x-default" href={`https://alice-agent.stuko.dev/en${pathname.replace(/^\/(es|it)/, "")}`} />}
+{["en", "es", "it"].includes(lang) && <link rel="alternate" hrefLang={lang} href={canonical} />}
+<meta name="keywords" content="AI agent, alice agent, autonomous coding, AI assistant, open source, CLI, terminal, code generation, self-improving, skills, plugins, local AI, AI teammate" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -40,5 +46,9 @@ const canonical = `https://alice-agent.stuko.dev${pathname}`;
     "@type": "Person",
     name: "Stuko0"
   },
-  codeRepository: "https://github.com/Stuko0/alice-agent"
+  codeRepository: "https://github.com/Stuko0/alice-agent",
+  sameAs: [
+    "https://github.com/Stuko0",
+    "https://github.com/Stuko0/alice-agent"
+  ],
 })} />

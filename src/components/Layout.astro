@@ -41,6 +41,7 @@ const navLabels = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <SEO title={title} description={desc} image={image} lang={lng} pathname={Astro.url.pathname} />
+    <slot name="head" />
     <ClientRouter />
   </head>
   <body class="min-h-screen noise">

@@ -1,0 +1,16 @@
+# Alice Agent
+> Open-source AI agent that runs locally, remembers context, and handles code, tasks, and creativity without sending your workflow to the cloud.
+
+## Main pages
+- [Home / English](https://alice-agent.stuko.dev/en/): Alice Agent — your AI teammate, on your machine
+- [Home / Español](https://alice-agent.stuko.dev/es/): Alice Agent — tu compañera IA, en tu máquina
+- [Features](https://alice-agent.stuko.dev/en/features/): persistent memory, web browsing, scheduled tasks, secure sandboxing, skills
+- [Docs](https://alice-agent.stuko.dev/en/docs/): installation, configuration, skills, plugins, gateway, cron jobs
+- [GitHub repository](https://github.com/Stuko0/alice-agent): source code, releases, issues
+- [Install script](https://alice-agent.stuko.dev/install.sh): one-line installer
+
+## Key facts
+- Open source, MIT license
+- Runs locally: CLI and desktop app (macOS, Windows, Linux)
+- Model-agnostic: OpenAI, Anthropic, local Ollama / llama.cpp, OpenRouter via gateway
+- Persistent memory, skills, plugins, cron jobs, subagents
