@@ -86,19 +86,19 @@ const sections = [
               <span class="suit-corner suit-corner-br suit-spade">♠</span>
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.quickstart}</h2>
-                <p class="mb-6 text-sm text-rpm-subtle">Alice Agent es una CLI multiplataforma escrita en Python. Tras la instalación puedes empezar a lanzar tareas, gestionar skills y conectar gateways.</p>
+                <p class="mb-6 text-sm text-rpm-subtle">{t.docs.quickstartDesc}</p>
                 <div class="grid gap-4 sm:grid-cols-3">
                   <div class="rounded-xl bg-rpm-surface/80 p-4 text-center border border-rpm-highlight-med/40">
                     <div class="mb-2 flex justify-center text-rpm-iris"><Terminal class="h-6 w-6" /></div>
-                    <p class="text-sm font-medium text-rpm-text">1. Instala</p>
+                    <p class="text-sm font-medium text-rpm-text">{t.docs.installStep}</p>
                   </div>
                   <div class="rounded-xl bg-rpm-surface/80 p-4 text-center border border-rpm-highlight-med/40">
                     <div class="mb-2 flex justify-center text-rpm-foam"><Globe class="h-6 w-6" /></div>
-                    <p class="text-sm font-medium text-rpm-text">2. Configura</p>
+                    <p class="text-sm font-medium text-rpm-text">{t.docs.configStep}</p>
                   </div>
                   <div class="rounded-xl bg-rpm-surface/80 p-4 text-center border border-rpm-highlight-med/40">
                     <div class="mb-2 flex justify-center text-rpm-love"><Sparkles class="h-6 w-6" /></div>
-                    <p class="text-sm font-medium text-rpm-text">3. Ejecuta</p>
+                    <p class="text-sm font-medium text-rpm-text">{t.docs.executeStep}</p>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const sections = [
               <span class="suit-corner suit-corner-br suit-heart">♥</span>
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.install}</h2>
-                <p class="mb-6 text-sm text-rpm-subtle">Copia el comando según tu sistema operativo y ejecútalo en la terminal.</p>
+                <p class="mb-6 text-sm text-rpm-subtle">{t.docs.installDesc}</p>
                 <InstallCommand client:visible />
               </div>
             </div>
@@ -127,7 +127,7 @@ const sections = [
               <span class="suit-corner suit-corner-br suit-diamond">♦</span>
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.provider}</h2>
-                <p class="mb-4 text-sm text-rpm-subtle">Alice soporta múltiples proveedores a través de OpenRouter, Anthropic, OpenAI y compatibles. Define tu preferencia por CLI:</p>
+                <p class="mb-4 text-sm text-rpm-subtle">{t.docs.providerDesc}</p>
                 <pre class="overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text border border-rpm-highlight-med/40"><code>{`alice config set model.provider openrouter
 alice config set model.model anthropic/claude-sonnet-4
 alice config set model.api_key $OPENROUTER_API_KEY`}</code></pre>
@@ -143,7 +143,7 @@ alice config set model.api_key $OPENROUTER_API_KEY`}</code></pre>
               <span class="suit-corner suit-corner-br suit-club">♣</span>
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.gateway}</h2>
-                <p class="mb-4 text-sm text-rpm-subtle">Habilita gateways para recibir mensajes o enviar notificaciones. Telegram y Discord funcionan sin servidores adicionales.</p>
+                <p class="mb-4 text-sm text-rpm-subtle">{t.docs.gatewayDesc}</p>
                 <div class="space-y-3 font-mono text-sm text-rpm-subtle">
                   <div class="flex items-center gap-3 rounded-lg bg-rpm-base/80 p-4 border border-l-4 border-rpm-iris"><Globe class="h-4 w-4 text-rpm-iris" /><code>alice config set gateways.telegram true</code></div>
                   <div class="flex items-center gap-3 rounded-lg bg-rpm-base/80 p-4 border border-l-4 border-rpm-foam"><Code class="h-4 w-4 text-rpm-foam" /><code>alice config set gateways.discord true</code></div>
@@ -177,7 +177,7 @@ alice config set model.api_key $OPENROUTER_API_KEY`}</code></pre>
               <span class="suit-corner suit-corner-br suit-heart">♥</span>
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.cron}</h2>
-                <p class="mb-4 text-sm text-rpm-subtle">Programa trabajos recurrentes que ejecuten un prompt, un script o una skill de forma autónoma.</p>
+                <p class="mb-4 text-sm text-rpm-subtle">{t.docs.cronDesc}</p>
                 <pre class="overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text border border-rpm-highlight-med/40"><code>{`alice cronjob create --name morning-brief \
   --schedule "0 8 * * *" \
   --prompt "Resumen de PRs y tareas pendientes" \
@@ -194,10 +194,10 @@ alice config set model.api_key $OPENROUTER_API_KEY`}</code></pre>
               <span class="suit-corner suit-corner-br suit-diamond">♦</span>
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.skills}</h2>
-                <p class="mb-6 text-sm text-rpm-subtle">Las skills son memoria procedural reutilizable. Puedes instalarlas del registro o crear las tuyas en <code class="rounded bg-rpm-surface px-1 py-0.5 font-mono text-rpm-iris">~/.alice/skills/</code>.</p>
+                <p class="mb-6 text-sm text-rpm-subtle">{t.docs.skillsDesc} <code class="rounded bg-rpm-surface px-1 py-0.5 font-mono text-rpm-iris">~/.alice/skills/</code></p>
                 <div class="grid gap-4 sm:grid-cols-2">
-                  <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-iris"><Shield class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">Seguridad por defecto</p></div>
-                  <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-foam"><Clock class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">Automatización recurrente</p></div>
+                  <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-iris"><Shield class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">{t.docs.securityLabel}</p></div>
+                  <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-foam"><Clock class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">{t.docs.automationLabel}</p></div>
                 </div>
                 <a href={`/${lng}/features`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
                   {t.featurePreview.ctaFeatures} <ArrowRight class="h-4 w-4" />
