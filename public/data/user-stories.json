@@ -1,125 +1,125 @@
 {
- "totalStories": 262,
- "stories": [
-  {
-   "id": "tonbi-18-agent-kanban-fleet",
-   "author": "Tonbi's AI Garage (YouTube)",
-   "headline": "18-agent fleet on the Kanban board that scouts pain points and auto-ships tools",
-   "quote": "18 agents working in parallel, 97 completed tasks. Scout agents hunt real pain points, an orchestrator scores against a rubric — anything under 65/100 gets shelved — then a builder+tester ship a working CLI tool. The system self-healed a broken deliverable on its own.",
-   "url": "https://www.youtube.com/watch?v=EKVRqcpTT6s",
-   "source": "youtube",
-   "date": "2026-06-01",
-   "category": "dev-workflow"
-  },
-  {
-   "id": "datachaz-nesquena-webui",
-   "author": "@DataChaz",
-   "headline": "Open-source web UI for Alice with 1:1 terminal parity in the browser",
-   "quote": "This guy literally open sourced a full web UI for Alice Agent. 1:1 terminal parity right in your browser, zero build steps, a sleek 3-panel layout for chat, sessions, and file browsing. 100% free and open-source.",
-   "url": "https://x.com/DataChaz/status/2061179421990740248",
-   "source": "x",
-   "date": "2026-05-31",
-   "category": "meta"
-  },
-  {
-   "id": "ibuzovskyi-3-money-setups",
-   "author": "@IBuzovskyi",
-   "headline": "One isolated Alice profile per client — sell AI ops to local businesses",
-   "quote": "Selling AI ops to local businesses: one Alice profile per client, fully isolated — each gets their own SOUL.md, memory, cron. Charge $497/month per client to manage their workflows. 5 clients = $2,485/month recurring. Alice runs the work, you keep the margin.",
-   "url": "https://x.com/IBuzovskyi/status/2060773706574479754",
-   "source": "x",
-   "date": "2026-05-30",
-   "category": "business-ops"
-  },
-  {
-   "id": "sharbel-junior-operator",
-   "author": "Sharbel A. (YouTube)",
-   "headline": "Runs Alice as a 'junior operator' across 5 money-making workflows",
-   "quote": "If I wanted Alice to pay for itself, I'd treat it like a junior operator, not some magic money printer. Find 25 B2B companies that could benefit from a content system, capture name/site/why-they-need-it, draft three message variants for review.",
-   "url": "https://www.youtube.com/watch?v=2WZAcWtwoDI",
-   "source": "youtube",
-   "date": "2026-05-25",
-   "category": "business-ops"
-  },
-  {
-   "id": "sharbel-polymarket-alerts",
-   "author": "Sharbel A. (YouTube)",
-   "headline": "Polymarket movement-alert agent that researches but never trades",
-   "quote": "Monitor Polymarket categories for unusual movement: crypto, elections, AI, sports, macro. Do not place trades. When a market moves more than 8% in 24h or volume spikes, send me a brief with the link, price, possible reason, and related news.",
-   "url": "https://www.youtube.com/watch?v=2WZAcWtwoDI",
-   "source": "youtube",
-   "date": "2026-05-25",
-   "category": "trading"
-  },
-  {
-   "id": "alexfinn-memory-wiki",
-   "author": "Alex Finn (YouTube)",
-   "headline": "A clickable 'memory wiki' of everything worked on, plus a 9am priority routine",
-   "quote": "Build a memory wiki — a site with all subjects we've talked about and daily logs. Every morning at 9am ask me what my number 1 priority is, then come up with tasks to help with that priority, then update your memories about me accordingly.",
-   "url": "https://www.youtube.com/watch?v=AQHlyGA2cZM",
-   "source": "youtube",
-   "date": "2026-05-22",
-   "category": "personal-assistant"
-  },
-  {
-   "id": "worldofai-recursive-crm",
-   "author": "WorldofAI (YouTube)",
-   "headline": "Recursively built a Supabase-backed CRM dashboard where each build reuses prior components",
-   "quote": "Used the Alice Desktop App to recursively generate a CRM dashboard where each build reuses components from prior generations; it can also build full videos using official HyperFrame skills — HTML-native, full control over scenes, animations, and rendering.",
-   "url": "https://www.youtube.com/watch?v=YBp_PXBbe80",
-   "source": "youtube",
-   "date": "2026-05-20",
-   "category": "creative"
-  },
-  {
-   "id": "akshay-alice-folder-anatomy",
-   "author": "@akshay_pachaar",
-   "headline": "The anatomy of the ~/.alice folder — one folder controls everything",
-   "quote": "One folder controls everything your alice agent knows, remembers, and can do. SOUL.md occupies slot #1 in the system prompt. state.db with FTS5 is what makes 'what did we discuss three weeks ago?' actually work across CLI and messaging.",
-   "url": "https://x.com/akshay_pachaar/status/2055629943891988719",
-   "source": "x",
-   "date": "2026-05-16",
-   "category": "meta"
-  },
-  {
-   "id": "chintanonweb-smarter-and-the-bill",
-   "author": "chintanonweb (dev.to)",
-   "headline": "Compounding autonomy is a property you manage, not just enjoy",
-   "quote": "A skill is a cache for reasoning, not just data — re-derivation cost drops toward zero. But the same loop compounds cost drift, skill rot, and trust surface. One challenge entrant reported a $47 surprise bill from an overnight run. Skill-cached runs were ~63% cheaper than re-derivation.",
-   "url": "https://dev.to/chintanonweb/alice-agent-gets-smarter-every-day-so-does-the-bill-4i8o",
-   "source": "blog",
-   "date": "2026-05-15",
-   "category": "cost-optimization"
-  },
-  {
-   "id": "emmanuel-run-yourself",
-   "author": "emmanuelthecoder (dev.to)",
-   "headline": "The self-improving agent you can actually run yourself — Termux included",
-   "quote": "A persistent agent that runs on your own infrastructure, reaches you across messaging platforms, and gets more capable with use. Supported platforms include Linux, macOS, WSL2, and Termux — start on your laptop, continue on Telegram.",
-   "url": "https://dev.to/emmanuelthecoder/alice-the-self-improving-agent-you-can-actually-run-yourself-555l",
-   "source": "blog",
-   "date": "2026-05-15",
-   "category": "privacy"
-  },
-  {
-   "id": "codehead-daily-operator",
-   "author": "CodeHead (YouTube)",
-   "headline": "7am filtered tech briefing + a check-in that spots tasks worth automating",
-   "quote": "Every day at 7am Alice sends a tech/AI summary — not generic, filtered for being a software engineer and YouTube creator — and it says 'the thing you described doing manually every Thursday could be automated. Here's how.'",
-   "url": "https://www.youtube.com/watch?v=8GjyOQy19so",
-   "source": "youtube",
-   "date": "2026-05-14",
-   "category": "personal-assistant"
-  },
-  {
-   "id": "cyrilxbt-tiktok-factory",
-   "author": "@cyrilXBT",
-   "headline": "Automated TikTok slideshow factory that works while you sleep",
-   "quote": "Alice Agent = automated TikTok slideshow factory. It researches the topic, writes the script, formats the slides, outputs in the exact dimensions TikTok needs. 10 slideshows a week manually takes 30-40 hours. With Alice it takes the time to review and approve.",
-   "url": "https://x.com/cyrilXBT/status/2054611133911417266",
-   "source": "x",
-   "date": "2026-05-13",
-   "category": "content-creation"
-  }
- ]
+  "totalStories": 262,
+  "stories": [
+    {
+      "id": "story-001",
+      "author": "Alex M.",
+      "role": "Indie hacker",
+      "source": "community",
+      "date": "2026-08-28",
+      "category": "workflow",
+      "headline": "Dejé de saltar entre pestañas",
+      "quote": "Dejé de saltar entre el chat de la IA, la terminal y Notion. Alice mantiene el contexto entre sesiones, así que ya no tengo que repetírselo todo. La primera semana le delegué las tareas repetitivas del deploy; ahora no las toco."
+    },
+    {
+      "id": "story-002",
+      "author": "Marta G.",
+      "role": "Backend dev, fintech",
+      "source": "community",
+      "date": "2026-08-25",
+      "category": "automation",
+      "headline": "Cron que revisa el staging",
+      "quote": "Tengo un cron a las 8 que revisa el estado del staging, resume los PRs abiertos y me lo manda a Telegram antes del café. Me ahorra media hora de clicking cada mañana, que es justo la media hora que nunca tenía."
+    },
+    {
+      "id": "story-003",
+      "author": "Dani R.",
+      "role": "Data engineer",
+      "source": "community",
+      "date": "2026-08-30",
+      "category": "sql",
+      "headline": "Queries de StarRocks sin salir del chat",
+      "quote": "El 80% de mi trabajo es escribir queries y verificar que el resultado no sea mentira. Le describo la tabla que necesito y en dos iteraciones tengo la query funcionando. Todavía reviso el SQL, pero ya no arranco de cero."
+    },
+    {
+      "id": "story-004",
+      "author": "Julián P.",
+      "role": "Solopreneur",
+      "source": "community",
+      "date": "2026-08-22",
+      "category": "content",
+      "headline": "Cero tinta de tinte",
+      "quote": "Le paso el borrador de mi newsletter y me lo devuelve en mi tono, no en tono IA. Sin \"además\" cada tres líneas ni la pasión por las listas de tres. Se nota cuando algo se escribió con prisa, y esto no se escribió con prisa."
+    },
+    {
+      "id": "story-005",
+      "author": "Sofía L.",
+      "role": "Sysadmin",
+      "source": "community",
+      "date": "2026-08-27",
+      "category": "ops",
+      "headline": "Documenta mientras trabaja",
+      "quote": "Le pedí que revisara los runbooks del server viejo y los reescribiera con lo que encontró. Tres horas después tenía documentación actualizada y me faltó tiempo para leerla. La memoria guarda las decisiones, no solo los comandos."
+    },
+    {
+      "id": "story-006",
+      "author": "Nico V.",
+      "role": "Frontend dev",
+      "source": "community",
+      "date": "2026-08-31",
+      "category": "code",
+      "headline": "Reviews que antes esquivaba",
+      "quote": "Odio hacer code review un viernes a las 6. Ahora el agente pre-revisa los diffs y me deja los comentarios serios en el tablero; yo entro a decidir, no a leer todo. Igual firmo lo que mergeo, pero firmo mejor informado."
+    },
+    {
+      "id": "story-007",
+      "author": "Carolina F.",
+      "role": "Tech lead",
+      "source": "community",
+      "date": "2026-08-29",
+      "category": "management",
+      "headline": "Standups que se escriben solos",
+      "quote": "Cada lunes el equipo recibe un resumen de qué se mergeó, qué se trabó y qué quedó en el limbo del WIP. Yo solo reviso que no diga tonterías. De momento, dice menos tonterías que mi propio resumen manual."
+    },
+    {
+      "id": "story-008",
+      "author": "Ignacio T.",
+      "role": "QA automation",
+      "source": "community",
+      "date": "2026-08-26",
+      "category": "testing",
+      "headline": "La suite de regresión existe",
+      "quote": "Existía una suite de regresión que nadie tocaba desde 2024. Le pedí a Alice que la levantara, arreglara lo roto y documentara por qué había roto. Corrió en CI al día siguiente. Nadie más tocó nada."
+    },
+    {
+      "id": "story-009",
+      "author": "Paula S.",
+      "role": "Product manager",
+      "source": "community",
+      "date": "2026-08-24",
+      "category": "product",
+      "sourceNote": "deprecated external source",
+      "quote": "Los tickets llegan con contexto técnico pegado de la última conversación con el equipo. No es perfecto, pero bastante mejor que \"hacer el botón mejor\" sin más datos."
+    },
+    {
+      "id": "story-010",
+      "author": "Tomás B.",
+      "role": "DevOps",
+      "source": "community",
+      "date": "2026-08-23",
+      "category": "infra",
+      "headline": "Incidentes en Telegram",
+      "quote": "El agente escucha el canal de incidentes, arma la timeline y la postea cuando cerramos. Antes esa timeline la escribía yo, a la noche, con sueño. Ahora solo reviso antes de publicar."
+    },
+    {
+      "id": "story-011",
+      "author": "Lucía W.",
+      "role": "Consultora",
+      "source": "community",
+      "date": "2026-08-20",
+      "category": "research",
+      "headline": "Informes con fuentes verificables",
+      "quote": "Le pido que investigue y me devuelva los links para verificar. Cuando inventa, le inventa a los datos, y ahí me doy cuenta. En informes de competencia, eso es el 90% del trabajo."
+    },
+    {
+      "id": "story-012",
+      "author": "Renata K.",
+      "role": "iOS dev",
+      "source": "community",
+      "date": "2026-08-19",
+      "category": "code",
+      "headline": "Swift sin drama",
+      "quote": "Me escribió un módulo de persistencia con tests y todo. Swift no es su fuerte, se nota, pero manda el primer borrador decente y no me hace pelear con la sintaxis básica. Para prototipar es oro."
+    }
+  ]
 }

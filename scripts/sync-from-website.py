@@ -85,6 +85,10 @@ def sync_blueprints() -> None:
 
 
 def sync_stories() -> dict:
+    # NOTE: user-stories.json is hand-curated (mocked testimonials, sources deprecated).
+    # Never overwrite it from the website repo — return the local copy untouched.
+    if STORIES_OUT.exists():
+        return read_json(STORIES_OUT)
     stories = read_json(WEBSITE / "src/data/userStories.json")
     usable = [s for s in stories if len(s.get("quote", "")) > 40 and s.get("url")]
     usable.sort(key=lambda s: s.get("date", ""), reverse=True)

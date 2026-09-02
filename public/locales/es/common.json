@@ -316,7 +316,11 @@
     "providers": "Proveedores",
     "providersDesc": "Conecta Alice a cualquier proveedor de modelos.",
     "platforms": "Plataformas",
-    "platformsDesc": "Un agente, todas las plataformas."
+    "platformsDesc": "Un agente, todas las plataformas.",
+    "indexTitle": "Explora la documentación",
+    "indexSubtitle": "Guías, referencia y casos de uso. Todo el detalle vive en la documentación completa — empieza por donde necesites.",
+    "viewAll": "Ver todo",
+    "pagesCount": "páginas"
   },
   "footer": {
     "links": "Enlaces",

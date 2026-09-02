@@ -316,7 +316,11 @@
     "providers": "Providers",
     "providersDesc": "Connect Alice to any model provider.",
     "platforms": "Platforms",
-    "platformsDesc": "One agent, every platform."
+    "platformsDesc": "One agent, every platform.",
+    "indexTitle": "Explore the documentation",
+    "indexSubtitle": "Guides, reference, and use cases. The full detail lives in the complete docs — start wherever you need.",
+    "viewAll": "View all",
+    "pagesCount": "pages"
   },
   "footer": {
     "links": "Links",

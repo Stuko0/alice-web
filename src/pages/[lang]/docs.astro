@@ -2,7 +2,7 @@
 import Layout from "../../components/Layout.astro";
 import { InstallCommand } from "../../components/InstallCommand";
 import { ScrollReveal } from "../../components/ScrollReveal";
-import { BookOpen, Terminal, Globe, Shield, Code, Clock, Sparkles, Heart, ArrowRight } from "lucide-react";
+import { BookOpen, Terminal, Globe, Shield, Code, Clock, Sparkles, Heart, ArrowRight, Compass } from "lucide-react";
 import { getT } from "../../i18n.server";
 
 export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
@@ -21,9 +21,98 @@ const sections = [
   { title: t.docs.cron, href: "#cron", suit: "♥" },
   { title: t.docs.skills, href: "#skills", suit: "♦" },
 ];
+
+const DOCS_BASE = "https://alice-agent.stuko.dev";
+
+const docSections = [
+  {
+    name: "Getting Started",
+    href: "/docs/getting-started/quickstart",
+    suit: "♠", color: "suit-spade", border: "border-suit-spade", bg: "bg-suit-spade",
+    pages: [
+      ["Quickstart", "/docs/getting-started/quickstart"],
+      ["Installation", "/docs/getting-started/installation"],
+      ["Platform support", "/docs/getting-started/platform-support"],
+      ["Updating", "/docs/getting-started/updating"],
+      ["Learning path", "/docs/getting-started/learning-path"],
+      ["Termux (Android)", "/docs/getting-started/termux"],
+    ],
+  },
+  {
+    name: "User Guide",
+    href: "/docs/user-guide/configuration",
+    suit: "♥", color: "suit-heart", border: "border-suit-heart", bg: "bg-suit-heart",
+    pages: [
+      ["Configuration", "/docs/user-guide/configuration"],
+      ["Configuring models", "/docs/user-guide/configuring-models"],
+      ["CLI", "/docs/user-guide/cli"],
+      ["Desktop app", "/docs/user-guide/desktop"],
+      ["Docker", "/docs/user-guide/docker"],
+      ["Security", "/docs/user-guide/security"],
+      ["Memory", "/docs/user-guide/features/memory"],
+      ["Skills", "/docs/user-guide/features/skills"],
+      ["Kanban", "/docs/user-guide/features/kanban"],
+      ["Web dashboard", "/docs/user-guide/features/web-dashboard"],
+      ["Cron jobs", "/docs/user-guide/features/cron"],
+      ["Delegation", "/docs/user-guide/features/delegation"],
+    ],
+  },
+  {
+    name: "Guides",
+    href: "/docs/guides/automate-with-cron",
+    suit: "♦", color: "suit-diamond", border: "border-suit-diamond", bg: "bg-suit-diamond",
+    pages: [
+      ["Automate with cron", "/docs/guides/automate-with-cron"],
+      ["Daily briefing bot", "/docs/guides/daily-briefing-bot"],
+      ["GitHub PR review agent", "/docs/guides/github-pr-review-agent"],
+      ["Delegation patterns", "/docs/guides/delegation-patterns"],
+      ["Local LLM on Mac", "/docs/guides/local-llm-on-mac"],
+      ["Build a plugin", "/docs/guides/build-a-alice-plugin"],
+    ],
+  },
+  {
+    name: "Integrations",
+    href: "/docs/integrations/providers",
+    suit: "♣", color: "suit-club", border: "border-suit-club", bg: "bg-suit-club",
+    pages: [
+      ["Model providers", "/docs/integrations/providers"],
+      ["Messaging platforms", "/docs/user-guide/messaging/"],
+      ["MCP servers", "/docs/reference/mcp-config-reference"],
+    ],
+  },
+  {
+    name: "Reference",
+    href: "/docs/reference/cli-commands",
+    suit: "♠", color: "suit-spade", border: "border-suit-spade", bg: "bg-suit-spade",
+    pages: [
+      ["CLI commands", "/docs/reference/cli-commands"],
+      ["Slash commands", "/docs/reference/slash-commands"],
+      ["Tools", "/docs/reference/tools-reference"],
+      ["Toolsets", "/docs/reference/toolsets-reference"],
+      ["Skills catalog", "/docs/reference/skills-catalog"],
+      ["Optional skills", "/docs/reference/optional-skills-catalog"],
+      ["Model catalog", "/docs/reference/model-catalog"],
+      ["Environment variables", "/docs/reference/environment-variables"],
+      ["FAQ", "/docs/reference/faq"],
+    ],
+  },
+  {
+    name: "Developer Guide",
+    href: "/docs/developer-guide/architecture",
+    suit: "♦", color: "suit-diamond", border: "border-suit-diamond", bg: "bg-suit-diamond",
+    pages: [
+      ["Architecture", "/docs/developer-guide/architecture"],
+      ["Agent loop", "/docs/developer-guide/agent-loop"],
+      ["Adding tools", "/docs/developer-guide/adding-tools"],
+      ["Adding providers", "/docs/developer-guide/adding-providers"],
+      ["Creating skills", "/docs/developer-guide/creating-skills"],
+      ["Contributing", "/docs/developer-guide/contributing"],
+    ],
+  },
+];
 ---
 
-<Layout title={title}>
+<Layout title={title} description={t.docs.subtitle}>
   <!-- Hero -->
   <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
     <div class="fabric-pattern"></div>
@@ -50,7 +139,7 @@ const sections = [
     </div>
   </section>
 
-  <!-- Content -->
+  <!-- Quick tutorial + content -->
   <section class="relative overflow-hidden bg-rpm-surface/20 py-24">
     <div class="fabric-pattern"></div>
     <div class="section-vignette"></div>
@@ -67,10 +156,14 @@ const sections = [
             <nav class="flex flex-col gap-2">
               {sections.map((s, i) => (
                 <a href={s.href} class="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-rpm-subtle transition hover:bg-rpm-surface hover:text-rpm-text">
-                  <span class="text-xs opacity-0 transition-opacity group-hover:opacity-60" class:list={[["suit-spade","suit-heart","suit-diamond","suit-club"][i % 4]]}>{s.suit}</span>
+                  <span class="text-xs opacity-0 transition-opacity group-hover:opacity-60" class:list={["suit-spade","suit-heart","suit-diamond","suit-club"][i % 4]}>{s.suit}</span>
                   {s.title}
                 </a>
               ))}
+              <a href="#doc-index" class="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-rpm-iris transition hover:bg-rpm-surface">
+                <Compass class="h-3.5 w-3.5" />
+                {t.docs.indexTitle}
+              </a>
             </nav>
           </div>
         </div>
@@ -128,9 +221,7 @@ const sections = [
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.provider}</h2>
                 <p class="mb-4 text-sm text-rpm-subtle">{t.docs.providerDesc}</p>
-                <pre class="overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text border border-rpm-highlight-med/40"><code>{`alice config set model.provider openrouter
-alice config set model.model anthropic/claude-sonnet-4
-alice config set model.api_key $OPENROUTER_API_KEY`}</code></pre>
+                <pre class="overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text border border-rpm-highlight-med/40"><code>{`alice config set model.provider openrouter\nalice config set model.model anthropic/claude-sonnet-4\nalice config set model.api_key $OPENROUTER_API_KEY`}</code></pre>
               </div>
             </div>
           </ScrollReveal>
@@ -178,10 +269,7 @@ alice config set model.api_key $OPENROUTER_API_KEY`}</code></pre>
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.cron}</h2>
                 <p class="mb-4 text-sm text-rpm-subtle">{t.docs.cronDesc}</p>
-                <pre class="overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text border border-rpm-highlight-med/40"><code>{`alice cronjob create --name morning-brief \
-  --schedule "0 8 * * *" \
-  --prompt "Resumen de PRs y tareas pendientes" \
-  --deliver telegram`}</code></pre>
+                <pre class="overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text border border-rpm-highlight-med/40"><code>{`alice cronjob create --name morning-brief \\\n  --schedule "0 8 * * *" \\\n  --prompt "Resumen de PRs y tareas pendientes" \\\n  --deliver telegram`}</code></pre>
               </div>
             </div>
           </ScrollReveal>
@@ -199,14 +287,63 @@ alice config set model.api_key $OPENROUTER_API_KEY`}</code></pre>
                   <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-iris"><Shield class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">{t.docs.securityLabel}</p></div>
                   <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-foam"><Clock class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">{t.docs.automationLabel}</p></div>
                 </div>
-                <a href={`/${lng}/features`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
-                  {t.featurePreview.ctaFeatures} <ArrowRight class="h-4 w-4" />
+                <a href={`/${lng}/skills`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+                  {t.nav.skills} <ArrowRight class="h-4 w-4" />
                 </a>
               </div>
             </div>
           </ScrollReveal>
 
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full doc index -->
+  <section id="doc-index" class="relative overflow-hidden bg-rpm-base py-24">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-16 text-center">
+        <div class="header-ornate">
+          <span class="suit-club">♣</span>
+          <span class="line" style="background: linear-gradient(90deg, transparent, var(--color-rpm-foam))"></span>
+          <span class="suit-spade">♠</span>
+          <span class="line" style="background: linear-gradient(90deg, var(--color-rpm-foam), transparent)"></span>
+          <span class="suit-club">♣</span>
+        </div>
+        <h2 class="font-display text-3xl text-rpm-text sm:text-4xl text-balance">{t.docs.indexTitle}</h2>
+        <p class="mt-3 text-rpm-muted">{t.docs.indexSubtitle}</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {docSections.map((sec, si) => (
+          <ScrollReveal client:visible delay={(si % 3) * 0.1}>
+            <div class={`card-alice h-full ${sec.border} ${sec.bg}`}>
+              <span class={`suit-watermark ${sec.color}`}>{sec.suit}</span>
+              <span class={`suit-corner suit-corner-tl ${sec.color}`}>{sec.suit}</span>
+              <span class={`suit-corner suit-corner-br ${sec.color}`}>{sec.suit}</span>
+              <div class="p-6 pt-12">
+                <div class="mb-4 flex items-center justify-between">
+                  <h3 class="font-display text-xl text-rpm-text">{sec.name}</h3>
+                  <span class="text-xs text-rpm-muted">{sec.pages.length} {t.docs.pagesCount}</span>
+                </div>
+                <nav class="flex flex-col">
+                  {sec.pages.map(([label, href]) => (
+                    <a href={DOCS_BASE + href} target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-rpm-subtle transition hover:bg-rpm-surface/70 hover:text-rpm-iris">
+                      {label}
+                      <ArrowRight class="h-3 w-3 shrink-0 opacity-0 transition group-hover:opacity-70" />
+                    </a>
+                  ))}
+                </nav>
+                <a href={DOCS_BASE + sec.href} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-rpm-iris transition hover:text-rpm-foam">
+                  {t.docs.viewAll} <ArrowRight class="h-3 w-3" />
+                </a>
+              </div>
+            </div>
+          </ScrollReveal>
+        ))}
       </div>
     </div>
   </section>

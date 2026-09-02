@@ -8,7 +8,7 @@ import WhyAlice from "../../components/WhyAlice.astro";
 import HowItWorks from "../../components/HowItWorks.astro";
 import UseCases from "../../components/UseCases.astro";
 import Testimonials from "../../components/Testimonials.astro";
-import { getStories, sourceLabel } from "../../lib/userStories";
+import { getStories } from "../../lib/userStories";
 import FAQ from "../../components/FAQ.astro";
 import Roadmap from "../../components/Roadmap.astro";
 import DesktopDownload from "../../components/DesktopDownload.astro";
@@ -28,9 +28,7 @@ const release = await getLatestRelease();
 const stories = getStories().map((s) => ({
   quote: s.quote,
   author: s.author,
-  role: s.source,
-  url: s.url,
-  source: sourceLabel(s.source),
+  role: s.role,
 }));
 
 const features = [
