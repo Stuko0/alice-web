@@ -1,0 +1,56 @@
+---
+import Layout from "../../../components/Layout.astro";
+import { getT } from "../../../i18n.server";
+
+export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
+
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const title = `${t.docs?.platforms ?? "Platforms"} — Alice Agent`;
+
+const platforms = [
+  { name: "Telegram", desc: "Full bot support with file sharing, voice messages, and group chats.", icon: "Telegram" },
+  { name: "Discord", desc: "Server bots with slash commands, threads, and channel management.", icon: "Discord" },
+  { name: "Slack", desc: "Workspace integration with channels, DMs, and app mentions.", icon: "Slack" },
+  { name: "WhatsApp", desc: "Personal WhatsApp via linked device. Messages, media, and groups.", icon: "WhatsApp" },
+  { name: "Signal", desc: "Private messaging with end-to-end encryption.", icon: "Signal" },
+  { name: "Matrix", desc: "Decentralized communication via Matrix protocol.", icon: "Matrix" },
+  { name: "IRC", desc: "Classic IRC support for legacy communities.", icon: "IRC" },
+  { name: "Email", desc: "Send and receive emails through the agent gateway.", icon: "Email" },
+  { name: "Feishu / Lark", desc: "Enterprise messaging for ByteDance ecosystem.", icon: "Feishu" },
+  { name: "Webhook", desc: "Custom webhook integration for any platform.", icon: "Webhook" },
+];
+---
+
+<Layout title={title} description={t.docs?.platformsDesc ?? "Alice Agent connects to 20+ messaging platforms from a single gateway process."}>
+  <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
+    <div class="fabric-pattern"></div>
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <h1 class="font-display text-5xl leading-tight text-rpm-text sm:text-6xl">{t.docs?.platforms ?? "Platforms"}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-rpm-subtle">{t.docs?.platformsDesc ?? "One agent, every platform."}</p>
+    </div>
+  </section>
+
+  <section class="bg-rpm-surface/20 py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {platforms.map((p) => (
+          <div class="card-alice border-rpm-highlight-low/60 bg-rpm-surface/40 p-6">
+            <h3 class="font-display text-xl text-rpm-text">{p.name}</h3>
+            <p class="mt-2 text-sm text-rpm-subtle">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 rounded-2xl border border-rpm-highlight-med/40 bg-rpm-surface/60 p-8">
+        <h2 class="font-display text-2xl text-rpm-text">Multi-Platform in One Command</h2>
+        <pre class="mt-4 overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text"><code>{`# Enable multiple platforms simultaneously
+alice config set gateways.telegram true
+alice config set gateways.discord true
+alice config set gateways.slack true
+alice gateway`}</code></pre>
+      </div>
+    </div>
+  </section>
+</Layout>

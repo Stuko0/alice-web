@@ -4,10 +4,11 @@
     "features": "Features",
     "docs": "Docs",
     "github": "GitHub",
-    "install": "Install"
+    "install": "Install",
+    "blog": "Blog"
   },
   "hero": {
-    "badge": "Open Source \u2022 MIT License",
+    "badge": "Open Source • MIT License",
     "title": "Your AI teammate, on your machine",
     "description": "Alice Agent runs locally, remembers context, and handles code, tasks, and creativity without sending your workflow to the cloud.",
     "terminal": "Terminal",
@@ -76,50 +77,120 @@
     "without": "Without Alice",
     "with": "With Alice",
     "rows": [
-      { "without": "Copy-paste prompts between browser and terminal", "with": "One CLI for chat, code, and automation" },
-      { "without": "Lose context every time you restart a session", "with": "Persistent memory across projects and sessions" },
-      { "without": "Pay subscriptions for ten different tools", "with": "Open source, runs locally, extensible with skills" },
-      { "without": "Write glue scripts that break next week", "with": "Reliable agents with sandboxed execution" }
+      {
+        "without": "Copy-paste prompts between browser and terminal",
+        "with": "One CLI for chat, code, and automation"
+      },
+      {
+        "without": "Lose context every time you restart a session",
+        "with": "Persistent memory across projects and sessions"
+      },
+      {
+        "without": "Pay subscriptions for ten different tools",
+        "with": "Open source, runs locally, extensible with skills"
+      },
+      {
+        "without": "Write glue scripts that break next week",
+        "with": "Reliable agents with sandboxed execution"
+      }
     ]
   },
   "how": {
     "title": "Get started in three steps",
     "subtitle": "From install to first task in under a minute.",
     "steps": [
-      { "number": "01", "title": "Install", "desc": "Run the one-line installer for macOS, Windows or Linux." },
-      { "number": "02", "title": "Configure", "desc": "Point Alice at your model provider and optional skills." },
-      { "number": "03", "title": "Delegate", "desc": "Ask, code, automate, or create. Alice remembers and executes." }
+      {
+        "number": "01",
+        "title": "Install",
+        "desc": "Run the one-line installer for macOS, Windows or Linux."
+      },
+      {
+        "number": "02",
+        "title": "Configure",
+        "desc": "Point Alice at your model provider and optional skills."
+      },
+      {
+        "number": "03",
+        "title": "Delegate",
+        "desc": "Ask, code, automate, or create. Alice remembers and executes."
+      }
     ]
   },
   "useCases": {
     "title": "What you can build",
     "subtitle": "From small automations to complex creative projects.",
     "cases": [
-      { "icon": "Terminal", "title": "Dev workflows", "desc": "Refactor code, write tests, review PRs, and manage infrastructure from a single chat interface." },
-      { "icon": "Palette", "title": "Creative assets", "desc": "Generate images, ASCII art, copy, diagrams, and polished HTML artifacts on demand." },
-      { "icon": "Calendar", "title": "Automations", "desc": "Schedule cron jobs, reminders, and pipelines that run in the background while you focus." },
-      { "icon": "Shield", "title": "Safe experimentation", "desc": "Run tasks in isolated subagents so bad ideas never break your main environment." }
+      {
+        "icon": "Terminal",
+        "title": "Dev workflows",
+        "desc": "Refactor code, write tests, review PRs, and manage infrastructure from a single chat interface."
+      },
+      {
+        "icon": "Palette",
+        "title": "Creative assets",
+        "desc": "Generate images, ASCII art, copy, diagrams, and polished HTML artifacts on demand."
+      },
+      {
+        "icon": "Calendar",
+        "title": "Automations",
+        "desc": "Schedule cron jobs, reminders, and pipelines that run in the background while you focus."
+      },
+      {
+        "icon": "Shield",
+        "title": "Safe experimentation",
+        "desc": "Run tasks in isolated subagents so bad ideas never break your main environment."
+      }
     ]
   },
   "testimonials": {
     "title": "What early users say",
     "subtitle": "Makers using Alice to ship faster.",
     "items": [
-      { "quote": "I stopped jumping between ChatGPT, my terminal, and Notion. Alice keeps context and just does the work.", "author": "Alex M.", "role": "Indie hacker" },
-      { "quote": "The local-first approach is exactly what I wanted. My code stays on my machine but I still get agent superpowers.", "author": "Sofia R.", "role": "Security engineer" },
-      { "quote": "I set up a cron skill and now Alice summarizes my RSS feeds every morning. It took five minutes.", "author": "Daniel K.", "role": "Product designer" }
+      {
+        "quote": "I stopped jumping between ChatGPT, my terminal, and Notion. Alice keeps context and just does the work.",
+        "author": "Alex M.",
+        "role": "Indie hacker"
+      },
+      {
+        "quote": "The local-first approach is exactly what I wanted. My code stays on my machine but I still get agent superpowers.",
+        "author": "Sofia R.",
+        "role": "Security engineer"
+      },
+      {
+        "quote": "I set up a cron skill and now Alice summarizes my RSS feeds every morning. It took five minutes.",
+        "author": "Daniel K.",
+        "role": "Product designer"
+      }
     ]
   },
   "faq": {
     "title": "Questions? Answered.",
     "subtitle": "Everything you need to know before installing.",
     "items": [
-      { "q": "Is Alice free?", "a": "Yes. Alice is open source under the MIT license and free to use, modify, and self-host." },
-      { "q": "Does it run locally?", "a": "The agent core runs on your machine. You choose which model provider to connect; your data never has to leave your system unless you configure external APIs." },
-      { "q": "Do I need to know how to code?", "a": "A little. Alice is built for developers and technical makers who want a programmable assistant." },
-      { "q": "Can I add my own skills?", "a": "Absolutely. Skills are plain code and configuration files. Add integrations, cron jobs, memory sources, or custom tools." },
-      { "q": "Which models are supported?", "a": "Any model reachable via API: OpenAI, Anthropic, local Ollama / llama.cpp, OpenRouter, and more through the gateway." },
-      { "q": "How is this different from other agents?", "a": "Alice is local-first, memory-persistent, and designed to be extended by you, not locked behind a SaaS subscription." }
+      {
+        "q": "Is Alice free?",
+        "a": "Yes. Alice is open source under the MIT license and free to use, modify, and self-host."
+      },
+      {
+        "q": "Does it run locally?",
+        "a": "The agent core runs on your machine. You choose which model provider to connect; your data never has to leave your system unless you configure external APIs."
+      },
+      {
+        "q": "Do I need to know how to code?",
+        "a": "A little. Alice is built for developers and technical makers who want a programmable assistant."
+      },
+      {
+        "q": "Can I add my own skills?",
+        "a": "Absolutely. Skills are plain code and configuration files. Add integrations, cron jobs, memory sources, or custom tools."
+      },
+      {
+        "q": "Which models are supported?",
+        "a": "Any model reachable via API: OpenAI, Anthropic, local Ollama / llama.cpp, OpenRouter, and more through the gateway."
+      },
+      {
+        "q": "How is this different from other agents?",
+        "a": "Alice is local-first, memory-persistent, and designed to be extended by you, not locked behind a SaaS subscription."
+      }
     ]
   },
   "cta": {
@@ -129,16 +200,16 @@
   },
   "roadmap": {
     "title": "Strategic Roadmap",
-    "subtitle": "From personal CLI to enterprise-ready multimodal workspace \u2014 here\u2019s what\u2019s coming.",
+    "subtitle": "From personal CLI to enterprise-ready multimodal workspace — here’s what’s coming.",
     "phases": [
       {
         "phase": "Phase 1",
         "objective": "Premium Local-First Workspace & Advanced Visual Interfaces",
         "items": [
-          "UI/UX overhaul with theming engine (Ros\u00e9 Pine, dynamic layouts, Spaces profiles)",
-          "Local LLM auto-discovery \u2014 detect Ollama, LM Studio with one-click model pull",
-          "Interactive widgets \u2014 charts, sortable tables, zoomable Mermaid diagrams",
-          "Visual workflow builder with React Flow \u2014 drag & drop skills into node graphs",
+          "UI/UX overhaul with theming engine (Rosé Pine, dynamic layouts, Spaces profiles)",
+          "Local LLM auto-discovery — detect Ollama, LM Studio with one-click model pull",
+          "Interactive widgets — charts, sortable tables, zoomable Mermaid diagrams",
+          "Visual workflow builder with React Flow — drag & drop skills into node graphs",
           "In-app plugin & skill marketplace to download community workflows"
         ]
       },
@@ -146,22 +217,22 @@
         "phase": "Phase 2",
         "objective": "Event-Driven Proactivity",
         "items": [
-          "Event engine core \u2014 Alice listens instead of waiting for prompts",
+          "Event engine core — Alice listens instead of waiting for prompts",
           "File system watcher + local webhook server for GitHub, Jira events",
-          "System monitor \u2014 agent alerts on CPU/RAM spikes or network changes",
+          "System monitor — agent alerts on CPU/RAM spikes or network changes",
           "System tray pulse + notification center for agent-initiated actions",
           "Configurable proactivity levels: Silent / Alert-Only / Autonomous"
         ]
       },
       {
         "phase": "Phase 3",
-        "objective": "The Team Agent \u2014 B2B & Enterprise Collaboration",
+        "objective": "The Team Agent — B2B & Enterprise Collaboration",
         "items": [
           "Alice Server: FastAPI backend with shared session store and vector DB",
           "Enterprise SSO (OIDC/SAML) + RBAC engine with tool-to-role mapping",
           "Immutable audit logs for every tool execution across the organization",
           "Channels view (like Slack) with WebSocket real-time sync",
-          "Agent-to-agent protocol \u2014 local Alice delegates to cloud Alice"
+          "Agent-to-agent protocol — local Alice delegates to cloud Alice"
         ]
       },
       {
@@ -169,9 +240,9 @@
         "objective": "Continuous Multimodal Observation",
         "items": [
           "Screen awareness via Electron desktopCapturer with frame-diffing",
-          "OS accessibility API reading \u2014 extract text without heavy OCR",
+          "OS accessibility API reading — extract text without heavy OCR",
           "Ambient VAD + local whisper.cpp transcription",
-          "Voice interrupt \u2014 speak to stop agent generation",
+          "Voice interrupt — speak to stop agent generation",
           "Privacy hardware toggle + configurable denylists for sensitive apps"
         ]
       },
@@ -179,12 +250,12 @@
         "phase": "Phase 5",
         "objective": "Ecosystem & Developer Experience Expansion",
         "items": [
-          "Mobile companion app (React Native) \u2014 notifications, voice commands, session browsing on the go",
-          "Formal Plugin SDK \u2014 CLI scaffolding (\u2018alice plugin create\u2019), docs, and templates for third-party developers",
-          "Native Git integration \u2014 auto-commit agent changes, changelog generation, draft PR summaries",
-          "Local observability dashboard \u2014 token usage, session analytics, live agent logs, cost tracking",
-          "Local multi-modal RAG \u2014 drop PDFs, images, or codebases and query over them without uploading anywhere",
-          "Full voice-first mode \u2014 complete voice-to-voice conversation with local whisper.cpp + edge-tts"
+          "Mobile companion app (React Native) — notifications, voice commands, session browsing on the go",
+          "Formal Plugin SDK — CLI scaffolding (‘alice plugin create’), docs, and templates for third-party developers",
+          "Native Git integration — auto-commit agent changes, changelog generation, draft PR summaries",
+          "Local observability dashboard — token usage, session analytics, live agent logs, cost tracking",
+          "Local multi-modal RAG — drop PDFs, images, or codebases and query over them without uploading anywhere",
+          "Full voice-first mode — complete voice-to-voice conversation with local whisper.cpp + edge-tts"
         ]
       }
     ]
@@ -212,12 +283,23 @@
     "gateway": "Gateway setup",
     "gatewayDesc": "Enable gateways to receive messages or send notifications. Telegram and Discord work without additional servers.",
     "cron": "Cron jobs",
-    "cronDesc": "Schedule recurring jobs that run a prompt, a script, or a skill autonomously."
+    "cronDesc": "Schedule recurring jobs that run a prompt, a script, or a skill autonomously.",
+    "providers": "Providers",
+    "providersDesc": "Connect Alice to any model provider.",
+    "platforms": "Platforms",
+    "platformsDesc": "One agent, every platform."
   },
   "footer": {
     "links": "Links",
     "community": "Community",
     "madeWith": "Made with",
     "by": "by"
+  },
+  "blog": {
+    "subtitle": "Insights on AI agents, local-first architecture, and building with Alice."
+  },
+  "alternatives": {
+    "title": "vs Alternatives",
+    "description": "How Alice Agent compares to Claude Code, Codex CLI, OpenCode, and other AI coding agents."
   }
 }

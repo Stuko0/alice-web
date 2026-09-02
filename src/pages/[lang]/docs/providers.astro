@@ -1,0 +1,60 @@
+---
+import Layout from "../../../components/Layout.astro";
+import { getT } from "../../../i18n.server";
+
+export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
+
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const title = `${t.docs?.providers ?? "Providers"} — Alice Agent`;
+
+const providers = [
+  { name: "OpenRouter", desc: "Access 200+ models from one API key. The easiest way to try multiple providers.", url: "https://openrouter.ai" },
+  { name: "Anthropic", desc: "Claude models — strong reasoning, long context, excellent for code.", url: "https://anthropic.com" },
+  { name: "OpenAI", desc: "GPT-4o, o1, o3 — the original frontier models.", url: "https://openai.com" },
+  { name: "Google", desc: "Gemini models — multimodal, large context windows.", url: "https://ai.google.dev" },
+  { name: "Ollama", desc: "Run models locally on your machine. No data leaves your hardware.", url: "https://ollama.com" },
+  { name: "llama.cpp", desc: "Local GGUF inference. Lightweight, fast, runs on CPU or GPU.", url: "https://github.com/ggerganov/llama.cpp" },
+  { name: "DeepSeek", desc: "Cost-effective models with strong coding performance.", url: "https://deepseek.com" },
+  { name: "xAI", desc: "Grok models from xAI.", url: "https://x.ai" },
+];
+---
+
+<Layout title={title} description={t.docs?.providersDesc ?? "Alice Agent supports multiple AI model providers. Connect to OpenRouter, Anthropic, OpenAI, Ollama, and more."}>
+  <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
+    <div class="fabric-pattern"></div>
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <h1 class="font-display text-5xl leading-tight text-rpm-text sm:text-6xl">{t.docs?.providers ?? "Providers"}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-rpm-subtle">{t.docs?.providersDesc ?? "Connect Alice to any model provider."}</p>
+    </div>
+  </section>
+
+  <section class="bg-rpm-surface/20 py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="grid gap-6 sm:grid-cols-2">
+        {providers.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer" class="card-alice border-rpm-highlight-low/60 bg-rpm-surface/40 p-6 transition hover:border-rpm-iris/40">
+            <h3 class="font-display text-xl text-rpm-text">{p.name}</h3>
+            <p class="mt-2 text-sm text-rpm-subtle">{p.desc}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-16 rounded-2xl border border-rpm-highlight-med/40 bg-rpm-surface/60 p-8">
+        <h2 class="font-display text-2xl text-rpm-text">Quick Setup</h2>
+        <pre class="mt-4 overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text"><code>{`# OpenRouter (easiest)
+alice config set model.provider openrouter
+alice config set model.api_key YOUR_KEY
+
+# Anthropic
+alice config set model.provider anthropic
+alice config set model.api_key YOUR_KEY
+
+# Local with Ollama
+alice config set model.provider ollama
+alice config set model.model llama3`}</code></pre>
+      </div>
+    </div>
+  </section>
+</Layout>

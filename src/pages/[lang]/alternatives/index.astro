@@ -1,0 +1,86 @@
+---
+import Layout from "../../../components/Layout.astro";
+import { getT } from "../../../i18n.server";
+
+export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
+
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const title = `Alice Agent ${t.alternatives?.title ?? "vs Alternatives"} — Honest Comparison`;
+const description = t.alternatives?.description ?? "How Alice Agent compares to Claude Code, Codex CLI, OpenCode, and other AI coding agents.";
+
+const comparisons = [
+  {
+    name: "Claude Code",
+    alice_wins: ["Persistent memory across sessions", "20+ messaging platforms", "Scheduled tasks and cron", "Skills system that improves with use", "MIT licensed, fully open source"],
+    they_win: ["Optimized specifically for code generation", "Direct Anthropic model access"],
+    verdict: "Claude Code is better for pure code generation. Alice is a full agent that also codes.",
+  },
+  {
+    name: "OpenAI Codex CLI",
+    alice_wins: ["Persistent memory", "Multi-platform messaging", "Self-improving skills", "Scheduled automation", "Local-first option with Ollama"],
+    they_win: ["Tight OpenAI ecosystem integration", "Simpler setup for OpenAI users"],
+    verdict: "Codex CLI is a coding tool. Alice is an AI teammate that happens to code.",
+  },
+  {
+    name: "OpenCode",
+    alice_wins: ["Persistent memory", "20+ messaging platforms", "Cron jobs and automation", "Skills and plugins", "Desktop app"],
+    they_win: ["Lightweight and focused", "Minimal configuration needed"],
+    verdict: "OpenCode is lighter for quick code tasks. Alice is for building real workflows.",
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
+    <div class="fabric-pattern"></div>
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <h1 class="font-display text-5xl leading-tight text-rpm-text sm:text-6xl">{t.alternatives?.title ?? "Alice Agent vs Alternatives"}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-rpm-subtle">{description}</p>
+    </div>
+  </section>
+
+  <section class="bg-rpm-surface/20 py-24">
+    <div class="mx-auto max-w-4xl px-6 space-y-16">
+      {comparisons.map((c) => (
+        <div class="card-alice border-rpm-highlight-low/60 bg-rpm-surface/40 p-8">
+          <h2 class="font-display text-3xl text-rpm-text">Alice Agent vs {c.name}</h2>
+
+          <div class="mt-8 grid gap-8 sm:grid-cols-2">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-rpm-iris mb-3">Alice Agent</h3>
+              <ul class="space-y-2">
+                {c.alice_wins.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-rpm-subtle">
+                    <span class="mt-1 text-rpm-iris">&#10003;</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-rpm-muted mb-3">{c.name}</h3>
+              <ul class="space-y-2">
+                {c.they_win.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-rpm-subtle">
+                    <span class="mt-1 text-rpm-muted">&#10003;</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p class="mt-6 rounded-xl bg-rpm-base/60 p-4 text-sm text-rpm-subtle border border-rpm-highlight-med/20">
+            <strong class="text-rpm-text">Verdict:</strong> {c.verdict}
+          </p>
+        </div>
+      ))}
+
+      <div class="text-center">
+        <a href="https://alice-agent.stuko.dev/en/" class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-8 py-4 text-lg font-medium text-rpm-base transition hover:bg-rpm-foam hover:text-rpm-base">
+          Try Alice Agent &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

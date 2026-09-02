@@ -1,0 +1,49 @@
+---
+import Layout from "../../../components/Layout.astro";
+import { getCollection } from "astro:content";
+import { getT } from "../../../i18n.server";
+
+export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
+
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const allPosts = (await getCollection("blog")).filter(p => p.data.lang === lng);
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const title = `${t.nav.blog ?? "Blog"} — Alice Agent`;
+---
+
+<Layout title={title}>
+  <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
+    <div class="fabric-pattern"></div>
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <h1 class="font-display text-5xl leading-tight text-rpm-text sm:text-6xl">{t.nav.blog ?? "Blog"}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-rpm-subtle">{t.blog?.subtitle ?? "Insights on AI agents, local-first architecture, and building with Alice."}</p>
+    </div>
+  </section>
+
+  <section class="bg-rpm-surface/20 py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="space-y-12">
+        {posts.map((post) => (
+          <article class="card-alice border-rpm-highlight-low/60 bg-rpm-surface/40 p-8">
+            <div class="flex items-center gap-3 text-xs text-rpm-muted">
+              <time>{post.data.pubDate.toLocaleDateString(lng === "es" ? "es-ES" : lng === "it" ? "it-IT" : "en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
+              {post.data.tags.slice(0, 3).map((tag) => (
+                <span class="rounded-full border border-rpm-highlight-med/40 px-2 py-0.5 text-rpm-subtle">{tag}</span>
+              ))}
+            </div>
+            <h2 class="mt-4 font-display text-2xl text-rpm-text">
+              <a href={`/${lng}/blog/${post.id.replace(/-(en|es|it)$/, "")}/`} class="transition hover:text-rpm-iris">{post.data.title}</a>
+            </h2>
+            <p class="mt-3 text-rpm-subtle">{post.data.description}</p>
+            <a href={`/${lng}/blog/${post.id.replace(/-(en|es|it)$/, "")}/`} class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-rpm-iris transition hover:text-rpm-foam">
+              {t.blog?.readMore ?? "Read more"} &rarr;
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -4,7 +4,8 @@
     "features": "Características",
     "docs": "Docs",
     "github": "GitHub",
-    "install": "Instalar"
+    "install": "Instalar",
+    "blog": "Blog"
   },
   "hero": {
     "badge": "Open Source • MIT License",
@@ -282,12 +283,23 @@
     "gateway": "Configuración de gateway",
     "gatewayDesc": "Habilita gateways para recibir mensajes o enviar notificaciones. Telegram y Discord funcionan sin servidores adicionales.",
     "cron": "Cron jobs",
-    "cronDesc": "Programa trabajos recurrentes que ejecuten un prompt, un script o una skill de forma autónoma."
+    "cronDesc": "Programa trabajos recurrentes que ejecuten un prompt, un script o una skill de forma autónoma.",
+    "providers": "Proveedores",
+    "providersDesc": "Conecta Alice a cualquier proveedor de modelos.",
+    "platforms": "Plataformas",
+    "platformsDesc": "Un agente, todas las plataformas."
   },
   "footer": {
     "links": "Enlaces",
     "community": "Comunidad",
     "madeWith": "Hecho con",
     "by": "por"
+  },
+  "blog": {
+    "subtitle": "Perspectivas sobre agentes IA, arquitectura local-first y construir con Alice."
+  },
+  "alternatives": {
+    "title": "vs Alternativas",
+    "description": "Como se compara Alice Agent con Claude Code, Codex CLI, OpenCode y otros agentes IA."
   }
 }
