@@ -1,0 +1,108 @@
+---
+import Layout from "../../components/Layout.astro";
+import { ScrollReveal } from "../../components/ScrollReveal";
+import { Cpu, ArrowRight, RefreshCw } from "lucide-react";
+import { getT } from "../../i18n.server";
+import catalog from "../../../public/api/model-catalog.json";
+
+export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
+
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const { updated_at, providers } = catalog as {
+  updated_at: string;
+  providers: Record<string, { models: { id: string; description: string }[] }>;
+};
+
+const providerSections = [
+  { key: "openrouter", name: "OpenRouter", suit: "♠", color: "suit-spade", border: "border-suit-spade", bg: "bg-suit-spade" },
+  { key: "nous", name: "Nous Portal", suit: "♦", color: "suit-diamond", border: "border-suit-diamond", bg: "bg-suit-diamond" },
+];
+
+const updated = new Date(updated_at).toLocaleDateString(lng === "es" ? "es-ES" : lng === "it" ? "it-IT" : "en-US", { year: "numeric", month: "long", day: "numeric" });
+
+const title = `${t.modelsPage.title} — Alice Agent`;
+---
+
+<Layout title={title} description={t.modelsPage.subtitle}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+    <div class="glow-orb glow-orb-1" style="background: var(--color-rpm-foam)"></div>
+    <div class="absolute top-20 left-8 text-6xl font-bold text-rpm-foam/6 select-none hidden md:block" aria-hidden>♦</div>
+    <div class="absolute bottom-20 right-8 text-6xl font-bold text-rpm-gold/6 select-none hidden md:block" aria-hidden>♠</div>
+
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <div class="header-ornate">
+        <span class="suit-diamond">♦</span>
+        <span class="line" style="background: linear-gradient(90deg, transparent, var(--color-rpm-foam))"></span>
+        <span class="suit-spade">♠</span>
+        <span class="line" style="background: linear-gradient(90deg, var(--color-rpm-foam), transparent)"></span>
+        <span class="suit-diamond">♦</span>
+      </div>
+      <div class="inline-flex items-center gap-2 rounded-full border border-rpm-foam/30 bg-rpm-foam/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-rpm-foam">
+        <Cpu class="h-3.5 w-3.5" />
+        {t.modelsPage.badge}
+        <span class="opacity-40" aria-hidden>♦</span>
+      </div>
+      <h1 class="mt-6 font-display text-5xl leading-tight text-rpm-text sm:text-6xl text-balance">{t.modelsPage.title}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-rpm-subtle">{t.modelsPage.subtitle}</p>
+      <p class="mt-4 inline-flex items-center gap-1.5 text-xs text-rpm-muted">
+        <RefreshCw class="h-3 w-3" /> {t.modelsPage.updated}: {updated}
+      </p>
+    </div>
+  </section>
+
+  <!-- Providers -->
+  <section class="relative overflow-hidden bg-rpm-surface/20 py-24">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+
+    <div class="mx-auto max-w-5xl space-y-16 px-6">
+      {providerSections.map((p) => (
+        <ScrollReveal client:visible>
+          <div class={`card-alice ${p.border} ${p.bg}`}>
+            <span class={`suit-watermark ${p.color}`}>{p.suit}</span>
+            <span class={`suit-corner suit-corner-tl ${p.color}`}>{p.suit}</span>
+            <span class={`suit-corner suit-corner-br ${p.color}`}>{p.suit}</span>
+            <div class="p-8 pt-14">
+              <h2 class="font-display text-2xl text-rpm-text">{p.name}</h2>
+              <ul class="mt-6 divide-y divide-rpm-highlight-low/50">
+                {providers[p.key].models.map((m) => (
+                  <li class="flex items-center justify-between gap-4 py-2.5">
+                    <code class="font-mono text-sm text-rpm-subtle">{m.id}</code>
+                    {m.description === "recommended" && (
+                      <span class={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${p.border} ${p.color}`}>
+                        {t.modelsPage.recommended}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </ScrollReveal>
+      ))}
+
+      <!-- Any endpoint -->
+      <ScrollReveal client:visible>
+        <div class="card-alice border-suit-heart bg-suit-heart">
+          <span class="suit-watermark suit-heart">♥</span>
+          <span class="suit-corner suit-corner-tl suit-heart">♥</span>
+          <span class="suit-corner suit-corner-br suit-heart">♥</span>
+          <div class="p-8 pt-14">
+            <h2 class="font-display text-2xl text-rpm-text">{t.modelsPage.useAny}</h2>
+            <p class="mt-4 text-sm leading-relaxed text-rpm-subtle">{t.modelsPage.useAnyDesc}</p>
+            <pre class="mt-6 overflow-x-auto rounded-xl bg-rpm-base/80 p-5 text-sm text-rpm-text border border-rpm-highlight-med/40"><code>{`alice config set model.provider openrouter
+alice config set model.model anthropic/claude-sonnet-4`}</code></pre>
+            <a href={`/${lng}/docs/providers`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+              {t.modelsPage.providersCta} <ArrowRight class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+</Layout>

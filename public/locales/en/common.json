@@ -5,7 +5,11 @@
     "docs": "Docs",
     "github": "GitHub",
     "install": "Install",
-    "blog": "Blog"
+    "blog": "Blog",
+    "skills": "Skills",
+    "models": "Models",
+    "automation": "Automation",
+    "faq": "FAQ"
   },
   "hero": {
     "badge": "Open Source • MIT License",
@@ -161,7 +165,8 @@
         "author": "Daniel K.",
         "role": "Product designer"
       }
-    ]
+    ],
+    "communityLabel": "From the community"
   },
   "faq": {
     "title": "Questions? Answered.",
@@ -190,6 +195,30 @@
       {
         "q": "How is this different from other agents?",
         "a": "Alice is local-first, memory-persistent, and designed to be extended by you, not locked behind a SaaS subscription."
+      },
+      {
+        "q": "Does it work offline or with local models?",
+        "a": "Yes. Alice runs with Ollama, llama.cpp, vLLM, or any OpenAI-compatible server. No cloud, no API keys."
+      },
+      {
+        "q": "Is my data sent anywhere?",
+        "a": "Only if you use a remote provider (OpenRouter, OpenAI, Anthropic...). With local models nothing leaves your machine. Sessions and memory live in ~/.alice/."
+      },
+      {
+        "q": "How much does Alice cost?",
+        "a": "Alice is free and open source (MIT). You only pay for the model usage you choose — or nothing with local models."
+      },
+      {
+        "q": "Can I use it in my own Python project?",
+        "a": "Yes. Alice works as a library: import the agent and run prompts programmatically from your code."
+      },
+      {
+        "q": "What's the difference between memory and skills?",
+        "a": "Memory stores facts across sessions (who you are, your preferences). Skills are procedure documents the agent creates or installs to repeat workflows."
+      },
+      {
+        "q": "Can multiple people or profiles use it?",
+        "a": "Each profile has its own memory, sessions, and skills. You can run several isolated agents on the same machine — even on the same repo with git worktrees."
       }
     ]
   },
@@ -293,7 +322,9 @@
     "links": "Links",
     "community": "Community",
     "madeWith": "Made with",
-    "by": "by"
+    "by": "by",
+    "product": "Product",
+    "resources": "Resources"
   },
   "blog": {
     "subtitle": "Insights on AI agents, local-first architecture, and building with Alice."
@@ -301,5 +332,48 @@
   "alternatives": {
     "title": "vs Alternatives",
     "description": "How Alice Agent compares to Claude Code, Codex CLI, OpenCode, and other AI coding agents."
+  },
+  "skillsPage": {
+    "badge": "Skills catalog",
+    "title": "Bundled skills",
+    "subtitle": "Every skill ships as a knowledge document Alice loads on demand. Explore the 85 that come out of the box — plus 600+ more via the Skills Hub.",
+    "search": "Search skills…",
+    "allCategories": "All",
+    "results": "skills",
+    "moreTitle": "600+ more skills in the ecosystem",
+    "moreDesc": "Beyond the bundled ones, the Skills Hub offers 622 external and optional skills — from finance to research. Install them with alice skills install <name>.",
+    "docsCta": "Skills documentation"
+  },
+  "modelsPage": {
+    "badge": "Model catalog",
+    "title": "Supported models",
+    "subtitle": "Alice is model-agnostic. These are the curated models for the OpenRouter and Nous Portal pickers — any OpenAI-compatible endpoint works.",
+    "recommended": "Recommended",
+    "updated": "Updated",
+    "useAny": "Model not listed?",
+    "useAnyDesc": "Any OpenAI-compatible endpoint works. Set it up with alice config set model.provider.",
+    "providersCta": "View providers"
+  },
+  "automationPage": {
+    "badge": "Automation blueprints",
+    "title": "Automate your day",
+    "subtitle": "Ready-to-use blueprints for Alice's cron system. One command, and your agent works while you don't.",
+    "all": "All",
+    "scheduleLabel": "Schedule",
+    "commandLabel": "Command",
+    "guideCta": "Full cron guide"
+  },
+  "faqPage": {
+    "badge": "Frequently asked",
+    "moreCta": "Full FAQ in the documentation"
+  },
+  "deepDive": {
+    "kanbanTitle": "Multi-agent Kanban",
+    "kanbanDesc": "A SQLite-backed board coordinating multiple Alice profiles working in parallel on the same repository.",
+    "dashboardTitle": "Built-in web dashboard",
+    "dashboardDesc": "Sessions, channels, skills, MCP, hooks, and webhooks — all manageable from the browser.",
+    "cliTitle": "First-class CLI",
+    "cliDesc": "Commands to configure, schedule, and manage the agent without leaving the terminal.",
+    "learnMore": "Learn more"
   }
 }

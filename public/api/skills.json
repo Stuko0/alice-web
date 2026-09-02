@@ -1,0 +1,1774 @@
+{
+ "meta": {
+  "version": 1,
+  "extractedAt": "2026-09-01T10:03:48.853753+00:00",
+  "bundledSkills": 85,
+  "totalSkills": 707,
+  "docsBase": "https://alice-agent.stuko.dev/docs/user-guide/skills/"
+ },
+ "skills": [
+  {
+   "name": "alice-agent",
+   "description": "Configure, extend, or contribute to Alice Agent.",
+   "category": "autonomous-ai-agents",
+   "categoryLabel": "AI Agents",
+   "source": "built-in",
+   "tags": [
+    "alice",
+    "setup",
+    "configuration",
+    "multi-agent",
+    "spawning",
+    "cli",
+    "gateway",
+    "development"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/autonomous-ai-agents/autonomous-ai-agents-alice-agent"
+  },
+  {
+   "name": "claude-code",
+   "description": "Delegate coding to Claude Code CLI (features, PRs).",
+   "category": "autonomous-ai-agents",
+   "categoryLabel": "AI Agents",
+   "source": "built-in",
+   "tags": [
+    "Coding-Agent",
+    "Claude",
+    "Anthropic",
+    "Code-Review",
+    "Refactoring",
+    "PTY",
+    "Automation"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/autonomous-ai-agents/autonomous-ai-agents-claude-code"
+  },
+  {
+   "name": "codex",
+   "description": "Delegate coding to OpenAI Codex CLI (features, PRs).",
+   "category": "autonomous-ai-agents",
+   "categoryLabel": "AI Agents",
+   "source": "built-in",
+   "tags": [
+    "Coding-Agent",
+    "Codex",
+    "OpenAI",
+    "Code-Review",
+    "Refactoring"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/autonomous-ai-agents/autonomous-ai-agents-codex"
+  },
+  {
+   "name": "opencode",
+   "description": "Delegate coding to OpenCode CLI (features, PR review).",
+   "category": "autonomous-ai-agents",
+   "categoryLabel": "AI Agents",
+   "source": "built-in",
+   "tags": [
+    "Coding-Agent",
+    "OpenCode",
+    "Autonomous",
+    "Refactoring",
+    "Code-Review"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/autonomous-ai-agents/autonomous-ai-agents-opencode"
+  },
+  {
+   "name": "apple-notes",
+   "description": "Manage Apple Notes via memo CLI: create, search, edit.",
+   "category": "apple",
+   "categoryLabel": "Apple",
+   "source": "built-in",
+   "tags": [
+    "Notes",
+    "Apple",
+    "macOS",
+    "note-taking"
+   ],
+   "platforms": [
+    "macos"
+   ],
+   "docsPath": "bundled/apple/apple-apple-notes"
+  },
+  {
+   "name": "apple-reminders",
+   "description": "Apple Reminders via remindctl: add, list, complete.",
+   "category": "apple",
+   "categoryLabel": "Apple",
+   "source": "built-in",
+   "tags": [
+    "Reminders",
+    "tasks",
+    "todo",
+    "macOS",
+    "Apple"
+   ],
+   "platforms": [
+    "macos"
+   ],
+   "docsPath": "bundled/apple/apple-apple-reminders"
+  },
+  {
+   "name": "findmy",
+   "description": "Track Apple devices/AirTags via FindMy.app on macOS.",
+   "category": "apple",
+   "categoryLabel": "Apple",
+   "source": "built-in",
+   "tags": [
+    "FindMy",
+    "AirTag",
+    "location",
+    "tracking",
+    "macOS",
+    "Apple"
+   ],
+   "platforms": [
+    "macos"
+   ],
+   "docsPath": "bundled/apple/apple-findmy"
+  },
+  {
+   "name": "imessage",
+   "description": "Send and receive iMessages/SMS via the imsg CLI on macOS.",
+   "category": "apple",
+   "categoryLabel": "Apple",
+   "source": "built-in",
+   "tags": [
+    "iMessage",
+    "SMS",
+    "messaging",
+    "macOS",
+    "Apple"
+   ],
+   "platforms": [
+    "macos"
+   ],
+   "docsPath": "bundled/apple/apple-imessage"
+  },
+  {
+   "name": "architecture-diagram",
+   "description": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "architecture",
+    "diagrams",
+    "SVG",
+    "HTML",
+    "visualization",
+    "infrastructure",
+    "cloud"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-architecture-diagram"
+  },
+  {
+   "name": "ascii-art",
+   "description": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "ASCII",
+    "Art",
+    "Banners",
+    "Creative",
+    "Unicode",
+    "Text-Art",
+    "pyfiglet",
+    "figlet",
+    "cowsay",
+    "boxes"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-ascii-art"
+  },
+  {
+   "name": "ascii-video",
+   "description": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-ascii-video"
+  },
+  {
+   "name": "baoyu-infographic",
+   "description": "Infographics: 21 layouts x 21 styles (信息图, 可视化).",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "infographic",
+    "visual-summary",
+    "creative",
+    "image-generation"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-baoyu-infographic"
+  },
+  {
+   "name": "claude-design",
+   "description": "Design one-off HTML artifacts (landing, deck, prototype).",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "design",
+    "html",
+    "prototype",
+    "ux",
+    "ui",
+    "creative",
+    "artifact",
+    "deck",
+    "motion",
+    "design-system"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-claude-design"
+  },
+  {
+   "name": "comfyui",
+   "description": "Generate images, video, and audio with ComfyUI — install, launch, manage nodes/models, run workflows with parameter injection. Uses the official comfy-cli for lifecycle and direct REST/WebSocket API for execution.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "comfyui",
+    "image-generation",
+    "stable-diffusion",
+    "flux",
+    "sd3",
+    "wan-video",
+    "hunyuan-video",
+    "creative",
+    "generative-ai",
+    "video-generation"
+   ],
+   "platforms": [
+    "macos",
+    "linux",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-comfyui"
+  },
+  {
+   "name": "design-md",
+   "description": "Author/validate/export Google's DESIGN.md token spec files.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "design",
+    "design-system",
+    "tokens",
+    "ui",
+    "accessibility",
+    "wcag",
+    "tailwind",
+    "dtcg",
+    "google"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-design-md"
+  },
+  {
+   "name": "excalidraw",
+   "description": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "Excalidraw",
+    "Diagrams",
+    "Flowcharts",
+    "Architecture",
+    "Visualization",
+    "JSON"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-excalidraw"
+  },
+  {
+   "name": "humanizer",
+   "description": "Humanize text: strip AI-isms and add real voice.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "writing",
+    "editing",
+    "humanize",
+    "anti-ai-slop",
+    "voice",
+    "prose",
+    "text"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-humanizer"
+  },
+  {
+   "name": "manim-video",
+   "description": "Manim CE animations: 3Blue1Brown math/algo videos.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-manim-video"
+  },
+  {
+   "name": "p5js",
+   "description": "p5.js sketches: gen art, shaders, interactive, 3D.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "creative-coding",
+    "generative-art",
+    "p5js",
+    "canvas",
+    "interactive",
+    "visualization",
+    "webgl",
+    "shaders",
+    "animation"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-p5js"
+  },
+  {
+   "name": "popular-web-designs",
+   "description": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "design",
+    "css",
+    "html",
+    "ui",
+    "web-development",
+    "design-systems",
+    "templates"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-popular-web-designs"
+  },
+  {
+   "name": "pretext",
+   "description": "Use when building creative browser demos with @chenglou/pretext — DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produces single-file HTML demos by default.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "creative-coding",
+    "typography",
+    "pretext",
+    "ascii-art",
+    "canvas",
+    "generative",
+    "text-layout",
+    "kinetic-typography"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-pretext"
+  },
+  {
+   "name": "sketch",
+   "description": "Throwaway HTML mockups: 2-3 design variants to compare.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "sketch",
+    "mockup",
+    "design",
+    "ui",
+    "prototype",
+    "html",
+    "variants",
+    "exploration",
+    "wireframe",
+    "comparison"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-sketch"
+  },
+  {
+   "name": "songwriting-and-ai-music",
+   "description": "Songwriting craft and Suno AI music prompts.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "songwriting",
+    "music",
+    "suno",
+    "parody",
+    "lyrics",
+    "creative"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-songwriting-and-ai-music"
+  },
+  {
+   "name": "touchdesigner-mcp",
+   "description": "Control a running TouchDesigner instance via twozero MCP — create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
+   "category": "creative",
+   "categoryLabel": "Creative",
+   "source": "built-in",
+   "tags": [
+    "TouchDesigner",
+    "MCP",
+    "twozero",
+    "creative-coding",
+    "real-time-visuals",
+    "generative-art",
+    "audio-reactive",
+    "VJ",
+    "installation",
+    "GLSL"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/creative/creative-touchdesigner-mcp"
+  },
+  {
+   "name": "jupyter-live-kernel",
+   "description": "Iterative Python via live Jupyter kernel (hamelnb).",
+   "category": "data-science",
+   "categoryLabel": "Data Science",
+   "source": "built-in",
+   "tags": [
+    "jupyter",
+    "notebook",
+    "repl",
+    "data-science",
+    "exploration",
+    "iterative"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/data-science/data-science-jupyter-live-kernel"
+  },
+  {
+   "name": "codebase-inspection",
+   "description": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+   "category": "github",
+   "categoryLabel": "GitHub",
+   "source": "built-in",
+   "tags": [
+    "LOC",
+    "Code Analysis",
+    "pygount",
+    "Codebase",
+    "Metrics",
+    "Repository"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/github/github-codebase-inspection"
+  },
+  {
+   "name": "github-auth",
+   "description": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+   "category": "github",
+   "categoryLabel": "GitHub",
+   "source": "built-in",
+   "tags": [
+    "GitHub",
+    "Authentication",
+    "Git",
+    "gh-cli",
+    "SSH",
+    "Setup"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/github/github-github-auth"
+  },
+  {
+   "name": "github-code-review",
+   "description": "Review PRs: diffs, inline comments via gh or REST.",
+   "category": "github",
+   "categoryLabel": "GitHub",
+   "source": "built-in",
+   "tags": [
+    "GitHub",
+    "Code-Review",
+    "Pull-Requests",
+    "Git",
+    "Quality"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/github/github-github-code-review"
+  },
+  {
+   "name": "github-issues",
+   "description": "Create, triage, label, assign GitHub issues via gh or REST.",
+   "category": "github",
+   "categoryLabel": "GitHub",
+   "source": "built-in",
+   "tags": [
+    "GitHub",
+    "Issues",
+    "Project-Management",
+    "Bug-Tracking",
+    "Triage"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/github/github-github-issues"
+  },
+  {
+   "name": "github-pr-workflow",
+   "description": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+   "category": "github",
+   "categoryLabel": "GitHub",
+   "source": "built-in",
+   "tags": [
+    "GitHub",
+    "Pull-Requests",
+    "CI/CD",
+    "Git",
+    "Automation",
+    "Merge"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/github/github-github-pr-workflow"
+  },
+  {
+   "name": "github-repo-management",
+   "description": "Clone/create/fork repos; manage remotes, releases.",
+   "category": "github",
+   "categoryLabel": "GitHub",
+   "source": "built-in",
+   "tags": [
+    "GitHub",
+    "Repositories",
+    "Git",
+    "Releases",
+    "Secrets",
+    "Configuration"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/github/github-github-repo-management"
+  },
+  {
+   "name": "codebase-inspection",
+   "description": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+   "category": "gitea",
+   "categoryLabel": "Gitea",
+   "source": "built-in",
+   "tags": [
+    "LOC",
+    "Code Analysis",
+    "pygount",
+    "Codebase",
+    "Metrics",
+    "Repository"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitea/gitea-codebase-inspection"
+  },
+  {
+   "name": "gitea-auth",
+   "description": "Gitea auth setup: HTTPS tokens, SSH keys, tea CLI login.",
+   "category": "gitea",
+   "categoryLabel": "Gitea",
+   "source": "built-in",
+   "tags": [
+    "Gitea",
+    "Authentication",
+    "Git",
+    "tea-cli",
+    "SSH",
+    "Setup"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitea/gitea-gitea-auth"
+  },
+  {
+   "name": "gitea-code-review",
+   "description": "Review PRs: diffs, inline comments via tea or REST.",
+   "category": "gitea",
+   "categoryLabel": "Gitea",
+   "source": "built-in",
+   "tags": [
+    "Gitea",
+    "Code-Review",
+    "Pull-Requests",
+    "Git",
+    "Quality"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitea/gitea-gitea-code-review"
+  },
+  {
+   "name": "gitea-issues",
+   "description": "Create, triage, label, assign Gitea issues via tea or REST.",
+   "category": "gitea",
+   "categoryLabel": "Gitea",
+   "source": "built-in",
+   "tags": [
+    "Gitea",
+    "Issues",
+    "Project-Management",
+    "Bug-Tracking",
+    "Triage"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitea/gitea-gitea-issues"
+  },
+  {
+   "name": "gitea-pr-workflow",
+   "description": "Gitea PR lifecycle: branch, commit, open, CI, merge.",
+   "category": "gitea",
+   "categoryLabel": "Gitea",
+   "source": "built-in",
+   "tags": [
+    "Gitea",
+    "Pull-Requests",
+    "CI/CD",
+    "Git",
+    "Automation",
+    "Merge"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitea/gitea-gitea-pr-workflow"
+  },
+  {
+   "name": "gitea-repo-management",
+   "description": "Clone/create/fork repos; manage remotes, releases.",
+   "category": "gitea",
+   "categoryLabel": "Gitea",
+   "source": "built-in",
+   "tags": [
+    "Gitea",
+    "Repositories",
+    "Git",
+    "Releases",
+    "Secrets",
+    "Configuration"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitea/gitea-gitea-repo-management"
+  },
+  {
+   "name": "codebase-inspection",
+   "description": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+   "category": "gitlab",
+   "categoryLabel": "Gitlab",
+   "source": "built-in",
+   "tags": [
+    "LOC",
+    "Code Analysis",
+    "pygount",
+    "Codebase",
+    "Metrics",
+    "Repository"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitlab/gitlab-codebase-inspection"
+  },
+  {
+   "name": "gitlab-auth",
+   "description": "GitLab auth setup: HTTPS tokens, SSH keys, glab CLI login.",
+   "category": "gitlab",
+   "categoryLabel": "Gitlab",
+   "source": "built-in",
+   "tags": [
+    "GitLab",
+    "Authentication",
+    "Git",
+    "glab-cli",
+    "SSH",
+    "Setup"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitlab/gitlab-gitlab-auth"
+  },
+  {
+   "name": "gitlab-code-review",
+   "description": "Review MRs: diffs, inline comments via glab or REST.",
+   "category": "gitlab",
+   "categoryLabel": "Gitlab",
+   "source": "built-in",
+   "tags": [
+    "GitLab",
+    "Code-Review",
+    "Pull-Requests",
+    "Git",
+    "Quality"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitlab/gitlab-gitlab-code-review"
+  },
+  {
+   "name": "gitlab-issues",
+   "description": "Create, triage, label, assign GitLab issues via glab or REST.",
+   "category": "gitlab",
+   "categoryLabel": "Gitlab",
+   "source": "built-in",
+   "tags": [
+    "GitLab",
+    "Issues",
+    "Project-Management",
+    "Bug-Tracking",
+    "Triage"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitlab/gitlab-gitlab-issues"
+  },
+  {
+   "name": "gitlab-mr-workflow",
+   "description": "GitLab MR lifecycle: branch, commit, open, CI, merge.",
+   "category": "gitlab",
+   "categoryLabel": "Gitlab",
+   "source": "built-in",
+   "tags": [
+    "GitLab",
+    "Merge-Requests",
+    "CI/CD",
+    "Git",
+    "Automation",
+    "Merge"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitlab/gitlab-gitlab-mr-workflow"
+  },
+  {
+   "name": "gitlab-repo-management",
+   "description": "Clone/create/fork repos; manage remotes, releases.",
+   "category": "gitlab",
+   "categoryLabel": "Gitlab",
+   "source": "built-in",
+   "tags": [
+    "GitLab",
+    "Repositories",
+    "Git",
+    "Releases",
+    "Secrets",
+    "Configuration"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/gitlab/gitlab-gitlab-repo-management"
+  },
+  {
+   "name": "audiocraft-audio-generation",
+   "description": "AudioCraft: MusicGen text-to-music, AudioGen text-to-sound.",
+   "category": "mlops",
+   "categoryLabel": "MLOps",
+   "source": "built-in",
+   "tags": [
+    "Multimodal",
+    "Audio Generation",
+    "Text-to-Music",
+    "Text-to-Audio",
+    "MusicGen"
+   ],
+   "platforms": [
+    "linux",
+    "macos"
+   ],
+   "docsPath": "bundled/mlops/mlops-models-audiocraft"
+  },
+  {
+   "name": "evaluating-llms-harness",
+   "description": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).",
+   "category": "mlops",
+   "categoryLabel": "MLOps",
+   "source": "built-in",
+   "tags": [
+    "Evaluation",
+    "LM Evaluation Harness",
+    "Benchmarking",
+    "MMLU",
+    "HumanEval",
+    "GSM8K",
+    "EleutherAI",
+    "Model Quality",
+    "Academic Benchmarks",
+    "Industry Standard"
+   ],
+   "platforms": [
+    "linux",
+    "macos"
+   ],
+   "docsPath": "bundled/mlops/mlops-evaluation-lm-evaluation-harness"
+  },
+  {
+   "name": "huggingface-hub",
+   "description": "HuggingFace hf CLI: search/download/upload models, datasets.",
+   "category": "mlops",
+   "categoryLabel": "MLOps",
+   "source": "built-in",
+   "tags": [
+    "huggingface",
+    "hf",
+    "models",
+    "datasets",
+    "hub",
+    "mlops"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/mlops/mlops-huggingface-hub"
+  },
+  {
+   "name": "llama-cpp",
+   "description": "llama.cpp local GGUF inference + HF Hub model discovery.",
+   "category": "mlops",
+   "categoryLabel": "MLOps",
+   "source": "built-in",
+   "tags": [
+    "llama.cpp",
+    "GGUF",
+    "Quantization",
+    "Hugging Face Hub",
+    "CPU Inference",
+    "Apple Silicon",
+    "Edge Deployment",
+    "AMD GPUs",
+    "Intel GPUs",
+    "NVIDIA",
+    "URL-first"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/mlops/mlops-inference-llama-cpp"
+  },
+  {
+   "name": "segment-anything-model",
+   "description": "SAM: zero-shot image segmentation via points, boxes, masks.",
+   "category": "mlops",
+   "categoryLabel": "MLOps",
+   "source": "built-in",
+   "tags": [
+    "Multimodal",
+    "Image Segmentation",
+    "Computer Vision",
+    "SAM",
+    "Zero-Shot"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/mlops/mlops-models-segment-anything"
+  },
+  {
+   "name": "serving-llms-vllm",
+   "description": "vLLM: high-throughput LLM serving, OpenAI API, quantization.",
+   "category": "mlops",
+   "categoryLabel": "MLOps",
+   "source": "built-in",
+   "tags": [
+    "vLLM",
+    "Inference Serving",
+    "PagedAttention",
+    "Continuous Batching",
+    "High Throughput",
+    "Production",
+    "OpenAI API",
+    "Quantization",
+    "Tensor Parallelism"
+   ],
+   "platforms": [
+    "linux",
+    "macos"
+   ],
+   "docsPath": "bundled/mlops/mlops-inference-vllm"
+  },
+  {
+   "name": "weights-and-biases",
+   "description": "W&B: log ML experiments, sweeps, model registry, dashboards.",
+   "category": "mlops",
+   "categoryLabel": "MLOps",
+   "source": "built-in",
+   "tags": [
+    "MLOps",
+    "Weights And Biases",
+    "WandB",
+    "Experiment Tracking",
+    "Hyperparameter Tuning",
+    "Model Registry",
+    "Collaboration",
+    "Real-Time Visualization",
+    "PyTorch",
+    "TensorFlow",
+    "HuggingFace"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/mlops/mlops-evaluation-weights-and-biases"
+  },
+  {
+   "name": "gif-search",
+   "description": "Search/download GIFs from Tenor via curl + jq.",
+   "category": "media",
+   "categoryLabel": "Media",
+   "source": "built-in",
+   "tags": [
+    "GIF",
+    "Media",
+    "Search",
+    "Tenor",
+    "API"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/media/media-gif-search"
+  },
+  {
+   "name": "heartmula",
+   "description": "HeartMuLa: Suno-like song generation from lyrics + tags.",
+   "category": "media",
+   "categoryLabel": "Media",
+   "source": "built-in",
+   "tags": [
+    "music",
+    "audio",
+    "generation",
+    "ai",
+    "heartmula",
+    "heartcodec",
+    "lyrics",
+    "songs"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/media/media-heartmula"
+  },
+  {
+   "name": "songsee",
+   "description": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
+   "category": "media",
+   "categoryLabel": "Media",
+   "source": "built-in",
+   "tags": [
+    "Audio",
+    "Visualization",
+    "Spectrogram",
+    "Music",
+    "Analysis"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/media/media-songsee"
+  },
+  {
+   "name": "youtube-content",
+   "description": "YouTube transcripts to summaries, threads, blogs.",
+   "category": "media",
+   "categoryLabel": "Media",
+   "source": "built-in",
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/media/media-youtube-content"
+  },
+  {
+   "name": "computer-use",
+   "description": "Drive the user's desktop in the background — clicking, typing,\nscrolling, dragging — without stealing the cursor, keyboard focus,\nor switching virtual desktops / Spaces. Cross-platform: macOS,\nWindows, Linux. Works with any tool-capable model. Load this skill\nwhenever the `computer_use` tool is available.\n",
+   "category": "other",
+   "categoryLabel": "Other",
+   "source": "built-in",
+   "tags": [
+    "computer-use",
+    "desktop",
+    "automation",
+    "gui",
+    "cross-platform"
+   ],
+   "platforms": [
+    "macos",
+    "windows",
+    "linux"
+   ],
+   "docsPath": "bundled/computer-use/computer-use-computer-use"
+  },
+  {
+   "name": "dogfood",
+   "description": "Exploratory QA of web apps: find bugs, evidence, reports.",
+   "category": "other",
+   "categoryLabel": "Other",
+   "source": "built-in",
+   "tags": [
+    "qa",
+    "testing",
+    "browser",
+    "web",
+    "dogfood"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/dogfood/dogfood-dogfood"
+  },
+  {
+   "name": "himalaya",
+   "description": "Himalaya CLI: IMAP/SMTP email from terminal.",
+   "category": "other",
+   "categoryLabel": "Other",
+   "source": "built-in",
+   "tags": [
+    "Email",
+    "IMAP",
+    "SMTP",
+    "CLI",
+    "Communication"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/email/email-himalaya"
+  },
+  {
+   "name": "obsidian",
+   "description": "Read, search, create, and edit notes in the Obsidian vault.",
+   "category": "other",
+   "categoryLabel": "Other",
+   "source": "built-in",
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/note-taking/note-taking-obsidian"
+  },
+  {
+   "name": "openhue",
+   "description": "Control Philips Hue lights, scenes, rooms via OpenHue CLI.",
+   "category": "other",
+   "categoryLabel": "Other",
+   "source": "built-in",
+   "tags": [
+    "Smart-Home",
+    "Hue",
+    "Lights",
+    "IoT",
+    "Automation"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/smart-home/smart-home-openhue"
+  },
+  {
+   "name": "yuanbao",
+   "description": "Yuanbao (元宝) groups: @mention users, query info/members.",
+   "category": "other",
+   "categoryLabel": "Other",
+   "source": "built-in",
+   "tags": [
+    "yuanbao",
+    "mention",
+    "at",
+    "group",
+    "members",
+    "元宝",
+    "派",
+    "艾特"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/yuanbao/yuanbao-yuanbao"
+  },
+  {
+   "name": "airtable",
+   "description": "Airtable REST API via curl. Records CRUD, filters, upserts.",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "tags": [
+    "Airtable",
+    "Productivity",
+    "Database",
+    "API"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/productivity/productivity-airtable"
+  },
+  {
+   "name": "google-workspace",
+   "description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python.",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "tags": [
+    "Google",
+    "Gmail",
+    "Calendar",
+    "Drive",
+    "Sheets",
+    "Docs",
+    "Contacts",
+    "Email",
+    "OAuth"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/productivity/productivity-google-workspace"
+  },
+  {
+   "name": "maps",
+   "description": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "tags": [
+    "maps",
+    "geocoding",
+    "places",
+    "routing",
+    "distance",
+    "directions",
+    "nearby",
+    "location",
+    "openstreetmap",
+    "nominatim",
+    "overpass",
+    "osrm"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/productivity/productivity-maps"
+  },
+  {
+   "name": "nano-pdf",
+   "description": "Edit PDF text/typos/titles via nano-pdf CLI (NL prompts).",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "tags": [
+    "PDF",
+    "Documents",
+    "Editing",
+    "NLP",
+    "Productivity"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/productivity/productivity-nano-pdf"
+  },
+  {
+   "name": "notion",
+   "description": "Notion API + ntn CLI: pages, databases, markdown, Workers.",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "tags": [
+    "Notion",
+    "Productivity",
+    "Notes",
+    "Database",
+    "API",
+    "CLI",
+    "Workers"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/productivity/productivity-notion"
+  },
+  {
+   "name": "ocr-and-documents",
+   "description": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "tags": [
+    "PDF",
+    "Documents",
+    "Research",
+    "Arxiv",
+    "Text-Extraction",
+    "OCR"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/productivity/productivity-ocr-and-documents"
+  },
+  {
+   "name": "petdex",
+   "description": "Install and select animated petdex mascots for Alice.",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "tags": [
+    "petdex",
+    "mascot",
+    "display",
+    "cli",
+    "tui",
+    "desktop"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/productivity/productivity-petdex"
+  },
+  {
+   "name": "powerpoint",
+   "description": "Create, read, edit .pptx decks, slides, notes, templates.",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/productivity/productivity-powerpoint"
+  },
+  {
+   "name": "teams-meeting-pipeline",
+   "description": "Operate the Teams meeting summary pipeline via Alice CLI — summarize meetings, inspect pipeline status, replay jobs, manage Microsoft Graph subscriptions.",
+   "category": "productivity",
+   "categoryLabel": "Productivity",
+   "source": "built-in",
+   "tags": [
+    "Teams",
+    "Microsoft Graph",
+    "Meetings",
+    "Productivity",
+    "Operations"
+   ],
+   "docsPath": "bundled/productivity/productivity-teams-meeting-pipeline"
+  },
+  {
+   "name": "arxiv",
+   "description": "Search arXiv papers by keyword, author, category, or ID.",
+   "category": "research",
+   "categoryLabel": "Research",
+   "source": "built-in",
+   "tags": [
+    "Research",
+    "Arxiv",
+    "Papers",
+    "Academic",
+    "Science",
+    "API"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/research/research-arxiv"
+  },
+  {
+   "name": "blogwatcher",
+   "description": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.",
+   "category": "research",
+   "categoryLabel": "Research",
+   "source": "built-in",
+   "tags": [
+    "RSS",
+    "Blogs",
+    "Feed-Reader",
+    "Monitoring"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/research/research-blogwatcher"
+  },
+  {
+   "name": "llm-wiki",
+   "description": "Karpathy's LLM Wiki: build/query interlinked markdown KB.",
+   "category": "research",
+   "categoryLabel": "Research",
+   "source": "built-in",
+   "tags": [
+    "wiki",
+    "knowledge-base",
+    "research",
+    "notes",
+    "markdown",
+    "rag-alternative"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/research/research-llm-wiki"
+  },
+  {
+   "name": "polymarket",
+   "description": "Query Polymarket: markets, prices, orderbooks, history.",
+   "category": "research",
+   "categoryLabel": "Research",
+   "source": "built-in",
+   "tags": [
+    "polymarket",
+    "prediction-markets",
+    "market-data",
+    "trading"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/research/research-polymarket"
+  },
+  {
+   "name": "research-paper-writing",
+   "description": "Write ML papers for NeurIPS/ICML/ICLR: design→submit.",
+   "category": "research",
+   "categoryLabel": "Research",
+   "source": "built-in",
+   "tags": [
+    "Research",
+    "Paper Writing",
+    "Experiments",
+    "ML",
+    "AI",
+    "NeurIPS",
+    "ICML",
+    "ICLR",
+    "ACL",
+    "AAAI",
+    "COLM",
+    "LaTeX",
+    "Citations",
+    "Statistical Analysis"
+   ],
+   "platforms": [
+    "linux",
+    "macos"
+   ],
+   "docsPath": "bundled/research/research-research-paper-writing"
+  },
+  {
+   "name": "xurl",
+   "description": "X/Twitter via xurl CLI: post, search, DM, media, v2 API.",
+   "category": "social-media",
+   "categoryLabel": "Social Media",
+   "source": "built-in",
+   "tags": [
+    "twitter",
+    "x",
+    "social-media",
+    "xurl",
+    "official-api"
+   ],
+   "platforms": [
+    "linux",
+    "macos"
+   ],
+   "docsPath": "bundled/social-media/social-media-xurl"
+  },
+  {
+   "name": "alice-agent-skill-authoring",
+   "description": "Author in-repo SKILL.md: frontmatter, validator, structure, and writing-quality principles.",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "skills",
+    "authoring",
+    "alice-agent",
+    "conventions",
+    "skill-md"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/software-development/software-development-alice-agent-skill-authoring"
+  },
+  {
+   "name": "graphify",
+   "description": "Project analysis and graph extraction using Graphify",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "platforms": [
+    "cli",
+    "telegram",
+    "discord"
+   ],
+   "docsPath": "bundled/software-development/software-development-graphify"
+  },
+  {
+   "name": "node-inspect-debugger",
+   "description": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "debugging",
+    "nodejs",
+    "node-inspect",
+    "cdp",
+    "breakpoints",
+    "ui-tui"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/software-development/software-development-node-inspect-debugger"
+  },
+  {
+   "name": "plan",
+   "description": "Plan mode: write an actionable markdown plan to .alice/plans/, no execution. Bite-sized tasks, exact paths, complete code.",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "planning",
+    "plan-mode",
+    "implementation",
+    "workflow",
+    "design",
+    "documentation"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/software-development/software-development-plan"
+  },
+  {
+   "name": "python-debugpy",
+   "description": "Debug Python: pdb REPL + debugpy remote (DAP).",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "debugging",
+    "python",
+    "pdb",
+    "debugpy",
+    "breakpoints",
+    "dap",
+    "post-mortem"
+   ],
+   "platforms": [
+    "linux",
+    "macos"
+   ],
+   "docsPath": "bundled/software-development/software-development-python-debugpy"
+  },
+  {
+   "name": "requesting-code-review",
+   "description": "Pre-commit review: security scan, quality gates, auto-fix.",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "code-review",
+    "security",
+    "verification",
+    "quality",
+    "pre-commit",
+    "auto-fix"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/software-development/software-development-requesting-code-review"
+  },
+  {
+   "name": "simplify-code",
+   "description": "Parallel 3-agent cleanup of recent code changes.",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "code-review",
+    "cleanup",
+    "refactor",
+    "delegation",
+    "subagent",
+    "parallel",
+    "simplify"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/software-development/software-development-simplify-code"
+  },
+  {
+   "name": "spike",
+   "description": "Throwaway experiments to validate an idea before build.",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "spike",
+    "prototype",
+    "experiment",
+    "feasibility",
+    "throwaway",
+    "exploration",
+    "research",
+    "planning",
+    "mvp",
+    "proof-of-concept"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/software-development/software-development-spike"
+  },
+  {
+   "name": "systematic-debugging",
+   "description": "4-phase root cause debugging: understand bugs before fixing.",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "debugging",
+    "troubleshooting",
+    "problem-solving",
+    "root-cause",
+    "investigation"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/software-development/software-development-systematic-debugging"
+  },
+  {
+   "name": "test-driven-development",
+   "description": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
+   "category": "software-development",
+   "categoryLabel": "Software Dev",
+   "source": "built-in",
+   "tags": [
+    "testing",
+    "tdd",
+    "development",
+    "quality",
+    "red-green-refactor"
+   ],
+   "platforms": [
+    "linux",
+    "macos",
+    "windows"
+   ],
+   "docsPath": "bundled/software-development/software-development-test-driven-development"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+---
+import Layout from "../../components/Layout.astro";
+import { BlueprintsGrid } from "../../components/BlueprintsGrid";
+import { ScrollReveal } from "../../components/ScrollReveal";
+import { Zap, ArrowRight } from "lucide-react";
+import { getT } from "../../i18n.server";
+import blueprintsData from "../../../public/api/automation-blueprints.json";
+
+export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
+
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const blueprints = blueprintsData as import("../../components/BlueprintsGrid").Blueprint[];
+
+const title = `${t.automationPage.title} — Alice Agent`;
+---
+
+<Layout title={title} description={t.automationPage.subtitle}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+    <div class="glow-orb glow-orb-1" style="background: var(--color-rpm-gold)"></div>
+    <div class="absolute top-20 left-8 text-6xl font-bold text-rpm-gold/6 select-none hidden md:block" aria-hidden>♣</div>
+    <div class="absolute bottom-20 right-8 text-6xl font-bold text-rpm-foam/6 select-none hidden md:block" aria-hidden>♥</div>
+
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <div class="header-ornate">
+        <span class="suit-club">♣</span>
+        <span class="line" style="background: linear-gradient(90deg, transparent, var(--color-rpm-gold))"></span>
+        <span class="suit-heart">♥</span>
+        <span class="line" style="background: linear-gradient(90deg, var(--color-rpm-gold), transparent)"></span>
+        <span class="suit-club">♣</span>
+      </div>
+      <div class="inline-flex items-center gap-2 rounded-full border border-rpm-gold/30 bg-rpm-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-rpm-gold">
+        <Zap class="h-3.5 w-3.5" />
+        {t.automationPage.badge}
+        <span class="opacity-40" aria-hidden>♣</span>
+      </div>
+      <h1 class="mt-6 font-display text-5xl leading-tight text-rpm-text sm:text-6xl text-balance">{t.automationPage.title}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-rpm-subtle">{t.automationPage.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Blueprints -->
+  <section class="relative overflow-hidden bg-rpm-surface/20 py-24">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+
+    <div class="mx-auto max-w-7xl px-6">
+      <BlueprintsGrid
+        client:visible
+        blueprints={blueprints}
+        labels={{
+          all: t.automationPage.all,
+          scheduleLabel: t.automationPage.scheduleLabel,
+          commandLabel: t.automationPage.commandLabel,
+          badge: t.automationPage.badge,
+          title: t.automationPage.title,
+          subtitle: t.automationPage.subtitle,
+          guideCta: t.automationPage.guideCta,
+        }}
+      />
+
+      <!-- Guide CTA -->
+      <ScrollReveal client:visible>
+        <div class="card-alice border-suit-diamond bg-suit-diamond mt-16">
+          <span class="suit-watermark suit-diamond">♦</span>
+          <span class="suit-corner suit-corner-tl suit-diamond">♦</span>
+          <span class="suit-corner suit-corner-br suit-diamond">♦</span>
+          <div class="p-8 pt-14 text-center">
+            <a href="https://alice-agent.stuko.dev/docs/guides/automate-with-cron" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-6 py-3 font-medium text-rpm-base transition hover:bg-rpm-foam">
+              {t.automationPage.guideCta} <ArrowRight class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+</Layout>

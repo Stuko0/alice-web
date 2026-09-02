@@ -2,7 +2,7 @@
 import Layout from "../../components/Layout.astro";
 import { ScrollReveal } from "../../components/ScrollReveal";
 import { FeatureCard } from "../../components/FeatureCard";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { getT } from "../../i18n.server";
 
 export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
@@ -64,6 +64,74 @@ const title = `${t.nav.features} — Alice Agent`;
           <FeatureCard client:visible title={f.title} description={f.desc} iconName={f.iconName} index={i} />
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Deep dives -->
+  <section id="deep-dive" class="relative overflow-hidden bg-rpm-base py-24">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+
+    <div class="mx-auto max-w-7xl space-y-24 px-6">
+      <!-- Kanban -->
+      <ScrollReveal client:visible>
+        <div class="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-rpm-foam/30 bg-rpm-foam/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-rpm-foam">♠ Kanban</span>
+            <h2 class="font-display text-3xl text-rpm-text text-balance">{t.deepDive.kanbanTitle}</h2>
+            <p class="mt-4 leading-relaxed text-rpm-subtle">{t.deepDive.kanbanDesc}</p>
+            <a href="https://alice-agent.stuko.dev/docs/user-guide/features/kanban" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+              {t.deepDive.learnMore} <ArrowRight class="h-4 w-4" />
+            </a>
+          </div>
+          <div class="card-alice border-suit-spade bg-suit-spade">
+            <span class="suit-watermark suit-spade">♠</span>
+            <div class="p-4 pt-12">
+              <img src="/img/kanban/01-board-overview.png" alt={t.deepDive.kanbanTitle} width="880" height="495" loading="lazy" class="w-full rounded-xl border border-rpm-highlight-med/40" />
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <!-- Dashboard -->
+      <ScrollReveal client:visible>
+        <div class="grid items-center gap-10 lg:grid-cols-2">
+          <div class="order-2 lg:order-1 card-alice border-suit-heart bg-suit-heart">
+            <span class="suit-watermark suit-heart">♥</span>
+            <div class="p-4 pt-12">
+              <img src="/img/dashboard/admin-sessions.png" alt={t.deepDive.dashboardTitle} width="960" height="540" loading="lazy" class="w-full rounded-xl border border-rpm-highlight-med/40" />
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-rpm-love/30 bg-rpm-love/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-rpm-love">♥ Dashboard</span>
+            <h2 class="font-display text-3xl text-rpm-text text-balance">{t.deepDive.dashboardTitle}</h2>
+            <p class="mt-4 leading-relaxed text-rpm-subtle">{t.deepDive.dashboardDesc}</p>
+            <a href="https://alice-agent.stuko.dev/docs/user-guide/features/web-dashboard" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+              {t.deepDive.learnMore} <ArrowRight class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <!-- CLI -->
+      <ScrollReveal client:visible>
+        <div class="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-rpm-gold/30 bg-rpm-gold/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-rpm-gold">♦ CLI</span>
+            <h2 class="font-display text-3xl text-rpm-text text-balance">{t.deepDive.cliTitle}</h2>
+            <p class="mt-4 leading-relaxed text-rpm-subtle">{t.deepDive.cliDesc}</p>
+            <a href="https://alice-agent.stuko.dev/docs/user-guide/cli" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+              {t.deepDive.learnMore} <ArrowRight class="h-4 w-4" />
+            </a>
+          </div>
+          <div class="card-alice border-suit-diamond bg-suit-diamond">
+            <span class="suit-watermark suit-diamond">♦</span>
+            <div class="p-4 pt-12">
+              <img src="/img/docs/cli-layout.svg" alt={t.deepDive.cliTitle} loading="lazy" class="w-full rounded-xl border border-rpm-highlight-med/40 bg-rpm-base/60" />
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
     </div>
   </section>
 </Layout>

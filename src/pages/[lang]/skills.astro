@@ -1,0 +1,92 @@
+---
+import Layout from "../../components/Layout.astro";
+import { SkillsCatalog } from "../../components/SkillsCatalog";
+import { ScrollReveal } from "../../components/ScrollReveal";
+import { Layers, ArrowRight } from "lucide-react";
+import { getT } from "../../i18n.server";
+import skillsData from "../../../public/api/skills.json";
+
+export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
+
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const { meta, skills } = skillsData as {
+  meta: { bundledSkills: number; totalSkills: number; docsBase: string };
+  skills: import("../../components/SkillsCatalog").Skill[];
+};
+
+const title = `${t.skillsPage.title} — Alice Agent`;
+---
+
+<Layout title={title} description={t.skillsPage.subtitle}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+    <div class="glow-orb glow-orb-1" style="background: var(--color-rpm-foam)"></div>
+    <div class="absolute top-20 left-8 text-6xl font-bold text-rpm-foam/6 select-none hidden md:block" aria-hidden>♠</div>
+    <div class="absolute bottom-20 right-8 text-6xl font-bold text-rpm-gold/6 select-none hidden md:block" aria-hidden>♣</div>
+
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <div class="header-ornate">
+        <span class="suit-spade">♠</span>
+        <span class="line" style="background: linear-gradient(90deg, transparent, var(--color-rpm-foam))"></span>
+        <span class="suit-diamond">♦</span>
+        <span class="line" style="background: linear-gradient(90deg, var(--color-rpm-foam), transparent)"></span>
+        <span class="suit-spade">♠</span>
+      </div>
+      <div class="inline-flex items-center gap-2 rounded-full border border-rpm-foam/30 bg-rpm-foam/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-rpm-foam">
+        <Layers class="h-3.5 w-3.5" />
+        {t.skillsPage.badge}
+        <span class="opacity-40" aria-hidden>♠</span>
+      </div>
+      <h1 class="mt-6 font-display text-5xl leading-tight text-rpm-text sm:text-6xl text-balance">{t.skillsPage.title}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-rpm-subtle">{t.skillsPage.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- Catalog -->
+  <section class="relative overflow-hidden bg-rpm-surface/20 py-24">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+
+    <div class="mx-auto max-w-7xl px-6">
+      <SkillsCatalog
+        client:visible
+        skills={skills}
+        labels={{
+          search: t.skillsPage.search,
+          allCategories: t.skillsPage.allCategories,
+          results: t.skillsPage.results,
+          badge: t.skillsPage.badge,
+          title: t.skillsPage.title,
+          subtitle: t.skillsPage.subtitle,
+          moreTitle: t.skillsPage.moreTitle,
+          moreDesc: t.skillsPage.moreDesc,
+          docsCta: t.skillsPage.docsCta,
+        }}
+        docsBase={meta.docsBase}
+      />
+
+      <!-- More skills -->
+      <ScrollReveal client:visible>
+        <div class="card-alice border-suit-club bg-suit-club mt-16">
+          <span class="suit-watermark suit-club">♣</span>
+          <span class="suit-corner suit-corner-tl suit-club">♣</span>
+          <span class="suit-corner suit-corner-br suit-club">♣</span>
+          <div class="p-8 pt-14">
+            <h2 class="font-display text-2xl text-rpm-text">{t.skillsPage.moreTitle}</h2>
+            <p class="mt-4 max-w-2xl text-sm leading-relaxed text-rpm-subtle">{t.skillsPage.moreDesc}</p>
+            <div class="mt-6 flex flex-wrap items-center gap-4">
+              <a href="https://alice-agent.stuko.dev/docs/reference/optional-skills-catalog" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+                {t.skillsPage.docsCta} <ArrowRight class="h-4 w-4" />
+              </a>
+              <span class="text-xs text-rpm-muted">{meta.bundledSkills} bundled · {meta.totalSkills} total</span>
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+</Layout>

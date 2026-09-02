@@ -1,0 +1,88 @@
+---
+import Layout from "../../components/Layout.astro";
+import { ScrollReveal } from "../../components/ScrollReveal";
+import { HelpCircle, ArrowRight } from "lucide-react";
+import { getT } from "../../i18n.server";
+
+export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
+
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const title = `${t.faq.title} — Alice Agent`;
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: t.faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+});
+---
+
+<Layout title={title} description={t.faq.subtitle}>
+  <slot name="head">
+    <script type="application/ld+json" set:html={faqSchema} />
+  </slot>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+    <div class="glow-orb glow-orb-1" style="background: var(--color-rpm-gold)"></div>
+    <div class="absolute top-20 left-8 text-6xl font-bold text-rpm-gold/6 select-none hidden md:block" aria-hidden>♠</div>
+    <div class="absolute bottom-20 right-8 text-6xl font-bold text-rpm-foam/6 select-none hidden md:block" aria-hidden>♦</div>
+
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <div class="header-ornate">
+        <span class="suit-spade">♠</span>
+        <span class="line" style="background: linear-gradient(90deg, transparent, var(--color-rpm-gold))"></span>
+        <span class="suit-diamond">♦</span>
+        <span class="line" style="background: linear-gradient(90deg, var(--color-rpm-gold), transparent)"></span>
+        <span class="suit-spade">♠</span>
+      </div>
+      <div class="inline-flex items-center gap-2 rounded-full border border-rpm-gold/30 bg-rpm-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-rpm-gold">
+        <HelpCircle class="h-3.5 w-3.5" />
+        {t.faqPage.badge}
+        <span class="opacity-40" aria-hidden>♠</span>
+      </div>
+      <h1 class="mt-6 font-display text-5xl leading-tight text-rpm-text sm:text-6xl text-balance">{t.faq.title}</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-rpm-subtle">{t.faq.subtitle}</p>
+    </div>
+  </section>
+
+  <!-- FAQ items -->
+  <section class="relative overflow-hidden bg-rpm-surface/20 py-24">
+    <div class="fabric-pattern"></div>
+    <div class="section-vignette"></div>
+
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="space-y-3">
+        {t.faq.items.map((item, i) => {
+          const suits = ["♠", "♥", "♦", "♣"];
+          const colorCls = ["suit-spade", "suit-heart", "suit-diamond", "suit-club"][i % 4];
+          return (
+            <details class="card-alice group overflow-hidden border-rpm-highlight-med/40 bg-rpm-base/60 transition-all open:!border-rpm-iris/40 open:bg-rpm-surface/60">
+              <span class={`suit-watermark ${colorCls}`}>{suits[i % 4]}</span>
+              <summary class="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-rpm-text transition group-hover:text-rpm-iris">
+                <span class="font-medium text-sm pr-4">{item.q}</span>
+                <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-rpm-highlight-med text-sm text-rpm-subtle transition group-open:rotate-45 group-open:border-rpm-iris group-open:text-rpm-iris">+</span>
+              </summary>
+              <p class="px-6 pb-5 text-sm leading-relaxed text-rpm-subtle">{item.a}</p>
+            </details>
+          );
+        })}
+      </div>
+
+      <ScrollReveal client:visible>
+        <div class="mt-12 text-center">
+          <a href="https://alice-agent.stuko.dev/docs/reference/faq" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-6 py-3 font-medium text-rpm-base transition hover:bg-rpm-foam">
+            {t.faqPage.moreCta} <ArrowRight class="h-4 w-4" />
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+</Layout>

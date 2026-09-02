@@ -4,13 +4,40 @@
 ## Main pages
 - [Home / English](https://alice-agent.stuko.dev/en/): Alice Agent — your AI teammate, on your machine
 - [Home / Español](https://alice-agent.stuko.dev/es/): Alice Agent — tu compañera IA, en tu máquina
-- [Features](https://alice-agent.stuko.dev/en/features/): persistent memory, web browsing, scheduled tasks, secure sandboxing, skills
+- [Home / Italiano](https://alice-agent.stuko.dev/it/): Alice Agent — la tua compagna IA, sulla tua macchina
+- [Features](https://alice-agent.stuko.dev/en/features/): persistent memory, web browsing, scheduled tasks, secure sandboxing, skills, multi-agent Kanban, web dashboard, first-class CLI
+- [Skills catalog](https://alice-agent.stuko.dev/en/skills/): the 85 bundled skills, searchable and filterable — plus 600+ more via the Skills Hub
+- [Model catalog](https://alice-agent.stuko.dev/en/models/): curated models for OpenRouter and Nous Portal pickers
+- [Automation blueprints](https://alice-agent.stuko.dev/en/automation/): 14 ready-to-use cron blueprints — morning briefings, mail monitors, weekly reviews
+- [FAQ](https://alice-agent.stuko.dev/en/faq/): common questions — providers, local models, cost, security, memory vs skills
 - [Docs](https://alice-agent.stuko.dev/en/docs/): installation, configuration, skills, plugins, gateway, cron jobs
+- [Blog](https://alice-agent.stuko.dev/en/blog/): insights on AI agents, local-first architecture, building with Alice
 - [GitHub repository](https://github.com/Stuko0/alice-agent): source code, releases, issues
 - [Install script](https://alice-agent.stuko.dev/install.sh): one-line installer
+
+## Full documentation
+- [Getting Started](https://alice-agent.stuko.dev/docs/getting-started/quickstart): install to first chat in under 5 minutes
+- [Installation](https://alice-agent.stuko.dev/docs/getting-started/installation): Linux, macOS, WSL2, native Windows, Android via Termux
+- [Features overview](https://alice-agent.stuko.dev/docs/user-guide/features/overview): everything Alice can do
+- [Tools](https://alice-agent.stuko.dev/docs/user-guide/features/tools): what tools exist and how toolsets work
+- [Skills system](https://alice-agent.stuko.dev/docs/user-guide/features/skills): on-demand knowledge documents and the Skills Hub
+- [Memory](https://alice-agent.stuko.dev/docs/user-guide/features/memory): MEMORY.md, USER.md, session search
+- [Cron jobs](https://alice-agent.stuko.dev/docs/user-guide/features/cron): schedule automated tasks with natural language
+- [Delegation](https://alice-agent.stuko.dev/docs/user-guide/features/delegation): spawn isolated child agents for parallel work
+- [Kanban multi-agent](https://alice-agent.stuko.dev/docs/user-guide/features/kanban): SQLite-backed task board for multiple profiles
+- [Messaging platforms](https://alice-agent.stuko.dev/docs/user-guide/messaging/): Telegram, Discord, Slack, WhatsApp, Signal, Matrix, and 15+ more
+- [Configuration](https://alice-agent.stuko.dev/docs/user-guide/configuration): config.yaml, providers, models, API keys
+- [Security](https://alice-agent.stuko.dev/docs/user-guide/security): approval model, container isolation, best practices
+- [CLI reference](https://alice-agent.stuko.dev/docs/reference/cli-commands): all commands
+- [Model providers](https://alice-agent.stuko.dev/docs/integrations/providers): OpenRouter, OpenAI, Anthropic, Google, local servers
+- [Skills catalog (full)](https://alice-agent.stuko.dev/docs/reference/skills-catalog): all bundled skills documented
+- [Optional skills catalog](https://alice-agent.stuko.dev/docs/reference/optional-skills-catalog): 100+ installable skills
+- [FAQ & Troubleshooting (full)](https://alice-agent.stuko.dev/docs/reference/faq): extended answers
 
 ## Key facts
 - Open source, MIT license
 - Runs locally: CLI and desktop app (macOS, Windows, Linux)
-- Model-agnostic: OpenAI, Anthropic, local Ollama / llama.cpp, OpenRouter via gateway
-- Persistent memory, skills, plugins, cron jobs, subagents
+- Model-agnostic: OpenAI, Anthropic, Google, OpenRouter, Nous Portal, or local Ollama / llama.cpp / vLLM
+- 85 bundled skills + 600+ installable; agent creates its own skills as it works
+- Persistent memory, plugins, cron jobs, subagent delegation
+- Gateway to 21+ messaging platforms: Telegram, Discord, Slack, WhatsApp, and more

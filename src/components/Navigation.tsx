@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sparkles, Heart, BookOpen, GitBranch, Download } from "lucide-react";
+import { Menu, X, Sparkles, Heart, BookOpen, GitBranch, Download, Layers, Zap, HelpCircle } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface NavigationProps {
@@ -10,6 +10,10 @@ interface NavigationProps {
     home: string;
     features: string;
     docs: string;
+    skills: string;
+    models: string;
+    automation: string;
+    faq: string;
     github: string;
     install: string;
   };
@@ -20,6 +24,8 @@ const suits = ["♠", "♥", "♦", "♣"];
 const links = [
   { key: "home", href: "/" },
   { key: "features", href: "/features" },
+  { key: "skills", href: "/skills" },
+  { key: "automation", href: "/automation" },
   { key: "docs", href: "/docs" },
 ];
 

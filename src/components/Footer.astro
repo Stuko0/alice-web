@@ -1,12 +1,28 @@
 ---
-interface Props {
-  linksText: string;
-  communityText: string;
-  madeWith: string;
-  byText: string;
-}
+import { getT } from "../i18n.server";
 
-const { linksText, communityText, madeWith, byText } = Astro.props;
+const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
+const t = getT(lng);
+
+const productLinks = [
+  { label: t.nav.features, href: `/${lng}/features` },
+  { label: t.nav.skills, href: `/${lng}/skills` },
+  { label: t.nav.models, href: `/${lng}/models` },
+  { label: t.nav.automation, href: `/${lng}/automation` },
+  { label: t.nav.faq, href: `/${lng}/faq` },
+];
+
+const resourcesLinks = [
+  { label: t.nav.docs, href: `/${lng}/docs` },
+  { label: "Getting Started", href: "https://alice-agent.stuko.dev/docs/getting-started/quickstart" },
+  { label: "Skills Catalog", href: "https://alice-agent.stuko.dev/docs/reference/skills-catalog" },
+  { label: "CLI Reference", href: "https://alice-agent.stuko.dev/docs/reference/cli-commands" },
+  { label: "FAQ & Troubleshooting", href: "https://alice-agent.stuko.dev/docs/reference/faq" },
+  { label: "Blog", href: `/${lng}/blog` },
+];
+
+const suitIcon = (i: number) => ["♠", "♥", "♣", "♦"][i % 4];
+const suitClass = (i: number) => ["suit-spade", "suit-heart", "suit-club", "suit-diamond"][i % 4];
 ---
 
 <footer class="relative overflow-hidden border-t border-rpm-highlight-low/60 bg-rpm-surface/40">
@@ -14,7 +30,7 @@ const { linksText, communityText, madeWith, byText } = Astro.props;
   <div class="section-vignette"></div>
 
   <div class="mx-auto max-w-7xl px-6 py-16">
-    <div class="grid gap-10 sm:grid-cols-3">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <!-- Brand -->
       <div>
         <div class="mb-4 flex items-center gap-3">
@@ -30,15 +46,30 @@ const { linksText, communityText, madeWith, byText } = Astro.props;
         </div>
       </div>
 
-      <!-- Links -->
+      <!-- Product -->
       <div>
-        <h4 class="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-rpm-muted">{linksText}</h4>
+        <h4 class="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-rpm-muted">{t.footer.product}</h4>
         <ul class="space-y-3">
-          {["Features", "Docs", "GitHub"].map((label, i) => (
+          {productLinks.map((link, i) => (
             <li>
-              <a href={label === "GitHub" ? "https://github.com/Stuko0/alice-agent" : `#`} class="group flex items-center gap-2 text-sm text-rpm-subtle transition hover:text-rpm-iris">
-                <span class="text-[10px] opacity-0 transition-opacity group-hover:opacity-50" class:list={[["suit-spade","suit-heart","suit-club"][i]]}>{["♠","♥","♣"][i]}</span>
-                {label}
+              <a href={link.href} class="group flex items-center gap-2 text-sm text-rpm-subtle transition hover:text-rpm-iris">
+                <span class={`text-[10px] opacity-0 transition-opacity group-hover:opacity-50 ${suitClass(i)}`}>{suitIcon(i)}</span>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h4 class="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-rpm-muted">{t.footer.resources}</h4>
+        <ul class="space-y-3">
+          {resourcesLinks.map((link, i) => (
+            <li>
+              <a href={link.href} class="group flex items-center gap-2 text-sm text-rpm-subtle transition hover:text-rpm-iris">
+                <span class={`text-[10px] opacity-0 transition-opacity group-hover:opacity-50 ${suitClass(i)}`}>{suitIcon(i)}</span>
+                {link.label}
               </a>
             </li>
           ))}
@@ -47,10 +78,10 @@ const { linksText, communityText, madeWith, byText } = Astro.props;
 
       <!-- Community -->
       <div>
-        <h4 class="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-rpm-muted">{communityText}</h4>
+        <h4 class="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-rpm-muted">{t.footer.community}</h4>
         <p class="text-sm text-rpm-subtle">Open source under MIT. Contributions welcome.</p>
         <div class="mt-6 flex gap-4">
-          <a href="https://github.com/Stuko0/alice-agent" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-xl border border-rpm-highlight-med/40 text-rpm-subtle transition hover:border-rpm-iris hover:text-rpm-iris hover:-translate-y-1">
+          <a href="https://github.com/Stuko0/alice-agent" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="flex h-10 w-10 items-center justify-center rounded-xl border border-rpm-highlight-med/40 text-rpm-subtle transition hover:border-rpm-iris hover:text-rpm-iris hover:-translate-y-1">
             <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
         </div>
@@ -60,7 +91,7 @@ const { linksText, communityText, madeWith, byText } = Astro.props;
     <div class="divider-ornate my-10"></div>
 
     <div class="flex items-center justify-between text-xs text-rpm-muted/60">
-      <p>{madeWith} <span class="suit-heart opacity-50">♥</span> {byText} Stuko0</p>
+      <p>{t.footer.madeWith} <span class="suit-heart opacity-50">♥</span> {t.footer.by} Stuko0</p>
       <p>MIT License &mdash; {new Date().getFullYear()}</p>
     </div>
   </div>

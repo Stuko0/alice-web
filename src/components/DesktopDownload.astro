@@ -1,6 +1,6 @@
 ---
 import { Download, Apple, Monitor, Terminal } from "lucide-react";
-import { getLatestRelease, LATEST_DOWNLOAD } from "../lib/releases";
+import { getLatestRelease } from "../lib/releases";
 
 const release = await getLatestRelease();
 ---
@@ -21,25 +21,33 @@ const release = await getLatestRelease();
       <span class="text-[10px] italic text-rpm-muted/60">Próximamente</span>
     </div>
 
-    <!-- Windows → latest release -->
-    <a
-      href={LATEST_DOWNLOAD.winExe}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="group flex flex-col items-center gap-2 rounded-xl border border-rpm-love/40 bg-rpm-love/10 px-4 py-4 text-rpm-love transition hover:bg-rpm-love/20 hover:shadow-lg hover:-translate-y-1"
-    >
-      <Monitor class="h-6 w-6 transition group-hover:-translate-y-0.5" />
-      <span class="text-xs font-medium">Windows</span>
-      <span class="flex items-center gap-1 text-[10px] font-medium">
-        <Download class="h-3 w-3" />
-        Alice-Setup.exe
-      </span>
-      <span class="text-[10px] text-rpm-muted">v{release.version}</span>
-    </a>
+    <!-- Windows → latest release (only if exe asset exists) -->
+    {release.winExeUrl ? (
+      <a
+        href={release.winExeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex flex-col items-center gap-2 rounded-xl border border-rpm-love/40 bg-rpm-love/10 px-4 py-4 text-rpm-love transition hover:bg-rpm-love/20 hover:shadow-lg hover:-translate-y-1"
+      >
+        <Monitor class="h-6 w-6 transition group-hover:-translate-y-0.5" />
+        <span class="text-xs font-medium">Windows</span>
+        <span class="flex items-center gap-1 text-[10px] font-medium">
+          <Download class="h-3 w-3" />
+          {release.winExeName}
+        </span>
+        <span class="text-[10px] text-rpm-muted">v{release.version}</span>
+      </a>
+    ) : (
+      <div class="flex flex-col items-center gap-2 rounded-xl border border-rpm-highlight-med/30 bg-rpm-surface/60 px-4 py-4 opacity-60">
+        <Monitor class="h-6 w-6 text-rpm-muted" />
+        <span class="text-xs font-medium text-rpm-muted">Windows</span>
+        <span class="text-[10px] italic text-rpm-muted/60">Próximamente</span>
+      </div>
+    )}
 
     <!-- Linux → latest release -->
     <a
-      href={LATEST_DOWNLOAD.linuxTar}
+      href={release.linuxTarUrl}
       target="_blank"
       rel="noopener noreferrer"
       class="group flex flex-col items-center gap-2 rounded-xl border border-rpm-pine/40 bg-rpm-pine/10 px-4 py-4 text-rpm-pine transition hover:bg-rpm-pine/20 hover:shadow-lg hover:-translate-y-1"
@@ -48,7 +56,7 @@ const release = await getLatestRelease();
       <span class="text-xs font-medium">Linux</span>
       <span class="flex items-center gap-1 text-[10px] font-medium">
         <Download class="h-3 w-3" />
-        alice-linux.tar.gz
+        {release.linuxTarName}
       </span>
       <span class="text-[10px] text-rpm-muted">v{release.version}</span>
     </a>
