@@ -8,7 +8,6 @@ import WhyAlice from "../../components/WhyAlice.astro";
 import HowItWorks from "../../components/HowItWorks.astro";
 import UseCases from "../../components/UseCases.astro";
 import Testimonials from "../../components/Testimonials.astro";
-import { getStories } from "../../lib/userStories";
 import FAQ from "../../components/FAQ.astro";
 import Roadmap from "../../components/Roadmap.astro";
 import DesktopDownload from "../../components/DesktopDownload.astro";
@@ -25,11 +24,6 @@ export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lan
 const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
 const t = getT(lng);
 const release = await getLatestRelease();
-const stories = getStories().map((s) => ({
-  quote: s.quote,
-  author: s.author,
-  role: s.role,
-}));
 
 const features = [
   { iconName: "Brain" as const, title: t.features.persistentMemory, desc: t.features.persistentMemoryDesc, color: "iris" as const },
@@ -164,8 +158,7 @@ const version = release.version;
   <Testimonials
     title={t.testimonials.title}
     subtitle={t.testimonials.subtitle}
-    communityLabel={t.testimonials.communityLabel}
-    testimonials={stories}
+    testimonials={t.testimonials.items}
   />
 
   <FAQ

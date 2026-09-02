@@ -151,19 +151,64 @@
     "subtitle": "Makers using Alice to ship faster.",
     "items": [
       {
-        "quote": "I stopped jumping between ChatGPT, my terminal, and Notion. Alice keeps context and just does the work.",
+        "quote": "I stopped bouncing between the AI chat, the terminal, and Notion. Alice keeps context across sessions, so I don't have to re-explain everything. The first week I handed off the repetitive deploy chores; I haven't touched them since.",
         "author": "Alex M.",
         "role": "Indie hacker"
       },
       {
-        "quote": "The local-first approach is exactly what I wanted. My code stays on my machine but I still get agent superpowers.",
-        "author": "Sofia R.",
-        "role": "Security engineer"
+        "quote": "I have an 8am cron that checks staging, summarizes open PRs, and drops it in Telegram before my coffee. Saves me half an hour of clicking every morning — exactly the half hour I never had.",
+        "author": "Marta G.",
+        "role": "Backend dev, fintech"
       },
       {
-        "quote": "I set up a cron skill and now Alice summarizes my RSS feeds every morning. It took five minutes.",
-        "author": "Daniel K.",
-        "role": "Product designer"
+        "quote": "80% of my job is writing queries and checking the result isn't lying. I describe the table I need and two iterations later the query works. I still review the SQL, but I don't start from scratch anymore.",
+        "author": "Dani R.",
+        "role": "Data engineer"
+      },
+      {
+        "quote": "I hand it my newsletter draft and it comes back in my voice, not AI voice. No 'moreover' every three lines, no obsession with lists of three. You can tell when something was written in a hurry — this wasn't.",
+        "author": "Julián P.",
+        "role": "Solopreneur"
+      },
+      {
+        "quote": "I asked it to go through the old server's runbooks and rewrite them with what it found. Three hours later I had updated docs and no time left to read them. Memory keeps the decisions, not just the commands.",
+        "author": "Sofía L.",
+        "role": "Sysadmin"
+      },
+      {
+        "quote": "I hate doing code review on a Friday at 6pm. Now the agent pre-reviews diffs and leaves the serious comments on the board; I come in to decide, not to read everything. I still sign off on what I merge, but better informed.",
+        "author": "Nico V.",
+        "role": "Frontend dev"
+      },
+      {
+        "quote": "Every Monday the team gets a summary of what got merged, what got stuck, and what's rotting in WIP limbo. I just check it doesn't say anything silly. So far it says fewer silly things than my own manual summary.",
+        "author": "Carolina F.",
+        "role": "Tech lead"
+      },
+      {
+        "quote": "There was a regression suite nobody had touched since 2024. I asked Alice to bring it up, fix what was broken, and document why it broke. It ran in CI the next day. Nobody else touched anything.",
+        "author": "Ignacio T.",
+        "role": "QA automation"
+      },
+      {
+        "quote": "Tickets arrive with technical context glued in from the latest conversation with the team. Not perfect, but a good deal better than 'make the button better' with nothing else.",
+        "author": "Paula S.",
+        "role": "Product manager"
+      },
+      {
+        "quote": "The agent listens to the incident channel, builds the timeline, and posts it when we close. I used to write that timeline myself, at night, tired. Now I just review before publishing.",
+        "author": "Tomás B.",
+        "role": "DevOps"
+      },
+      {
+        "quote": "I ask it to research and come back with links I can verify. When it makes things up, it makes up the data, and that's how I catch it. In competitive reports, that's 90% of the work.",
+        "author": "Lucía W.",
+        "role": "Consultant"
+      },
+      {
+        "quote": "It wrote me a persistence module, tests and all. Swift isn't its strong suit, you can tell, but it sends a decent first draft and doesn't make me fight basic syntax. For prototyping it's gold.",
+        "author": "Renata K.",
+        "role": "iOS dev"
       }
     ],
     "communityLabel": "From the community"

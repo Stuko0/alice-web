@@ -151,19 +151,64 @@
     "subtitle": "Maker che usano Alice per spedire più velocemente.",
     "items": [
       {
-        "quote": "Ho smesso di saltare tra ChatGPT, il terminale e Notion. Alice tiene il contesto e semplicemente fa il lavoro.",
+        "quote": "Ho smesso di rimbalzare tra la chat dell'IA, il terminale e Notion. Alice mantiene il contesto tra le sessioni, quindi non devo rispiegare tutto. La prima settimana le ho delegato i task ripetitivi del deploy; non li tocco più.",
         "author": "Alex M.",
         "role": "Indie hacker"
       },
       {
-        "quote": "L'approccio local-first è esattamente ciò che volevo. Il mio codice resta sulla mia macchina ma ho comunque i superpoteri di un agente.",
-        "author": "Sofia R.",
-        "role": "Security engineer"
+        "quote": "Ho un cron alle 8 che controlla lo stato dello staging, riassume le PR aperte e me lo manda su Telegram prima del caffè. Mi risparmia mezz'ora di click ogni mattina — proprio la mezz'ora che non avevo mai.",
+        "author": "Marta G.",
+        "role": "Backend dev, fintech"
       },
       {
-        "quote": "Ho configurato uno skill cron e ora Alice riassume i miei feed RSS ogni mattina. Ci ho messo cinque minuti.",
-        "author": "Daniel K.",
-        "role": "Product designer"
+        "quote": "L'80% del mio lavoro è scrivere query e verificare che il risultato non sia una bugia. Descrivo la tabella che mi serve e dopo due iterazioni la query funziona. Ricontrollo ancora il SQL, ma non parto più da zero.",
+        "author": "Dani R.",
+        "role": "Data engineer"
+      },
+      {
+        "quote": "Gli passo la bozza della mia newsletter e me la restituisce con la mia voce, non con voce IA. Niente 'inoltre' ogni tre righe, niente ossessione per le liste di tre. Si sente quando qualcosa è scritto di fretta — e questa non lo è.",
+        "author": "Julián P.",
+        "role": "Solopreneur"
+      },
+      {
+        "quote": "Le ho chiesto di rivedere i runbook del vecchio server e di riscriverli con quello che trovava. Tre ore dopo avevo documentazione aggiornata e mi mancava il tempo di leggerla. La memoria conserva le decisioni, non solo i comandi.",
+        "author": "Sofía L.",
+        "role": "Sysadmin"
+      },
+      {
+        "quote": "Odio fare code review il venerdì alle 6. Ora l'agente pre-rivede i diff e mi lascia i commenti seri in bacheca; io entro per decidere, non per leggere tutto. Firmo comunque quello che mergeo, ma meglio informato.",
+        "author": "Nico V.",
+        "role": "Frontend dev"
+      },
+      {
+        "quote": "Ogni lunedì il team riceve un riepilogo di cosa è stato mergiato, cosa si è bloccato e cosa marcisce nel limbo del WIP. Io controllo solo che non dica sciocchezze. Per ora ne dice meno del mio riepilogo manuale.",
+        "author": "Carolina F.",
+        "role": "Tech lead"
+      },
+      {
+        "quote": "C'era una suite di regressione che nessuno toccava dal 2024. Ho chiesto ad Alice di farla girare, aggiustare quello che era rotto e documentare perché si era rotta. È girata in CI il giorno dopo. Nessun altro ha toccato nulla.",
+        "author": "Ignacio T.",
+        "role": "QA automation"
+      },
+      {
+        "quote": "I ticket arrivano con contesto tecnico incollato dall'ultima conversazione con il team. Non è perfetto, ma decisamente meglio di 'migliora il bottone' e basta.",
+        "author": "Paula S.",
+        "role": "Product manager"
+      },
+      {
+        "quote": "L'agente ascolta il canale degli incidenti, costruisce la timeline e la posta quando chiudiamo. Prima quella timeline la scrivevo io, di notte, con sonno. Ora controllo solo prima di pubblicare.",
+        "author": "Tomás B.",
+        "role": "DevOps"
+      },
+      {
+        "quote": "Le chiedo di fare ricerca e tornare con link che posso verificare. Quando inventa, inventa i dati, e lì me ne accorgo. Nei report sulla concorrenza, questo è il 90% del lavoro.",
+        "author": "Lucía W.",
+        "role": "Consulente"
+      },
+      {
+        "quote": "Mi ha scritto un modulo di persistenza, test compresi. Swift non è il suo forte, si sente, ma manda una prima bozza decente e non mi fa litigare con la sintassi di base. Per prototipizzare è oro.",
+        "author": "Renata K.",
+        "role": "iOS dev"
       }
     ],
     "communityLabel": "Dalla community"

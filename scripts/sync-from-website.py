@@ -19,7 +19,6 @@ PUBLIC = ROOT / "public"
 SKILLS_OUT = PUBLIC / "api" / "skills.json"
 MODELS_OUT = PUBLIC / "api" / "model-catalog.json"
 BLUEPRINTS_OUT = PUBLIC / "api" / "automation-blueprints.json"
-STORIES_OUT = PUBLIC / "data" / "user-stories.json"
 IMG_OUT = PUBLIC / "img"
 
 # Bundled skills (source built-in) — the ones that ship with Alice and have
@@ -29,8 +28,6 @@ IMG_OUT = PUBLIC / "img"
 BUNDLED_SOURCES = {"built-in"}
 
 SKILL_FIELDS = ["name", "description", "category", "categoryLabel", "source", "tags", "platforms", "docsPath"]
-STORY_FIELDS = ["id", "author", "headline", "quote", "url", "source", "date", "category"]
-STORY_TOP_N = 12
 
 # Dashboard screenshots to ship (subset of website/static/img/dashboard/)
 DASHBOARD_SHOTS = [
@@ -82,20 +79,6 @@ def sync_models() -> None:
 def sync_blueprints() -> None:
     bp = read_json(WEBSITE / "static/api/automation-blueprints-index.json")
     write_json(BLUEPRINTS_OUT, bp)
-
-
-def sync_stories() -> dict:
-    # NOTE: user-stories.json is hand-curated (mocked testimonials, sources deprecated).
-    # Never overwrite it from the website repo — return the local copy untouched.
-    if STORIES_OUT.exists():
-        return read_json(STORIES_OUT)
-    stories = read_json(WEBSITE / "src/data/userStories.json")
-    usable = [s for s in stories if len(s.get("quote", "")) > 40 and s.get("url")]
-    usable.sort(key=lambda s: s.get("date", ""), reverse=True)
-    top = [{f: s.get(f) for f in STORY_FIELDS if s.get(f)} for s in usable[:STORY_TOP_N]]
-    payload = {"totalStories": len(stories), "stories": top}
-    write_json(STORIES_OUT, payload)
-    return payload
 
 
 def optimize_png(src: Path, dst: Path, width: int = 960) -> None:
@@ -160,14 +143,12 @@ def main() -> None:
     skills_meta = sync_skills(total_skills)
     sync_models()
     sync_blueprints()
-    stories_meta = sync_stories()
     imgs = sync_images()
     favs = sync_favicons()
 
     print(f"skills: {skills_meta['bundledSkills']} bundled of {skills_meta['totalSkills']} total -> {SKILLS_OUT.relative_to(ROOT)}")
     print(f"models: {MODELS_OUT.relative_to(ROOT)}")
     print(f"blueprints: {BLUEPRINTS_OUT.relative_to(ROOT)}")
-    print(f"stories: top {len(stories_meta['stories'])} of {stories_meta['totalStories']} -> {STORIES_OUT.relative_to(ROOT)}")
     print(f"images: {len(imgs)} files -> public/img/")
     print(f"favicons: {len(favs)} files")
 
