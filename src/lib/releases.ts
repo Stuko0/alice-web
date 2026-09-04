@@ -16,8 +16,8 @@ export interface ReleaseInfo {
 const REPO = "Stuko0/alice-agent";
 const LATEST = `https://github.com/${REPO}/releases/latest/download`;
 const FALLBACK: ReleaseInfo = {
-  tag: "v0.23.1",
-  version: "0.23.1",
+  tag: "v0.23.3",
+  version: "0.23.3",
   winExeUrl: `${LATEST}/alice-desktop.exe`,
   linuxTarUrl: `${LATEST}/alice-linux-x86_64.tar.gz`,
   winExeName: "alice-desktop.exe",
@@ -60,10 +60,11 @@ async function fetchLatest(): Promise<ReleaseInfo> {
   return {
     tag,
     version,
-    // When an asset is missing, the generic latest/download URL still tracks
-    // the newest release — safer than baking in a tag that goes stale.
-    winExeUrl: win?.url ?? FALLBACK.winExeUrl,
-    linuxTarUrl: linux?.url ?? FALLBACK.linuxTarUrl,
+    // Always use the generic latest/download URL — GitHub redirects it to the
+    // newest release, so download buttons never go stale between static builds.
+    // The build-time fetch only confirms which asset names exist right now.
+    winExeUrl: win ? `${LATEST}/${win.name}` : null,
+    linuxTarUrl: linux ? `${LATEST}/${linux.name}` : FALLBACK.linuxTarUrl,
     winExeName: win?.name ?? FALLBACK.winExeName,
     linuxTarName: linux?.name ?? FALLBACK.linuxTarName,
   };
