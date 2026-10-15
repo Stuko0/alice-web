@@ -14,7 +14,7 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
 const title = `${t.nav.blog ?? "Blog"} — Alice Agent`;
 ---
 
-<Layout title={title}>
+<Layout title={title} description={t.blog?.subtitle ?? "Insights on AI agents, local-first architecture, and building with Alice."}>
   <section class="relative overflow-hidden border-b border-rpm-highlight-low/60 bg-rpm-base py-28">
     <div class="fabric-pattern"></div>
     <div class="relative mx-auto max-w-4xl px-6 text-center">

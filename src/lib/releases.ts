@@ -27,6 +27,29 @@ const FALLBACK: ReleaseInfo = {
 // One API call per build process (frontmatter runs once per lang per page)
 let cached: Promise<ReleaseInfo> | null = null;
 
+// Real GitHub star count, fetched at build time (never hardcoded).
+// The fallback is the last known count so a rate-limited API cannot break the build.
+let starsCached: Promise<number> | null = null;
+const FALLBACK_STARS = 1;
+
+export async function getStars(): Promise<number> {
+  starsCached ??= (async () => {
+    try {
+      const res = await fetch(`https://api.github.com/repos/${REPO}`, {
+        headers: { "User-Agent": "alice-web", Accept: "application/vnd.github+json" },
+      });
+      if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+      const repo = await res.json();
+      return typeof repo.stargazers_count === "number" ? repo.stargazers_count : FALLBACK_STARS;
+    } catch (err) {
+      console.warn(`[stars] GitHub API unreachable, using fallback: ${err}`);
+      starsCached = null;
+      return FALLBACK_STARS;
+    }
+  })();
+  return starsCached;
+}
+
 export async function getLatestRelease(): Promise<ReleaseInfo> {
   cached ??= fetchLatest().catch((err) => {
     console.warn(`[releases] GitHub API unreachable, using fallback: ${err}`);

@@ -49,6 +49,7 @@ const title = `${t.automationPage.title} — Alice Agent`;
     <div class="section-vignette"></div>
 
     <div class="mx-auto max-w-7xl px-6">
+      <h2 class="sr-only">{t.automationPage.badge}</h2>
       <BlueprintsGrid
         client:visible
         blueprints={blueprints}
@@ -70,7 +71,7 @@ const title = `${t.automationPage.title} — Alice Agent`;
           <span class="suit-corner suit-corner-tl suit-diamond">♦</span>
           <span class="suit-corner suit-corner-br suit-diamond">♦</span>
           <div class="p-8 pt-14 text-center">
-            <a href="https://alice-agent.stuko.dev/docs/guides/automate-with-cron" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-6 py-3 font-medium text-rpm-base transition hover:bg-rpm-foam">
+            <a href="https://alice-agent.stuko.dev/docs/guides/automate-with-cron" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-rose px-6 py-3 font-medium text-rpm-base transition hover:bg-rpm-foam">
               {t.automationPage.guideCta} <ArrowRight class="h-4 w-4" />
             </a>
           </div>

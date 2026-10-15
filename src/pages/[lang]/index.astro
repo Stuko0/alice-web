@@ -17,13 +17,14 @@ import { ScrollReveal } from "../../components/ScrollReveal";
 import { FeatureCard } from "../../components/FeatureCard";
 import { ArrowRight, Heart } from "lucide-react";
 import { getT } from "../../i18n.server";
-import { getLatestRelease } from "../../lib/releases";
+import { getLatestRelease, getStars } from "../../lib/releases";
 
 export const getStaticPaths = () => [{ params: { lang: "es" } }, { params: { lang: "en" } }, { params: { lang: "it" } }];
 
 const lng = (Astro.currentLocale ?? "es") as "es" | "en" | "it";
 const t = getT(lng);
 const release = await getLatestRelease();
+const stars = await getStars();
 
 const features = [
   { iconName: "Brain" as const, title: t.features.persistentMemory, desc: t.features.persistentMemoryDesc, color: "iris" as const },
@@ -48,17 +49,16 @@ const description = t.hero.description;
 const version = release.version;
 ---
 
-<script slot="head" type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: t.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-})} />
-
 <Layout title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  })} />
   <HeroSection
     badge={t.hero.badge}
     title={t.hero.title}
@@ -72,7 +72,7 @@ const version = release.version;
     </div>
   </HeroSection>
 
-  <Stats stars="128" version={release.version} langs="3" />
+  <Stats stars={String(stars)} version={release.version} langs="3" />
 
   <WhyAlice
     title={t.why.title}
@@ -123,7 +123,7 @@ const version = release.version;
           </ScrollReveal>
           <ScrollReveal client:visible delay={0.3}>
             <div class="flex flex-wrap gap-4">
-              <a href={`/${lng}/features`} class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-6 py-3 font-medium text-rpm-base transition hover:bg-rpm-foam hover:text-rpm-base">
+              <a href={`/${lng}/features`} class="inline-flex items-center gap-2 rounded-full bg-rpm-rose px-6 py-3 font-medium text-rpm-base transition hover:bg-rpm-foam hover:text-rpm-base">
                 {t.featurePreview.ctaFeatures} <ArrowRight className="h-4 w-4" />
               </a>
               <a href={`/${lng}/docs`} class="inline-flex items-center gap-2 rounded-full border border-rpm-highlight-med/40 bg-rpm-surface/60 px-6 py-3 font-medium text-rpm-text transition hover:border-rpm-iris hover:text-rpm-iris">
@@ -173,7 +173,7 @@ const version = release.version;
       <h2 class="font-display text-4xl text-rpm-text sm:text-5xl text-balance">{t.cta.title}</h2>
       <p class="mt-4 text-lg text-rpm-subtle">{t.cta.subtitle}</p>
       <div class="mt-10 space-y-6">
-        <a href={`/${lng}/#install`} class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-8 py-4 text-lg font-medium text-rpm-base transition hover:bg-rpm-foam hover:text-rpm-base">
+        <a href={`/${lng}/#install`} class="inline-flex items-center gap-2 rounded-full bg-rpm-rose px-8 py-4 text-lg font-medium text-rpm-base transition hover:bg-rpm-foam hover:text-rpm-base">
           {t.cta.button} <ArrowRight className="h-5 w-5" />
         </a>
       </div>

@@ -365,7 +365,9 @@
     "indexTitle": "Esplora la documentazione",
     "indexSubtitle": "Guide, riferimenti e casi d'uso. Tutti i dettagli sono nella documentazione completa — inizia da dove ti serve.",
     "viewAll": "Vedi tutto",
-    "pagesCount": "pagine"
+    "pagesCount": "pagine",
+    "providersGrid": "Fornitori di modelli",
+    "platformsGrid": "Piattaforme di messaggistica"
   },
   "footer": {
     "links": "Link",

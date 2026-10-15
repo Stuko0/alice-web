@@ -52,6 +52,7 @@ const title = `${t.skillsPage.title} — Alice Agent`;
     <div class="section-vignette"></div>
 
     <div class="mx-auto max-w-7xl px-6">
+      <h2 class="sr-only">{t.skillsPage.badge}</h2>
       <SkillsCatalog
         client:visible
         skills={skills}
@@ -79,7 +80,7 @@ const title = `${t.skillsPage.title} — Alice Agent`;
             <h2 class="font-display text-2xl text-rpm-text">{t.skillsPage.moreTitle}</h2>
             <p class="mt-4 max-w-2xl text-sm leading-relaxed text-rpm-subtle">{t.skillsPage.moreDesc}</p>
             <div class="mt-6 flex flex-wrap items-center gap-4">
-              <a href="https://alice-agent.stuko.dev/docs/reference/optional-skills-catalog" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+              <a href="https://alice-agent.stuko.dev/docs/reference/optional-skills-catalog" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-rose px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
                 {t.skillsPage.docsCta} <ArrowRight class="h-4 w-4" />
               </a>
               <span class="text-xs text-rpm-muted">{meta.bundledSkills} bundled · {meta.totalSkills} total</span>

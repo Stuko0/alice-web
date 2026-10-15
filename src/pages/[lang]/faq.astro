@@ -59,6 +59,7 @@ const faqSchema = JSON.stringify({
     <div class="section-vignette"></div>
 
     <div class="mx-auto max-w-3xl px-6">
+      <h2 class="sr-only">{t.faqPage.badge}</h2>
       <div class="space-y-3">
         {t.faq.items.map((item, i) => {
           const suits = ["♠", "♥", "♦", "♣"];
@@ -78,7 +79,7 @@ const faqSchema = JSON.stringify({
 
       <ScrollReveal client:visible>
         <div class="mt-12 text-center">
-          <a href="https://alice-agent.stuko.dev/docs/reference/faq" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-iris px-6 py-3 font-medium text-rpm-base transition hover:bg-rpm-foam">
+          <a href="https://alice-agent.stuko.dev/docs/reference/faq" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-rpm-rose px-6 py-3 font-medium text-rpm-base transition hover:bg-rpm-foam">
             {t.faqPage.moreCta} <ArrowRight class="h-4 w-4" />
           </a>
         </div>

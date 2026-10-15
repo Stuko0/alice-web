@@ -152,7 +152,7 @@ const docSections = [
             <span class="suit-watermark suit-diamond">♦</span>
             <span class="suit-corner suit-corner-tl suit-diamond">♦</span>
             <span class="suit-corner suit-corner-br suit-diamond">♦</span>
-            <h3 class="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-rpm-muted">{t.docs.onThisPage}</h3>
+            <h2 class="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-rpm-muted">{t.docs.onThisPage}</h2>
             <nav class="flex flex-col gap-2">
               {sections.map((s, i) => (
                 <a href={s.href} class="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-rpm-subtle transition hover:bg-rpm-surface hover:text-rpm-text">
@@ -287,7 +287,7 @@ const docSections = [
                   <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-iris"><Shield class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">{t.docs.securityLabel}</p></div>
                   <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-foam"><Clock class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">{t.docs.automationLabel}</p></div>
                 </div>
-                <a href={`/${lng}/skills`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-iris px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+                <a href={`/${lng}/skills`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-rose px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
                   {t.nav.skills} <ArrowRight class="h-4 w-4" />
                 </a>
               </div>

@@ -6,32 +6,53 @@ export interface Props {
   type?: string;
   lang: string;
   pathname: string;
+  /** Locales that actually have this page. Used to emit a complete hreflang cluster. */
+  alternates?: string[];
 }
 
-const { title, description, image = "/og-image.png", type = "website", lang, pathname } = Astro.props;
-const canonical = `https://alice-agent.stuko.dev${pathname}`;
+const {
+  title,
+  description,
+  image = "/og-image.png",
+  type = "website",
+  lang,
+  pathname,
+  alternates = ["es", "en", "it"],
+} = Astro.props;
+
+const origin = "https://alice-agent.stuko.dev";
+const canonical = `${origin}${pathname}`;
+// Strip the locale prefix: /en/features/ -> /features/, /es/ -> /
+const rest = pathname.replace(/^\/(es|en|it)(?=\/|$)/, "") || "/";
+const urlFor = (l: string) => `${origin}/${l}${rest}`;
+const locales = (["es", "en", "it"] as const).filter((l) => alternates.includes(l));
 ---
 
 <link rel="canonical" href={canonical} />
-{lang === "en" && <link rel="alternate" hrefLang="es" href={`https://alice-agent.stuko.dev/es${pathname.replace(/^\/en/, "")}`} />}
-{lang === "en" && <link rel="alternate" hrefLang="it" href={`https://alice-agent.stuko.dev/it${pathname.replace(/^\/en/, "")}`} />}
-{lang === "en" && <link rel="alternate" hrefLang="x-default" href={`https://alice-agent.stuko.dev/en${pathname.replace(/^\/en/, "")}`} />}
-{lang !== "en" && <link rel="alternate" hrefLang="en" href={`https://alice-agent.stuko.dev/en${pathname.replace(/^\/(es|it)/, "")}`} />}
-{lang !== "en" && <link rel="alternate" hrefLang="x-default" href={`https://alice-agent.stuko.dev/en${pathname.replace(/^\/(es|it)/, "")}`} />}
-{["en", "es", "it"].includes(lang) && <link rel="alternate" hrefLang={lang} href={canonical} />}
+{
+  locales.map((l) => (
+    <link rel="alternate" hrefLang={l} href={l === lang ? canonical : urlFor(l)} />
+  ))
+}
+{alternates.includes("en") && <link rel="alternate" hrefLang="x-default" href={urlFor("en")} />}
 <meta name="keywords" content="AI agent, alice agent, autonomous coding, AI assistant, open source, CLI, terminal, code generation, self-improving, skills, plugins, local AI, AI teammate" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonical} />
-<meta property="og:image" content={`https://alice-agent.stuko.dev${image}`} />
+<meta property="og:image" content={`${origin}${image}`} />
 <meta property="og:site_name" content="Alice Agent" />
 <meta property="og:locale" content={lang === "es" ? "es_ES" : lang === "it" ? "it_IT" : "en_US"} />
+{
+  locales.filter((l) => l !== lang).map((l) => (
+    <meta property="og:locale:alternate" content={l === "es" ? "es_ES" : l === "it" ? "it_IT" : "en_US"} />
+  ))
+}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={`https://alice-agent.stuko.dev${image}`} />
+<meta name="twitter:image" content={`${origin}${image}`} />
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -49,11 +70,11 @@ const canonical = `https://alice-agent.stuko.dev${pathname}`;
   },
   author: {
     "@type": "Person",
-    name: "Stuko0"
+    name: "Stuko0",
   },
   codeRepository: "https://github.com/Stuko0/alice-agent",
   sameAs: [
     "https://github.com/Stuko0",
-    "https://github.com/Stuko0/alice-agent"
+    "https://github.com/Stuko0/alice-agent",
   ],
 })} />

@@ -1,27 +1,16 @@
 # Alice Agent - robots.txt
 # https://alice-agent.stuko.dev
 
+# All crawlers are welcome. /api/ is machine data, /docs/search is app UI, not content.
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://alice-agent.stuko.dev/sitemap-index.xml
-
-# Crawl-delay for polite bots (optional)
+Disallow: /api/
+Disallow: /docs/search/
 Crawl-delay: 1
 
-# Allow all major search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-# Block common bot traps
-Disallow: /api/
+# Sitemaps
+Sitemap: https://alice-agent.stuko.dev/sitemap-index.xml
+Sitemap: https://alice-agent.stuko.dev/docs/sitemap.xml
 
 # As a condition of accessing this website, you agree to abide by the following
 # content signals:
