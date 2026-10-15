@@ -62,6 +62,9 @@ jobs:
           python3 scripts/extract-skills.py
           python3 scripts/generate-skill-docs.py
 
+      - name: Strip emojis from docs content
+        run: python3 scripts/strip-emojis.py alice-agent/website/docs alice-agent/website/i18n
+
       - name: Build docs (Docusaurus, en + zh-Hans)
         run: npm run build
         working-directory: alice-agent/website
