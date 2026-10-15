@@ -106,7 +106,7 @@ const version = release.version;
       <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
         <div class="space-y-6">
           <ScrollReveal client:visible>
-            <div class="inline-flex items-center gap-2 rounded-full border border-rpm-love/30 bg-rpm-love/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-rpm-love">
+            <div class="inline-flex items-center gap-2 rounded-full border border-rpm-love/30 bg-rpm-love/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-rpm-text">
               <Heart className="h-3.5 w-3.5" />
               {t.featurePreview.badge}
             </div>
@@ -142,7 +142,7 @@ const version = release.version;
   <section class="border-t border-rpm-highlight-low/60 bg-rpm-surface/30 py-24">
     <div class="mx-auto max-w-7xl px-6">
       <ScrollReveal client:visible>
-        <div class="mb-16 text-center">
+        <div class="mb-12 text-center">
           <h2 class="font-display text-3xl text-rpm-text sm:text-4xl">{t.featuresGrid.title}</h2>
           <p class="mt-3 text-rpm-muted">{t.featuresGrid.subtitle}</p>
         </div>
@@ -182,7 +182,7 @@ const version = release.version;
       </div>
 
       <!-- Desktop Downloads -->
-      <div class="mt-16">
+      <div class="mt-12">
         <DesktopDownload />
       </div>
 

@@ -37,7 +37,7 @@ const navLabels = {
 ---
 
 <!doctype html>
-<html lang={lng} data-theme="dark">
+<html lang={lng}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,7 +48,24 @@ const navLabels = {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#191724" />
+    <meta id="theme-color-meta" name="theme-color" content="#191724" />
+    <script is:inline>
+      (function () {
+        var t = null;
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t =
+            window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+        var m = document.getElementById("theme-color-meta");
+        if (m) m.setAttribute("content", t === "dark" ? "#191724" : "#ede7db");
+      })();
+    </script>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <SEO title={title} description={desc} image={image} lang={lng} pathname={Astro.url.pathname} alternates={alternates} />

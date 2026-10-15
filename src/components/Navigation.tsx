@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sparkles, Heart, BookOpen, GitBranch, Download, Layers, Zap, HelpCircle } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface NavigationProps {
   currentPath: string;
@@ -82,12 +83,14 @@ export function Navigation({ currentPath, lng, labels }: NavigationProps) {
           </a>
           <a
             href={resolvedHref("/") + "#install"}
-            className="flex items-center gap-1.5 rounded-full border border-rpm-iris/30 bg-rpm-iris/10 px-4 py-2 text-sm font-medium text-rpm-iris ring-1 ring-rpm-iris/20 transition hover:bg-rpm-iris/20"
+            className="flex items-center gap-1.5 rounded-full bg-rpm-rose px-4 py-2 text-sm font-medium text-rpm-base transition hover:bg-rpm-foam"
           >
             <Download className="h-4 w-4" />
             {labels.install}
           </a>
-          <LanguageSwitcher currentLng={lng} />
+          <ThemeToggle lng={lng} />
+            <ThemeToggle lng={lng} />
+            <LanguageSwitcher currentLng={lng} />
         </div>
 
         <div className="flex items-center gap-3 md:hidden">

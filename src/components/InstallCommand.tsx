@@ -20,7 +20,7 @@ export function InstallCommand() {
   };
 
   return (
-    <div className="w-full max-w-2xl overflow-hidden rounded-2xl border border-rpm-highlight-med/40 bg-rpm-surface/80 shadow-2xl">
+    <div className="terminal-dark w-full max-w-2xl overflow-hidden rounded-2xl border border-rpm-highlight-med/40 bg-rpm-surface/80 shadow-2xl">
       <div className="flex items-center justify-between border-b border-rpm-highlight-low/60 px-4 py-3">
         <div className="flex items-center gap-2 text-rpm-subtle">
           <Terminal className="h-4 w-4" />

@@ -129,7 +129,7 @@ const docSections = [
         <span class="line" style="background: linear-gradient(90deg, var(--color-rpm-foam), transparent)"></span>
         <span class="suit-diamond">♦</span>
       </div>
-      <div class="inline-flex items-center gap-2 rounded-full border border-rpm-foam/30 bg-rpm-foam/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-rpm-foam">
+      <div class="inline-flex items-center gap-2 rounded-full border border-rpm-foam/30 bg-rpm-foam/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-rpm-text">
         <BookOpen class="h-3.5 w-3.5" />
         {t.docs.badge}
         <span class="opacity-40" aria-hidden>♦</span>
@@ -282,12 +282,12 @@ const docSections = [
               <span class="suit-corner suit-corner-br suit-diamond">♦</span>
               <div class="p-8 pt-14">
                 <h2 class="mb-4 font-display text-2xl text-rpm-text">{t.docs.skills}</h2>
-                <p class="mb-6 text-sm text-rpm-subtle">{t.docs.skillsDesc} <code class="rounded bg-rpm-surface px-1 py-0.5 font-mono text-rpm-iris">~/.alice/skills/</code></p>
+                <p class="mb-6 text-sm text-rpm-subtle">{t.docs.skillsDesc} <code class="rounded bg-rpm-surface px-1 py-0.5 font-mono text-rpm-foam">~/.alice/skills/</code></p>
                 <div class="grid gap-4 sm:grid-cols-2">
                   <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-iris"><Shield class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">{t.docs.securityLabel}</p></div>
                   <div class="rounded-xl bg-rpm-base/80 p-4 border border-rpm-highlight-med/40"><div class="mb-2 text-rpm-foam"><Clock class="h-5 w-5" /></div><p class="text-sm font-medium text-rpm-text">{t.docs.automationLabel}</p></div>
                 </div>
-                <a href={`/${lng}/skills`} class="mt-6 inline-flex items-center gap-2 rounded-full bg-rpm-rose px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
+                <a href={`/${lng}/skills`} class="mt-8 inline-flex items-center gap-2 rounded-full bg-rpm-rose px-5 py-2.5 font-medium text-rpm-base transition hover:bg-rpm-foam">
                   {t.nav.skills} <ArrowRight class="h-4 w-4" />
                 </a>
               </div>
@@ -305,7 +305,7 @@ const docSections = [
     <div class="section-vignette"></div>
 
     <div class="mx-auto max-w-7xl px-6">
-      <div class="mb-16 text-center">
+      <div class="mb-12 text-center">
         <div class="header-ornate">
           <span class="suit-club">♣</span>
           <span class="line" style="background: linear-gradient(90deg, transparent, var(--color-rpm-foam))"></span>

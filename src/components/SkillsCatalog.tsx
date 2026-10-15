@@ -77,7 +77,7 @@ export function SkillsCatalog({ skills, labels, docsBase }: SkillsCatalogProps) 
             onClick={() => setCategory(null)}
             className={`rounded-full border px-4 py-1.5 text-xs font-medium transition ${
               category === null
-                ? "border-rpm-iris/60 bg-rpm-iris/15 text-rpm-iris"
+                ? "border-rpm-rose bg-rpm-rose text-rpm-base"
                 : "border-rpm-highlight-med/40 bg-rpm-surface/40 text-rpm-subtle hover:border-rpm-iris/40 hover:text-rpm-text"
             }`}
           >
@@ -89,7 +89,7 @@ export function SkillsCatalog({ skills, labels, docsBase }: SkillsCatalogProps) 
               onClick={() => setCategory(cat === category ? null : cat)}
               className={`rounded-full border px-4 py-1.5 text-xs font-medium transition ${
                 cat === category
-                  ? "border-rpm-iris/60 bg-rpm-iris/15 text-rpm-iris"
+                  ? "border-rpm-rose bg-rpm-rose text-rpm-base"
                   : "border-rpm-highlight-med/40 bg-rpm-surface/40 text-rpm-subtle hover:border-rpm-iris/40 hover:text-rpm-text"
               }`}
             >

@@ -95,9 +95,14 @@ documento la codifica para agentes y revisores.
 
 Principios rectores:
 
-1. **Oscuro por contrato.** Todo el sitio vive en `base #0c0a12`. No existe
-   tema claro; `color-scheme: dark` esta declarado en `html`. Ninguna seccion
-   invierte la paleta.
+1. **Oscuro por defecto, claro opcional.** El sitio vive en `base #0c0a12`
+   con `color-scheme: dark` por defecto; el switcher de la navegacion cambia
+   `html[data-theme]` a la variante clara (pergamino, ver Colors) y la
+   persiste en `localStorage['theme']`. La primera visita respeta
+   `prefers-color-scheme`. El cambio aplica al instante porque todas las
+   utilidades consumen `var(--color-rpm-*)` y el flip desactiva transiciones
+   (clase `theme-switching`, 120 ms). Ninguna seccion invierte la paleta por
+   su cuenta: el tema es una decision global.
 2. **Ornamento con presupuesto.** Naipes (`suit-spade/heart/diamond/club`),
    patrones de tela, viñetas y orbes de luz son decoracion de fondo, nunca
    ruido sobre el texto. Cada seccion puede usar una capa de textura y una de
@@ -138,6 +143,16 @@ La paleta se define como tokens `--color-rpm-*` y se consumen como
   meta-informacion decorativa.
 - **surface / overlay / highlight-\*:** elevacion progresiva de paneles.
 
+Modo claro (`html[data-theme='light']`, variante Heartless): base pergamino
+`#ede7db`, surface `#ffffff`, texto `#1a1714`, subtle `#5c4a44`, love
+carmesi `#8b0000`, rose `#a3182b`, iris `#6b3fa0`, gold `#8a6114`, pine
+`#2a6a6a`, foam `#0b5c5c`, highlights `#e7dfd1 / #c9b99c / #9a8760`.
+Todos los pares de texto sobre base/surface pasan WCAG AA (medido en build:
+0 fallos en 4 paginas x 2 temas). Los paneles marcados `.terminal-dark`
+(exhibiciones de terminal, bloque de instalacion) y los `<pre>` redeclaran la
+paleta oscura dentro de su alcance: la terminal permanece oscura en ambos
+temas.
+
 Reglas: un solo acento de accion por vista; los cuatro palos se ciclan por
 indice (`♠ ♥ ♦ ♣`) y nunca se re-mapean; los `color-mix()` al 8-40% crean las
 variantes de fondo/borde de cada palo (`bg-suit-*`, `border-suit-*`).
@@ -160,8 +175,12 @@ variantes de fondo/borde de cada palo (`bg-suit-*`, `border-suit-*`).
 
 - Contenedor maestro `max-w-7xl px-6` (1280px); heroes `max-w-4xl`;
   lectura larga `max-w-3xl`.
-- Ritmo vertical por seccion `py-24` (96px) y heroes `py-28`; grillas
-  `gap-6` o `gap-10`.
+- Ritmo vertical por seccion `py-24` (96px) en TODAS las vistas (canon
+  verificado en build: la home pasa de 80/96/112 mezclados a 96 uniforme);
+  heroes `py-28` (112px) con borde inferior; cabecera de seccion
+  `mb-12` (48px) y CTA tras parrafo `mt-8` (32px). Grillas `gap-6` o
+  `gap-10`; tarjetas con contenido `p-8 pt-14` (el watermark ocupa la
+  banda superior).
 - Secciones son `<section class="relative overflow-hidden">` con capas
   hermanas: `.fabric-pattern` (rejilla al 2.5%), `.section-vignette`
   (viñeta radial) y opcional `.glow-orb` teñido con el color del palo.
@@ -209,6 +228,9 @@ Sistema de radios documentado y seguido en todo el sitio:
   y esquinas `.suit-corner`.
 - **`input-text`**: fondo `base`, texto `border highlight-med`, foco con
   anillo `gold`.
+- **`theme-toggle`**: boton pill 36x36 en la navegacion (sol/luna lucide);
+  alterna `html[data-theme]`, persiste en `localStorage` y actualiza el meta
+  `theme-color`. Borde `highlight-med`, hover iris.
 - **Divisores**: `.divider-ornate` (linea 1px con degradado a transparente) y
   `.divider-ornate-glow` (con degradado dorado). Encabezados ornamentales
   `.header-ornate` (suit + linea + suit + linea + suit, centrado).
@@ -219,8 +241,12 @@ Sistema de radios documentado y seguido en todo el sitio:
 ## Do's and Don'ts
 
 - DO ciclar los palos por indice (`♠ ♥ ♦ ♣`) con su clase de color
-  correspondiente; DO mantener un unico acento de accion (iris) en toda la
-  vista.
+  correspondiente; DO mantener un unico acento de accion (rose para
+  acciones, iris para enlaces/foco) en toda la vista.
+- DO verificar cualquier combinacion nueva de texto sobre fondo en LOS DOS
+  temas (el modo claro invierte luminancias: lo que pasa en oscuro puede
+  fallar en claro y viceversa); los eyebrow badges usan borde/tinte del palo
+  con texto del tema para garantizar AA en ambos.
 - DO reservar Cinzel para titulares >= 20px y usar Inter para el resto.
 - DO traer toda metrica de un endpoint o archivo de datos en build time
   (`releases.ts`, `public/api/*.json`); la landing no puede mostrar un

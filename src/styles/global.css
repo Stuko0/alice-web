@@ -22,9 +22,70 @@
   --font-body: "Inter", sans-serif;
 }
 
+/* ── Modo claro: variante Heartless (pergamino + carmesi) ──
+   Sobrescribe las variables de @theme en <html data-theme='light">; todas las
+   utilidades de Tailwind consumen var(--color-rpm-*) y siguen el cambio. */
+html[data-theme='light'] {
+  --color-rpm-base: #ede7db;
+  --color-rpm-surface: #ffffff;
+  --color-rpm-overlay: #faf6ee;
+  --color-rpm-muted: #8a7a72;
+  --color-rpm-subtle: #5c4a44;
+  --color-rpm-text: #1a1714;
+  --color-rpm-love: #8b0000;
+  --color-rpm-rose: #a3182b;
+  --color-rpm-iris: #6b3fa0;
+  --color-rpm-gold: #8a6114;
+  --color-rpm-pine: #2a6a6a;
+  --color-rpm-foam: #0b5c5c;
+  --color-rpm-highlight-low: #e7dfd1;
+  --color-rpm-highlight-med: #c9b99c;
+  --color-rpm-highlight-high: #9a8760;
+}
+
+/* Los paneles de terminal mantienen la paleta oscura en cualquier tema:
+   redeclaramos los tokens dentro del alcance .terminal-dark. */
+html[data-theme='light'] .terminal-dark {
+  --color-rpm-base: #0c0a12;
+  --color-rpm-surface: #16131f;
+  --color-rpm-overlay: #221e30;
+  --color-rpm-muted: #6e687c;
+  --color-rpm-subtle: #958da5;
+  --color-rpm-text: #d4cfc7;
+  --color-rpm-love: #a8213a;
+  --color-rpm-rose: #c45a6b;
+  --color-rpm-iris: #7848a0;
+  --color-rpm-gold: #b8864e;
+  --color-rpm-pine: #3a8c8c;
+  --color-rpm-foam: #4fa8a8;
+  --color-rpm-highlight-low: #191622;
+  --color-rpm-highlight-med: #2d2940;
+  --color-rpm-highlight-high: #413d57;
+  color: #d4cfc7;
+  background-color: #16131f;
+}
+
+/* Bloques de codigo: siempre panel oscuro */
+html[data-theme='light'] pre {
+  background-color: #16131f !important;
+  color: #d4cfc7;
+  border-color: #2d2940;
+}
+
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* Cambio de tema: sin transiciones para que los colores por var() apliquen ya */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
 }
 
 body {

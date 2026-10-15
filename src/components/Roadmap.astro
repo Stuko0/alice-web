@@ -20,7 +20,7 @@ const borders = ["border-rpm-iris/40", "border-rpm-love/40", "border-rpm-foam/40
 const bgGlows = ["bg-rpm-iris/5", "bg-rpm-love/5", "bg-rpm-foam/5", "bg-rpm-gold/5"];
 ---
 
-<section class="relative overflow-hidden py-28 bg-rpm-base">
+<section class="relative overflow-hidden py-24 bg-rpm-base">
   <!-- Ornate background texture -->
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
     <div class="roadmap-vignette"></div>
@@ -88,7 +88,7 @@ const bgGlows = ["bg-rpm-iris/5", "bg-rpm-love/5", "bg-rpm-foam/5", "bg-rpm-gold
                 <!-- Card torn edge effect -->
                 <div class="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-rpm-base/40 to-transparent opacity-60"></div>
 
-                <div class="p-6 sm:p-8 pt-12">
+                <div class="p-6 sm:p-8 pt-14">
                   <!-- Phase badge -->
                   <div class={`mb-4 inline-flex items-center gap-2 rounded-full border ${border} ${bgGlow} px-4 py-1.5`}>
                     <span class="text-xs font-bold uppercase tracking-[0.15em]" class:list={[color]}>{phase.phase}</span>
@@ -124,7 +124,7 @@ const bgGlows = ["bg-rpm-iris/5", "bg-rpm-love/5", "bg-rpm-foam/5", "bg-rpm-gold
     </div>
 
     <!-- Decorative closing -->
-    <div class="mt-16 flex justify-center">
+    <div class="mt-12 flex justify-center">
       <div class="inline-flex items-center gap-6 text-xs uppercase tracking-[0.25em] text-rpm-muted/60">
         <span class="w-12 h-px bg-rpm-highlight-med"></span>
         <span class="font-display">✦ onward ✦</span>
