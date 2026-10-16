@@ -23,7 +23,6 @@ interface NavigationProps {
 const suits = ["♠", "♥", "♦", "♣"];
 
 const links = [
-  { key: "home", href: "/" },
   { key: "features", href: "/features" },
   { key: "skills", href: "/skills" },
   { key: "automation", href: "/automation" },
@@ -58,7 +57,7 @@ export function Navigation({ currentPath, lng, labels }: NavigationProps) {
         <div className="hidden items-center gap-5 md:flex">
           {links.map(({ key, href }, i) => {
             const isActive = currentPath === href;
-            const Icon = key === "home" ? Sparkles : key === "features" ? Heart : BookOpen;
+            const Icon = key === "features" ? Heart : BookOpen;
             return (
               <a
                 key={key}
@@ -89,11 +88,11 @@ export function Navigation({ currentPath, lng, labels }: NavigationProps) {
             {labels.install}
           </a>
           <ThemeToggle lng={lng} />
-            <ThemeToggle lng={lng} />
-            <LanguageSwitcher currentLng={lng} />
+          <LanguageSwitcher currentLng={lng} />
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle lng={lng} />
           <LanguageSwitcher currentLng={lng} />
           <button
             className="flex h-10 w-10 items-center justify-center rounded-lg border border-rpm-highlight-med/40 text-rpm-text"
@@ -116,7 +115,7 @@ export function Navigation({ currentPath, lng, labels }: NavigationProps) {
           >
             <div className="flex flex-col gap-3 px-6 py-5">
               {links.map(({ key, href }, i) => {
-                const Icon = key === "home" ? Sparkles : key === "features" ? Heart : BookOpen;
+                const Icon = key === "features" ? Heart : BookOpen;
                 return (
                   <a
                     key={key}
